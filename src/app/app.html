@@ -1,6 +1,18 @@
-<tui-root>
-	<main class="main">
-		main works
-		<router-outlet />
-	</main>
+<tui-root class="root" [attr.tuiTheme]="darkMode() ? 'dark' : null">
+	<div class="content">
+		<app-header></app-header>
+		<main class="main">
+			<router-outlet />
+		</main>
+		<app-footer>
+			@switch (layoutService.footerVariant) {
+				@case ("editor") {
+					<app-footer-editor />
+				}
+				@default {
+					<app-footer-about />
+				}
+			}
+		</app-footer>
+	</div>
 </tui-root>

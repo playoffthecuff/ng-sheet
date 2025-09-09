@@ -1,0 +1,18 @@
+.content {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"main"
+		"footer";
+	grid-template-rows: 3rem 1fr 3rem;
+}
+
+.main {
+	width: 100vw;
+	height: calc(100dvh - 6rem);
+	display: flex;
+	align-items: center;
+	justify-content: start;
+	box-sizing: border-box;
+	grid-area: main;
+}

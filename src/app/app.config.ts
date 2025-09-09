@@ -3,7 +3,7 @@ import {
 	provideZonelessChangeDetection,
 	type ApplicationConfig,
 } from '@angular/core';
-import { provideRouter } from '@angular/router';
+import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { provideEventPlugins } from '@taiga-ui/event-plugins';
 
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -24,7 +24,7 @@ export const appConfig: ApplicationConfig = {
 		// provideAnimations(),
 		provideBrowserGlobalErrorListeners(),
 		provideZonelessChangeDetection(),
-		provideRouter(routes),
+		provideRouter(routes, withComponentInputBinding()),
 		provideEventPlugins(),
 		provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
 		provideAuth(() => getAuth()),

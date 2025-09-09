@@ -1,0 +1,54 @@
+:host {
+	display: block;
+	flex-grow: 1;
+	padding: 1rem;
+	box-sizing: border-box;
+	position: relative;
+	height: 100%;
+}
+.bg {
+	font-size: 10rem;
+	font-weight: 900;
+	color: var(--tui-background-neutral-2);
+	position: absolute;
+	bottom: 50%;
+	right: 50%;
+	transform: translate(50%, 0);
+	z-index: 1;
+}
+.h {
+	line-height: 1.375;
+}
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+}
+.content {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.txt {
+	font: var(--tui-font-text-m);
+	font-weight: 500;
+}
+.btn {
+	block-size: 2rem !important;
+	padding: 0 0.5rem;
+}
+.btn::after {
+	font-size: 1.25rem;
+}
+.row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 10.5rem;
+}
+.img {
+	position: absolute;
+	bottom: 1rem;
+	right: 1rem;
+}
