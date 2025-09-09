@@ -1,11 +1,20 @@
-<tui-root class="root" [attr.tuiTheme]="darkMode() ? 'dark' : null">
+<tui-root class="root" [attr.tuiTheme]="ts.darkMode() ? 'dark' : null">
 	<div class="content">
-		<app-header></app-header>
+		<app-header>
+			@switch (ls.headerVariant) {
+				@case ("editor") {
+					"editor header"
+				}
+				@default {
+					"default header"
+				}
+			}
+		</app-header>
 		<main class="main">
 			<router-outlet />
 		</main>
 		<app-footer>
-			@switch (layoutService.footerVariant) {
+			@switch (ls.footerVariant) {
 				@case ("editor") {
 					<app-footer-editor />
 				}

@@ -1,1 +1,74 @@
-<p>register-form works!</p>
+<div class="container">
+	<form [formGroup]="form" (ngSubmit)="submit()" class="form">
+		<h1 tuiTitle="m" class="h">Sign Up</h1>
+		<app-divider class="divider" />
+		<div>
+			<tui-textfield>
+				<label tuiLabel htmlFor="name" i18n>Name </label>
+				<input tuiTextfield formControlName="name" />
+				<tui-icon icon="@tui.user" class="no-events" />
+			</tui-textfield>
+			<tui-error [error]="nameValidationMessage" class="error" />
+		</div>
+		<div>
+			<tui-textfield>
+				<label tuiLabel htmlFor="email" i18n>Email </label>
+				<input tuiTextfield formControlName="email" />
+				<tui-icon icon="@tui.mail" class="no-events" />
+			</tui-textfield>
+			<tui-error [error]="emailValidationMessage" class="error" />
+		</div>
+		<div>
+			<tui-textfield>
+				<label tuiLabel htmlFor="password" i18n>Password </label>
+				<input tuiTextfield formControlName="password" />
+				<tui-icon tuiPassword />
+			</tui-textfield>
+			<div class="progress-wrapper">
+				<progress
+					[color]="passwordStrength | progressToColor"
+					max="100"
+					tuiProgressBar
+					[value]="passwordStrength"
+					class="progress"
+				></progress>
+				<tui-icon
+					tuiTooltip="Different types of symbols, low repetition"
+					tuiHintDirection="top-left"
+					icon="@tui.circle-question-mark"
+					[style.color]="passwordStrength > 75 ? '#00CC00' : '#CC0000'"
+					class="icon"
+				/>
+			</div>
+		</div>
+		<div>
+			<button
+				type="submit"
+				tuiButton
+				[disabled]="isLoading() && !form.valid"
+				i18n
+				class="btn"
+				appearance="primary-grayscale"
+				[loading]="isLoading()"
+			>
+				Submit
+				<tui-icon icon="@tui.send-horizontal" [style.height.rem]="1.5" />
+			</button>
+			<tui-error [error]="loadingErrorMessage() ?? null" class="error" />
+		</div>
+		<div class="row">
+			<span i18n> Already have an account? </span>
+			<a tuiLink routerLink="/login" i18n> Login </a>
+		</div>
+	</form>
+	<div class="illustration">
+		<img
+			ngSrc="/assets/img/contact.png"
+			alt="id card"
+			priority="high"
+			width="328"
+			height="288"
+			[placeholder]="CONTACT_PLACEHOLDER"
+		/>
+	</div>
+</div>

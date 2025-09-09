@@ -1,0 +1,74 @@
+<tui-avatar
+	[src]="initials()"
+	size="s"
+	[tuiAppearanceState]="open ? 'active' : null"
+	[tuiDropdown]="dropdown"
+	[tuiDropdownMaxHeight]="480"
+	[(tuiDropdownOpen)]="open"
+	tuiDropdownAlign="left"
+	class="avatar"
+></tui-avatar>
+<ng-template #dropdown let-close>
+	<div class="menu">
+		<header class="header">
+			<span tuiFade class="email">{{ email() ?? "Login to start" }}</span>
+			<div class="buttons">
+				<app-theme-switcher></app-theme-switcher>
+				<app-lang-switcher></app-lang-switcher>
+			</div>
+		</header>
+		<app-divider />
+		<div class="body">
+			<tui-avatar [src]="initials()" size="l" class="avatar"></tui-avatar>
+			<p class="p">Good {{ time | dateToDayPart }}, {{ name() ?? "Guest" }}</p>
+			@if (email()) {
+				<button
+					tuiButton
+					iconEnd="@tui.log-out"
+					appearance="secondary"
+					size="m"
+					(click)="logout()"
+					class="btn"
+					[loading]="isLoading()"
+				>
+					Sign Out
+				</button>
+			} @else {
+				<button
+					tuiButton
+					iconEnd="@tui.log-in"
+					appearance="secondary"
+					size="m"
+					(click)="login()"
+					class="btn"
+					[loading]="isLoading()"
+				>
+					Sign In
+				</button>
+			}
+		</div>
+		@if (!email()) {
+			<app-divider />
+			<div class="add-block">
+				<p class="p">Don't have an account?</p>
+				<button
+					tuiButton
+					iconEnd="@tui.user-plus"
+					appearance="secondary"
+					size="m"
+					(click)="register()"
+					class="btn"
+					[loading]="isLoading()"
+				>
+					Register
+				</button>
+			</div>
+		}
+		<app-divider />
+		<footer class="footer">
+			<a routerLink="/terms-of-use" tuiLink appearance="action-grayscale">
+				Terms of use
+			</a>
+		</footer>
+	</div>
+</ng-template>

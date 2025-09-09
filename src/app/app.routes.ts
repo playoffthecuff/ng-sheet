@@ -23,6 +23,12 @@ export const routes: Routes = [
 		loadComponent: () => import('./pages/editor/editor').then((m) => m.Editor),
 	},
 	{
+		title: 'Terms Of Use - Ng Sheet',
+		path: 'terms-of-use',
+		loadComponent: () =>
+			import('./pages/terms-of-use/terms-of-use').then((m) => m.TermsOfUse),
+	},
+	{
 		title: 'Nothing Found - Ng Sheet',
 		path: '**',
 		loadComponent: () =>
