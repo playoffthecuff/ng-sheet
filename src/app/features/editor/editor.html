@@ -1,1 +1,51 @@
-<p>editor works!</p>
+<table tuiTable class="table" [columns]="columns">
+	<th
+		tuiTh
+		[minWidth]="48"
+		class="tbody-tr-th btn"
+		(click)="selectAllCells()"
+	></th>
+	<thead class="thead">
+		<tr tuiThGroup>
+			<th tuiTh [minWidth]="48" class="tbody-tr-th"></th>
+			@for (col of columns; let i = $index; track $index) {
+				<th
+					tuiTh
+					[minWidth]="48"
+					[resizable]="true"
+					[appInvertHighlight]="isAllCellSelected()"
+					[appHighlight]="isColumnHighlighted(i)"
+					class="thead-tr-th"
+				>
+					{{ col }}
+				</th>
+			}
+		</tr>
+	</thead>
+	<tbody tuiTbody class="tbody">
+		@for (row of ss.sheet?.data; let i = $index; track $index) {
+			<tr tuiTr class="tr">
+				<th
+					tuiTh
+					[appInvertHighlight]="isAllCellSelected()"
+					[appHighlight]="isRowSelected(i)"
+					class="tbody-tr-th"
+				>
+					{{ i }}
+				</th>
+				@for (cell of row; let j = $index; track $index) {
+					<td
+						tuiTd
+						(click)="selectCell(i, j)"
+						[appBorder]="isCellSelected(i, j)"
+						[appHighlight]="isAllCellSelected()"
+						color="var(--tui-status-info-pale-hover)"
+						class="td"
+					>
+						{{ cell }}
+					</td>
+				}
+			</tr>
+		}
+	</tbody>
+</table>

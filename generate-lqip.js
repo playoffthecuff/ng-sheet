@@ -17,7 +17,7 @@ try {
 		const outputPath = path.join(outputDir, `${baseName}-lqip.webp`);
 		try {
 			await sharp(inputPath)
-				.resize({ width: 96 })
+				.resize({ width: 48 })
 				.webp({ quality: 80 })
 				.toFile(outputPath);
 		} catch (e) {

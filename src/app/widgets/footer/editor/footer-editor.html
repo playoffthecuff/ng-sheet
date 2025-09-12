@@ -1,1 +1,109 @@
-<p>editor works!</p>
+<div class="menu">
+	<button
+		appearance="positive"
+		size="s"
+		tuiIconButton
+		type="button"
+		[style.border-radius.%]="100"
+		(click)="this.ss.addSheet()"
+	>
+		Add Sheet
+		<tui-icon icon="@tui.plus" tuiTooltip="Add Sheet" tuiHintDirection="right" />
+	</button>
+	<button
+		tuiButton
+		iconEnd="@tui.chevron-down"
+		tuiDropdownOpen
+		type="button"
+		[tuiDropdown]="content"
+		size="s"
+		appearance="info"
+	>
+		All Sheets
+	</button>
+	<ng-template #content>
+		<tui-data-list role="menu" size="s" class="data-list">
+			@for (
+				sheet of ss.docMetadata?.sheetsMetadata;
+				let i = $index;
+				track $index
+			) {
+				<button
+					[iconStart]="sheet.id === ss.sheet?.id ? '@tui.check' : ''"
+					tuiOption
+					new
+					type="button"
+					class="option"
+					(click)="navigateToSheet(sheet.id)"
+				>
+					<span></span>
+					{{ sheet.name }}
+				</button>
+			}
+		</tui-data-list>
+	</ng-template>
+	<!-- <tui-tabs-with-more class="tabs">
+			@for (sheet of sheets; let i = $index; track $index) {
+				<a
+					*tuiItem
+					[routerLink]="['/editor', '1', i]"
+					tuiTab
+					class="a"
+					tuiLink
+					routerLinkActive
+					[routerLinkActiveOptions]="{ exact: true }"
+				>
+					{{ sheet.name }}
+					<button
+						tuiIconButton
+						iconEnd="@tui.chevron-down"
+						tuiDropdownOpen
+						type="button"
+						[tuiDropdown]="sheetMenu"
+						size="s"
+						appearance="flat-grayscale"
+						(click)="stopP($event)"
+					>
+						All Sheets
+					</button>
+					<ng-template #sheetMenu>
+						<tui-data-list role="menu" size="s" class="data-list">
+							<button tuiOption new type="button" class="option">Item</button>
+						</tui-data-list>
+					</ng-template>
+				</a>
+			}
+		</tui-tabs-with-more> -->
+	<tui-segmented size="s" class="segments">
+		@for (sheet of ss.docMetadata?.sheetsMetadata; let i = $index; track $index) {
+			<a
+				[routerLink]="['/editor', '1', i]"
+				tuiTab
+				class="a"
+				tuiLink
+				routerLinkActive
+				[routerLinkActiveOptions]="{ exact: true }"
+				(click)="prevent($event)"
+			>
+				{{ sheet.name }}
+				<button
+					tuiIconButton
+					iconEnd="@tui.chevron-down"
+					tuiDropdownOpen
+					type="button"
+					[tuiDropdown]="sheetMenu"
+					size="s"
+					appearance="flat-grayscale"
+					(click)="prevent($event)"
+				>
+					All Sheets
+				</button>
+				<ng-template #sheetMenu>
+					<tui-data-list role="menu" size="s" class="data-list">
+						<button tuiOption new type="button" class="option">Item</button>
+					</tui-data-list>
+				</ng-template>
+			</a>
+		}
+	</tui-segmented>
+</div>

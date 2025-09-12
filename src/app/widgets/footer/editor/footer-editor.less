@@ -1,0 +1,40 @@
+.menu {
+	display: flex;
+	gap: 0.5rem;
+	align-items: center;
+	flex-grow: 1;
+}
+.option {
+	font-weight: 600 !important;
+	justify-content: space-between;
+}
+.data-list {
+	min-width: 5.5rem;
+}
+.tabs {
+	flex-grow: 1;
+	margin-left: 2rem;
+}
+.tabs[data-size="l"] {
+	padding-top: 0.5rem;
+	--tui-height-l: 2.5rem;
+}
+.span {
+	font-weight: 600;
+}
+.a {
+	display: flex;
+	height: calc(2rem + 2px);
+	margin: 0;
+	padding-left: 1rem;
+	padding-right: 0.25rem;
+	color: var(--tui-text-primary);
+}
+.a[tuiTab]::before {
+	font-size: 1.25rem;
+}
+.segments {
+	box-sizing: content-box;
+	--t-height: 100%;
+	--t-width: 100%;
+}
