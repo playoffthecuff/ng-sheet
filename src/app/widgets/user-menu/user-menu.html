@@ -47,6 +47,24 @@
 				</button>
 			}
 		</div>
+		<app-divider />
+		@if (email()) {
+			<div class="body">
+				<p class="p">Register a new user?</p>
+				<button
+					tuiButton
+					iconEnd="@tui.user-plus"
+					appearance="secondary"
+					size="m"
+					(click)="register()"
+					class="btn"
+					[loading]="isLoading()"
+				>
+					Add Account
+				</button>
+			</div>
+		}
+
 		@if (!email()) {
 			<app-divider />
 			<div class="add-block">

@@ -4,9 +4,9 @@ export const createColumnName = (
 	max = 26,
 	firstCode = 65,
 ): string =>
-	n <= 0 ? r : (
+	n < 0 ? r : (
 		createColumnName(
-			~~(--n / max),
+			~~(n / max) - 1,
 			String.fromCharCode(firstCode + (n % max)) + r,
 		)
 	);

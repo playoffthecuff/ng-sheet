@@ -1,0 +1,58 @@
+<a
+	[routerLink]="['/editor', '0', sheetId]"
+	tuiTab
+	class="a"
+	tuiLink
+	(dblclick)="setEditMode()"
+>
+	<tui-input-inline class="input-inline" [class.editable]="editMode()">
+		<input
+			#input
+			[(ngModel)]="name"
+			(change)="renameSheet($event)"
+			class="input"
+			(blur)="editMode.set(false)"
+			[appSetFocus]="editMode()"
+			(keydown.enter)="resetEditMode()"
+			(keydown.escape)="cancelInput()"
+		/>
+	</tui-input-inline>
+	<button
+		tuiIconButton
+		iconEnd="@tui.chevron-down"
+		tuiDropdownOpen
+		tuiDropdownAlign="right"
+		type="button"
+		[tuiDropdown]="sheetMenu"
+		size="s"
+		appearance="flat-grayscale"
+		(click)="prevent($event)"
+		class="button"
+	>
+		{{ sheetName() }}
+	</button>
+	<ng-template #sheetMenu>
+		<tui-data-list role="menu" size="s" class="data-list">
+			<button
+				tuiOption
+				new
+				type="button"
+				class="option"
+				iconStart="@tui.trash-2"
+				(click)="removeSheet()"
+			>
+				Remove
+			</button>
+			<button
+				tuiOption
+				new
+				type="button"
+				class="option"
+				iconStart="@tui.pencil"
+				(click)="setEditMode()"
+			>
+				Rename
+			</button>
+		</tui-data-list>
+	</ng-template>
+</a>

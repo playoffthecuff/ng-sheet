@@ -7,10 +7,21 @@ import { FooterAbout } from './widgets/footer/about/footer-about';
 import { FooterEditor } from './widgets/footer/editor/footer-editor';
 import { Footer } from './widgets/footer/footer';
 import { Header } from './widgets/header/header';
+import { CellInput } from './features/editor/cell-input/cell-input';
+import { HeaderEditor } from './widgets/header/editor/header-editor/header-editor';
 
 @Component({
 	selector: 'app-root',
-	imports: [RouterOutlet, TuiRoot, Header, Footer, FooterEditor, FooterAbout],
+	imports: [
+		RouterOutlet,
+		TuiRoot,
+		Header,
+		Footer,
+		FooterEditor,
+		FooterAbout,
+		CellInput,
+		HeaderEditor,
+	],
 	templateUrl: './app.html',
 	styleUrl: './app.less',
 })

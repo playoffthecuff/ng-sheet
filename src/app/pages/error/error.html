@@ -1,0 +1,39 @@
+<div>
+	<section class="container">
+		<span class="bg">500</span>
+		<article class="content">
+			<h1 tuiTitle="m" class="h">Oops. Something went wrong</h1>
+			<div>
+				<div class="row">
+					<span class="txt"> You can </span>
+					<button
+						appearance="action"
+						iconEnd="@tui.undo"
+						size="m"
+						tuiButton
+						type="button"
+						(click)="goBack()"
+						class="btn"
+					>
+						Go Back
+					</button>
+				</div>
+				<div class="row">
+					<span class="txt">or</span>
+					<button
+						appearance="action"
+						routerLink="/"
+						iconEnd="@tui.home"
+						size="m"
+						tuiButton
+						type="button"
+						class="btn"
+					>
+						Start over
+					</button>
+				</div>
+			</div>
+		</article>
+	</section>
+	<img src="/assets/img/500.svg" alt="man with a 'warning' sign" class="img" />
+</div>

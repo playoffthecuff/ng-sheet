@@ -1,15 +1,23 @@
 <tui-root class="root" [attr.tuiTheme]="ts.darkMode() ? 'dark' : null">
-	<div class="content">
+	<div
+		class="content page-layout"
+		[class.editor-layout]="ls.headerVariant === 'editor'"
+	>
 		<app-header>
 			@switch (ls.headerVariant) {
 				@case ("editor") {
-					"editor header"
+					<app-header-editor />
 				}
 				@default {
-					"default header"
+					<div class="h-wrapper">
+						<h1 tuiTitle="m" class="h shimmer">Ng Sheet</h1>
+					</div>
 				}
 			}
 		</app-header>
+		@if (ls.headerVariant === "editor") {
+			<app-cell-input />
+		}
 		<main class="main">
 			<router-outlet />
 		</main>

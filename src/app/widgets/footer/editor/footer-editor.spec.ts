@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { Editor } from './editor';
+import { FooterEditor } from './footer-editor';
 
-describe('Editor', () => {
-	let component: Editor;
-	let fixture: ComponentFixture<Editor>;
+describe('FooterEditor', () => {
+	let component: FooterEditor;
+	let fixture: ComponentFixture<FooterEditor>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			imports: [Editor],
+			imports: [FooterEditor],
 		}).compileComponents();
 
-		fixture = TestBed.createComponent(Editor);
+		fixture = TestBed.createComponent(FooterEditor);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

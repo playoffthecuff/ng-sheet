@@ -1,9 +1,16 @@
 import {
+	inject,
 	provideBrowserGlobalErrorListeners,
 	provideZonelessChangeDetection,
 	type ApplicationConfig,
 } from '@angular/core';
-import { provideRouter, withComponentInputBinding } from '@angular/router';
+import {
+	NavigationError,
+	provideRouter,
+	Router,
+	withComponentInputBinding,
+	withNavigationErrorHandler,
+} from '@angular/router';
 import { provideEventPlugins } from '@taiga-ui/event-plugins';
 
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -24,7 +31,16 @@ export const appConfig: ApplicationConfig = {
 		// provideAnimations(),
 		provideBrowserGlobalErrorListeners(),
 		provideZonelessChangeDetection(),
-		provideRouter(routes, withComponentInputBinding()),
+		provideRouter(
+			routes,
+			withComponentInputBinding(),
+			withNavigationErrorHandler((e: NavigationError) => {
+				const r = inject(Router);
+				if (e.error.message)
+					console.log('Navigation error occurred:', e.error.message);
+				r.navigate(['/error']);
+			}),
+		),
 		provideEventPlugins(),
 		provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
 		provideAuth(() => getAuth()),

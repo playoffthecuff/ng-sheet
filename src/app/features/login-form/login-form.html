@@ -1,5 +1,5 @@
 <div class="container">
-	<tui-loader size="l" [overlay]="true" [showLoader]="isLoading()">
+	<tui-loader size="l" [overlay]="true" [showLoader]="isGlobalLoading()">
 		<form [formGroup]="form" (ngSubmit)="submit()" class="form">
 			<h2 tuiTitle="m" class="h">Sign in</h2>
 			<app-divider></app-divider>
@@ -13,16 +13,12 @@
 					appearance="secondary-grayscale"
 					(click)="signinWithProvider('google')"
 				>
-					@if (isLoading()) {
-						<app-spinner [inheritColor]="true" [overlay]="false" size="m" />
-					} @else {
-						<img
-							src="assets/img/google.svg"
-							[style.height.rem]="1.5"
-							alt="google logo"
-						/>
-						Google
-					}
+					<img
+						src="assets/img/google.svg"
+						[style.height.rem]="1.5"
+						alt="google logo"
+					/>
+					Google
 				</button>
 				<button
 					type="button"
@@ -32,12 +28,8 @@
 					appearance="secondary-grayscale"
 					(click)="signinWithProvider('github')"
 				>
-					@if (isLoading()) {
-						<app-spinner [inheritColor]="true" [overlay]="false" size="m" />
-					} @else {
-						<tui-icon icon="github" [style.height.rem]="1.5" />
-						Github
-					}
+					<tui-icon icon="github" [style.height.rem]="1.5" />
+					Github
 				</button>
 			</div>
 			<app-divider></app-divider>
@@ -74,7 +66,7 @@
 				<button
 					type="submit"
 					tuiButton
-					[disabled]="!form.valid"
+					[disabled]="!form.valid || isLoading()"
 					i18n
 					class="btn w-full"
 					appearance="primary-grayscale"

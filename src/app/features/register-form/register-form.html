@@ -21,7 +21,7 @@
 		<div>
 			<tui-textfield>
 				<label tuiLabel htmlFor="password" i18n>Password </label>
-				<input tuiTextfield formControlName="password" />
+				<input tuiTextfield formControlName="password" type="password" />
 				<tui-icon tuiPassword />
 			</tui-textfield>
 			<div class="progress-wrapper">
@@ -45,7 +45,7 @@
 			<button
 				type="submit"
 				tuiButton
-				[disabled]="isLoading() && !form.valid"
+				[disabled]="isLoading() || !form.valid"
 				i18n
 				class="btn"
 				appearance="primary-grayscale"

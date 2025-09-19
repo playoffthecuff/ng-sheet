@@ -22,19 +22,17 @@
 .span {
 	font-weight: 600;
 }
-.a {
-	display: flex;
-	height: calc(2rem + 2px);
-	margin: 0;
-	padding-left: 1rem;
-	padding-right: 0.25rem;
-	color: var(--tui-text-primary);
-}
-.a[tuiTab]::before {
-	font-size: 1.25rem;
-}
 .segments {
 	box-sizing: content-box;
 	--t-height: 100%;
 	--t-width: 100%;
+}
+.btn[tuiButton] {
+	font-size: 0.875rem;
+	gap: 1rem;
+	font-weight: 500;
+}
+.btn-wrapper {
+	border: none;
+	padding: 0;
 }

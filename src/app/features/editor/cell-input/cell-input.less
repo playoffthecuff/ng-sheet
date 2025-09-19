@@ -1,0 +1,28 @@
+:host {
+	display: flex;
+	grid-area: toolbar;
+}
+.input {
+	font-weight: 500;
+	border-radius: 0;
+	font-size: 0.875rem;
+}
+.value {
+	flex-grow: 1;
+	padding: 0 1rem;
+	&::before {
+		font-size: 1.25rem;
+	}
+	& > .input {
+		padding-inline-start: 3rem;
+	}
+}
+.cell {
+	width: 6rem;
+	& > .input {
+		text-align: center;
+		font-weight: 700;
+		padding: 0.25rem;
+	}
+	font-size: 0.875rem;
+}

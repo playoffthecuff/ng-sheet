@@ -1,12 +1,8 @@
-:host {
-	flex-grow: 1;
-	padding: 14%;
-}
-
 .intro-link {
 	display: block;
-	width: 100%;
 	height: fit-content;
+	width: fit-content;
+	justify-self: center;
 	transition: color 0.2s;
 	color: var(--tui-text-primary);
 	&:hover {
@@ -15,4 +11,13 @@
 	&:active {
 		color: var(--text-tertiary);
 	}
+}
+
+.link-wrapper {
+	padding: 14%;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
 }

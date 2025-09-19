@@ -1,0 +1,18 @@
+<tui-textfield class="cell" tuiTextfieldSize="s" [tuiTextfieldCleaner]="false">
+	<input
+		placeholder="Enter cell here..."
+		tuiTextfield
+		class="input"
+		[value]="ss.getStrFocusedCellAddress()"
+	/>
+</tui-textfield>
+<tui-textfield iconStart="f-x" class="value" tuiTextfieldSize="s">
+	<input
+		#cellValue
+		placeholder="Type value or formula here..."
+		tuiTextfield
+		class="input"
+		(keydown.enter)="setFocusedCellValue($event)"
+		[(ngModel)]="ss.userInput"
+	/>
+</tui-textfield>

@@ -1,48 +1,81 @@
-<table tuiTable class="table" [columns]="columns">
+<table tuiTable class="table" [columns]="ss.columnLetters">
 	<th
 		tuiTh
 		[minWidth]="48"
 		class="tbody-tr-th btn"
-		(click)="selectAllCells()"
+		(click)="ss.selectAllCells()"
 	></th>
 	<thead class="thead">
 		<tr tuiThGroup>
 			<th tuiTh [minWidth]="48" class="tbody-tr-th"></th>
-			@for (col of columns; let i = $index; track $index) {
+			@for (col of ss.sheetValues?.[0]; let i = $index; track $index) {
 				<th
 					tuiTh
 					[minWidth]="48"
 					[resizable]="true"
-					[appInvertHighlight]="isAllCellSelected()"
-					[appHighlight]="isColumnHighlighted(i)"
 					class="thead-tr-th"
+					[class.highlighted-th]="
+						i === ss.focusedCell.x ||
+						(i >= ss.selectedCells.min.x && i <= ss.selectedCells.max.x)
+					"
+					[class.selected-th]="
+						i >= ss.selectedColumns.start && i <= ss.selectedColumns.end
+					"
+					(click)="ss.setSelectedColumn(i)"
 				>
-					{{ col }}
+					{{ ss.getColumnLetter(i) }}
 				</th>
 			}
 		</tr>
 	</thead>
 	<tbody tuiTbody class="tbody">
-		@for (row of ss.sheet?.data; let i = $index; track $index) {
+		@for (row of ss.sheetValues; let i = $index; track $index) {
 			<tr tuiTr class="tr">
 				<th
 					tuiTh
-					[appInvertHighlight]="isAllCellSelected()"
-					[appHighlight]="isRowSelected(i)"
 					class="tbody-tr-th"
+					[class.highlighted-th]="
+						i === ss.focusedCell.y ||
+						(i >= ss.selectedCells.min.y && i <= ss.selectedCells.max.y)
+					"
+					[class.selected-th]="
+						i >= ss.selectedRows.start && i <= ss.selectedRows.end
+					"
+					(click)="ss.setSelectedRow(i)"
 				>
-					{{ i }}
+					{{ i + 1 }}
 				</th>
 				@for (cell of row; let j = $index; track $index) {
 					<td
 						tuiTd
-						(click)="selectCell(i, j)"
-						[appBorder]="isCellSelected(i, j)"
-						[appHighlight]="isAllCellSelected()"
-						color="var(--tui-status-info-pale-hover)"
 						class="td"
+						[class.highlighted-td]="
+							i >= ss.selectedCells.min.y &&
+							i <= ss.selectedCells.max.y &&
+							j <= ss.selectedCells.max.x &&
+							j >= ss.selectedCells.min.x
+						"
+						[class.selected]="i === ss.focusedCell.y && j === ss.focusedCell.x"
+						(click)="handleCellClick(i, j, $event)"
+						(dblclick)="handleCellDoubleClick(i, j)"
 					>
-						{{ cell }}
+						<tui-input-inline
+							[class.no-events]="false"
+							class="input"
+							[class.pointer-events-all]="
+								ss.editingCell.x === j && ss.editingCell.y === i
+							"
+						>
+							<input
+								[value]="
+									ss.focusedCell.x === j && ss.focusedCell.y === i ? ss.userInput : cell
+								"
+								[appSetFocus]="ss.editingCell.x === j && ss.editingCell.y === i"
+								[appBlur]="ss.editingCell.x !== j || ss.editingCell.y !== i"
+								(ngModel)="(ss.userInput)"
+								(change)="onChange(i, j, $event)"
+							/>
+						</tui-input-inline>
 					</td>
 				}
 			</tr>

@@ -1,16 +1,20 @@
+import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../core/services/auth/auth-service';
 import { LayoutService } from '../../core/services/layout/layout-service';
 import { Intro } from '../../shared/ui/intro/intro';
 
 @Component({
 	selector: 'app-main',
-	imports: [Intro, RouterLink],
+	imports: [Intro, RouterLink, AsyncPipe],
 	templateUrl: './main.html',
 	styleUrl: './main.less',
 })
 export class Main {
 	private readonly ls = inject(LayoutService);
+	protected readonly as = inject(AuthService);
+	protected readonly user$ = this.as.user$;
 	constructor() {
 		this.ls.footerVariant = 'about';
 	}

@@ -65,6 +65,7 @@ export class LoginForm {
 	private readonly r = inject(Router);
 
 	protected readonly isLoading = signal(false);
+	protected readonly isGlobalLoading = signal(false);
 
 	protected readonly loadingErrorMessage = signal<string | null>(null);
 
@@ -82,8 +83,13 @@ export class LoginForm {
 		password: ['', Validators.required],
 	});
 
-	private login(o: Observable<User>) {
-		o.pipe(withLoading(this.isLoading.set), withEither(FirebaseError)).subscribe(
+	private login(o: Observable<User>, withGlobalLoader = false) {
+		o.pipe(
+			withLoading(
+				withGlobalLoader ? this.isGlobalLoading.set : this.isLoading.set,
+			),
+			withEither(FirebaseError),
+		).subscribe(
 			E.match(
 				(e) => this.loadingErrorMessage.set(e.message),
 				() => void this.r.navigateByUrl('/'),
@@ -107,6 +113,6 @@ export class LoginForm {
 	}
 
 	protected signinWithProvider(p: AuthProvider) {
-		this.login(this.as.loginWithOAuth(p));
+		this.login(this.as.loginWithOAuth(p), true);
 	}
 }

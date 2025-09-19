@@ -1,5 +1,5 @@
 import type { Routes } from '@angular/router';
-import { docResolver, sheetResolver } from './features/editor/sheets-service';
+import { docResolver } from './features/editor/sheets-service/sheets-service';
 
 export const routes: Routes = [
 	{
@@ -22,13 +22,18 @@ export const routes: Routes = [
 		title: 'Editor - Ng Sheet',
 		path: 'editor/:docId/:sheetId',
 		loadComponent: () => import('./features/editor/editor').then((m) => m.Editor),
-		resolve: { sheet: sheetResolver, docMetadata: docResolver },
+		resolve: { doc: docResolver },
 	},
 	{
 		title: 'Terms Of Use - Ng Sheet',
 		path: 'terms-of-use',
 		loadComponent: () =>
 			import('./pages/terms-of-use/terms-of-use').then((m) => m.TermsOfUse),
+	},
+	{
+		title: 'Error - Ng Sheet',
+		path: 'error',
+		loadComponent: () => import('./pages/error/error').then((m) => m.Error),
 	},
 	{
 		title: 'Nothing Found - Ng Sheet',

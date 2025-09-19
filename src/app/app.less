@@ -6,17 +6,55 @@
 	display: grid;
 	grid-template-areas:
 		"header"
+		"toolbar"
 		"main"
 		"footer";
-	grid-template-rows: 3rem 1fr 3rem;
+	grid-template-rows: auto auto 1fr 3rem;
+}
+
+.page-layout {
+	--layout-height: 6rem;
+}
+.editor-layout {
+	--layout-height: 8rem;
 }
 
 .main {
 	width: 100vw;
-	height: calc(100dvh - 6rem);
-	display: flex;
-	align-items: center;
-	justify-content: start;
-	box-sizing: border-box;
+	height: calc(100dvh - var(--layout-height));
+	overflow: auto;
 	grid-area: main;
+}
+
+.h-wrapper {
+	flex-grow: 1;
+}
+
+.h {
+	font-size: 1.5rem;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	line-height: 1.25;
+	width: fit-content;
+}
+
+.shimmer {
+	background: linear-gradient(90deg, #222 0%, #fff 50%, #222 100%);
+	background-size: 200% auto;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	animation: shimmer 10s linear infinite;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 0% 0;
+	}
+	10% {
+		background-position: -140% 0;
+	}
+	100% {
+		background-position: -140% 0;
+	}
 }
