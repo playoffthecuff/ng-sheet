@@ -1,8 +1,12 @@
 :host {
 	width: 100%;
 	height: 100%;
-	overflow: auto;
 	position: relative;
+}
+.container {
+	width: 100%;
+	height: 100%;
+	overflow: auto;
 }
 .table {
 	--tui-height-m: 1.5rem;
@@ -37,6 +41,8 @@
 	font-weight: 600;
 	padding: 0.25rem;
 	font-size: 0.875rem;
+	position: sticky;
+	left: 0;
 }
 .tbody-tr-th.btn {
 	position: absolute;
@@ -66,4 +72,16 @@
 	background-color: var(--tui-background-accent-1);
 	border-color: var(--tui-background-base);
 	color: var(--tui-background-base);
+}
+.br {
+	border-right: 2px dotted var(--tui-text-primary);
+}
+.bl {
+	border-left: 2px dotted var(--tui-text-primary);
+}
+.bt {
+	border-top: 2px dotted var(--tui-text-primary);
+}
+.bb {
+	border-bottom: 2px dotted var(--tui-text-primary);
 }

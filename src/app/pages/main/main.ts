@@ -3,11 +3,12 @@ import { Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../core/services/auth/auth-service';
 import { LayoutService } from '../../core/services/layout/layout-service';
+import { FileManager } from '../../features/file-manager/file-manager';
 import { Intro } from '../../shared/ui/intro/intro';
 
 @Component({
 	selector: 'app-main',
-	imports: [Intro, RouterLink, AsyncPipe],
+	imports: [Intro, RouterLink, AsyncPipe, FileManager],
 	templateUrl: './main.html',
 	styleUrl: './main.less',
 })
@@ -17,5 +18,6 @@ export class Main {
 	protected readonly user$ = this.as.user$;
 	constructor() {
 		this.ls.footerVariant = 'about';
+		this.ls.headerVariant = 'search';
 	}
 }

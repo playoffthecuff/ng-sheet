@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { HotkeyService } from './hotkey-service';
+import { KeyboardService } from './keyboard-service';
 
-describe('HotkeyService', () => {
-	let service: HotkeyService;
+describe('KeyboardService', () => {
+	let service: KeyboardService;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({});
-		service = TestBed.inject(HotkeyService);
+		service = TestBed.inject(KeyboardService);
 	});
 
 	it('should be created', () => {

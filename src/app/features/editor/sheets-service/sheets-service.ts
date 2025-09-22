@@ -1,4 +1,4 @@
-import { effect, inject, Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import type { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
 import * as O from 'fp-ts/Option';
 import { flow, pipe } from 'fp-ts/function';
@@ -6,6 +6,8 @@ import {
 	HyperFormula,
 	type CellValue,
 	type RawCellContent,
+	type SimpleCellAddress,
+	type SimpleCellRange,
 } from 'hyperformula';
 import { HYPER_FORMULA } from '../../../shared/constants/hyperformula';
 import { createColumnName } from '../../../shared/utils/create-column-name';
@@ -20,12 +22,15 @@ interface Range {
 	end: number;
 }
 
-const fakeData = [...Array(100).keys()].map(() =>
+const emptySheetData = [...Array(100).keys()].map(() =>
 	[...Array(26).keys()].map(() => ''),
 );
-const fakeInitHF = HyperFormula.buildFromArray(fakeData, HYPER_FORMULA.OPTIONS);
+const emptyTable = HyperFormula.buildFromArray(
+	emptySheetData,
+	HYPER_FORMULA.OPTIONS,
+);
 
-const fakeSerializableSheets = fakeInitHF.getAllSheetsSerialized();
+const emptySerializedTable = emptyTable.getAllSheetsSerialized();
 interface FirebaseDoc {
 	id: string;
 	name: string;
@@ -37,13 +42,12 @@ type Doc = Replace<FirebaseDoc, 'sheets', HyperFormula>;
 const fakeFirebaseDoc: FirebaseDoc = {
 	id: '0',
 	name: 'New Table',
-	sheets: JSON.stringify(fakeSerializableSheets),
+	sheets: JSON.stringify(emptySerializedTable),
 };
 export const docResolver: ResolveFn<void> = (route: ActivatedRouteSnapshot) => {
 	const ss = inject(SheetsService);
 	const docId = route.paramMap.get('docId')!;
 	const sheetId = route.paramMap.get('sheetId')!;
-	if (docId !== '0') throw new Error('Error retrieving route data.');
 	if (!/^\d+$/.test(sheetId)) throw new Error('Invalid sheet Id.');
 	ss.initDoc(docId, +sheetId);
 };
@@ -54,18 +58,18 @@ export class SheetsService {
 	docName = signal('');
 	sheetId = 0;
 	readonly focusedCell: Cell = { x: 0, y: 0 };
-	readonly selectedCells: { min: Cell; max: Cell } = {
-		min: { x: -1, y: -1 },
-		max: { x: -1, y: -1 },
+	readonly selectedCells: { start: Cell; end: Cell } = {
+		start: { x: -1, y: -1 },
+		end: { x: -1, y: -1 },
+	};
+	readonly copiedCells: SimpleCellRange = {
+		end: { col: -1, row: -1, sheet: -1 },
+		start: { col: -1, row: -1, sheet: -1 },
 	};
 	readonly selectedRows: Range = { end: -1, start: -1 };
 	readonly selectedColumns: Range = { end: -1, start: -1 };
 	readonly editingCell: Cell = { x: -1, y: -1 };
 	userInput: string | null = null;
-	constructor() {
-		effect(console.log);
-	}
-
 	private createLoadFlow = (docId: string, sheetId: number) =>
 		flow(
 			() =>
@@ -80,9 +84,7 @@ export class SheetsService {
 				this.doc = { id: docId, name: fakeFirebaseDoc.name, sheets: hf };
 				this.docName.set(fakeFirebaseDoc.name);
 				this.sheetId = sheetId;
-				this.userInput = this.parseCellValue(
-					hf.getCellValue({ col: 0, row: 0, sheet: sheetId }),
-				);
+				this.userInput = this.getParsedCellFormulaOrValue(0, 0);
 				return O.of(undefined);
 			}),
 		);
@@ -101,7 +103,7 @@ export class SheetsService {
 			O.fromNullable(this.doc?.sheets.addSheet()),
 			O.flatMap((n) => O.fromNullable(this.doc?.sheets.getSheetId(n))),
 			O.tap((id) =>
-				O.fromNullable(this.doc?.sheets.setSheetContent(id, fakeData)),
+				O.fromNullable(this.doc?.sheets.setSheetContent(id, emptySheetData)),
 			),
 		);
 	}
@@ -119,12 +121,6 @@ export class SheetsService {
 				return O.of(undefined);
 			}),
 		);
-		// const d = this.doc?.sheets.getSheetDimensions(this.currentSheetId);
-		// if (!d) return;
-		// this.focusedCell.x = 0;
-		// this.focusedCell.y = 0;
-		// this.setSelectedRows(0, d.height);
-		// this.setSelectedColumns(0, d.width);
 	}
 	parseUserInput(input: string): RawCellContent {
 		if (!input) return null;
@@ -139,20 +135,20 @@ export class SheetsService {
 		return v === null || v === undefined ? '' : String(v);
 	}
 
-	setSelectedCells(min: Cell, max: Cell) {
-		this.selectedCells.min.y = min.y;
-		this.selectedCells.min.x = min.x;
-		this.selectedCells.max.y = max.y;
-		this.selectedCells.max.x = max.x;
+	setSelectedCells(start: Cell, end: Cell) {
+		this.selectedCells.start.y = start.y;
+		this.selectedCells.start.x = start.x;
+		this.selectedCells.end.y = end.y;
+		this.selectedCells.end.x = end.x;
 	}
 	setSelectedCell(x: number, y: number) {
 		this.setSelectedCells({ x, y }, { x, y });
 	}
 	resetSelectedCells() {
-		this.selectedCells.min.y = -1;
-		this.selectedCells.min.x = -1;
-		this.selectedCells.max.y = -1;
-		this.selectedCells.max.x = -1;
+		this.selectedCells.start.y = -1;
+		this.selectedCells.start.x = -1;
+		this.selectedCells.end.y = -1;
+		this.selectedCells.end.x = -1;
 	}
 
 	setSelectedColumns(start: number, end: number) {
@@ -199,8 +195,21 @@ export class SheetsService {
 	getCellValue(y: number, x: number) {
 		return this.doc?.sheets.getCellValue({ col: x, row: y, sheet: this.sheetId });
 	}
+	getCellFormula(y: number, x: number) {
+		return this.doc?.sheets.getCellFormula({
+			col: x,
+			row: y,
+			sheet: this.sheetId,
+		});
+	}
+	getMaybeCellFormulaOrValue(y: number, x: number) {
+		return this.getCellFormula(y, x) ?? this.getCellValue(y, x);
+	}
 	getParsedCellValue(y: number, x: number) {
 		return this.parseCellValue(this.getCellValue(y, x));
+	}
+	getParsedCellFormulaOrValue(y: number, x: number) {
+		return this.parseCellValue(this.getMaybeCellFormulaOrValue(y, x));
 	}
 	setParsedCellValue(y: number, x: number, input: string) {
 		this.setCellContent(y, x, this.parseUserInput(input));
@@ -221,15 +230,66 @@ export class SheetsService {
 	getStrFocusedCellAddress() {
 		return this.getStrCellAddress(this.focusedCell.y, this.focusedCell.x);
 	}
+	getStrAddressRange() {
+		const mny = this.selectedCells.start.y;
+		const mnx = this.selectedCells.start.x;
+		const mxy = this.selectedCells.end.y;
+		const mxx = this.selectedCells.end.x;
+		if ((mnx === mxx && mny === mxy) || mxx === -1 || mxy === -1)
+			return this.getStrFocusedCellAddress();
+		return `${this.getStrCellAddress(mny, mnx)}:${this.getStrCellAddress(mxy, mxx)}`;
+	}
 	getColumnLetter(x: number) {
 		return createColumnName(x);
 	}
-	setCellContent(y: number, x: number, v: RawCellContent) {
-		const change = this.doc?.sheets.setCellContents(
-			{ col: x, row: y, sheet: this.sheetId },
-			v,
-		);
-		console.log('🚀 ~ SheetsService ~ setCell ~ change:', change);
+	setCellContent(y: number, x: number, v: RawCellContent | RawCellContent[][]) {
+		this.doc?.sheets.setCellContents({ col: x, row: y, sheet: this.sheetId }, v);
+	}
+	copyToClipboard() {
+		const start = {
+			col: this.isSelected ? this.selectedCells.start.x : this.focusedCell.x,
+			row: this.isSelected ? this.selectedCells.start.y : this.focusedCell.y,
+			sheet: this.sheetId,
+		};
+		const end = {
+			col: this.isSelected ? this.selectedCells.end.x : this.focusedCell.x,
+			row: this.isSelected ? this.selectedCells.end.y : this.focusedCell.y,
+			sheet: this.sheetId,
+		};
+		this.copiedCells.end = end;
+		this.copiedCells.start = start;
+		navigator.clipboard.writeText(String(this.doc?.sheets.copy({ end, start })));
+	}
+	cutToClipboard() {
+		const start = {
+			col: this.isSelected ? this.selectedCells.start.x : this.focusedCell.x,
+			row: this.isSelected ? this.selectedCells.start.y : this.focusedCell.y,
+			sheet: this.sheetId,
+		};
+		const end = {
+			col: this.isSelected ? this.selectedCells.end.x : this.focusedCell.x,
+			row: this.isSelected ? this.selectedCells.end.y : this.focusedCell.y,
+			sheet: this.sheetId,
+		};
+		this.copiedCells.end = end;
+		this.copiedCells.start = start;
+		navigator.clipboard.writeText(String(this.doc?.sheets.cut({ end, start })));
+	}
+	pasteFromClipboard() {
+		this.doc?.sheets.paste({
+			col: this.focusedCell.x,
+			row: this.focusedCell.y,
+			sheet: this.sheetId,
+		});
+		this.resetCopiedCells();
+	}
+	resetCopiedCells() {
+		this.copiedCells.end.col = -1;
+		this.copiedCells.end.row = -1;
+		this.copiedCells.end.sheet = -1;
+		this.copiedCells.start.col = -1;
+		this.copiedCells.start.row = -1;
+		this.copiedCells.start.sheet = -1;
 	}
 
 	get focusedCellValue() {
@@ -258,5 +318,139 @@ export class SheetsService {
 	}
 	get sheetWidth() {
 		return this.sheetDimensions?.width ?? 0;
+	}
+	get isEditing() {
+		return this.editingCell.x !== -1 || this.editingCell.y !== -1;
+	}
+	get isSelected() {
+		return this.selectedCells.end.x !== -1 && this.selectedCells.end.y !== -1;
+	}
+
+	isCellColInSelectedRange(x: number) {
+		if (this.selectedCells.end.x === -1) return false;
+		return (
+			x >= Math.min(this.selectedCells.end.x, this.selectedCells.start.x) &&
+			x <= Math.max(this.selectedCells.end.x, this.selectedCells.start.x)
+		);
+	}
+	isCellRowInSelectedRange(y: number) {
+		if (this.selectedCells.end.y === -1) return false;
+		return (
+			y >= Math.min(this.selectedCells.end.y, this.selectedCells.start.y) &&
+			y <= Math.max(this.selectedCells.end.y, this.selectedCells.start.y)
+		);
+	}
+	isCellInSheet(c: SimpleCellAddress) {
+		return c.col < this.sheetWidth && c.row < this.sheetHeight;
+	}
+	isRangeInSheet(r: SimpleCellRange) {
+		return (
+			r.end.col < this.sheetWidth &&
+			r.end.row < this.sheetHeight &&
+			r.start.col < this.sheetWidth &&
+			r.start.row < this.sheetHeight
+		);
+	}
+
+	updateUserInput() {
+		this.userInput = this.getParsedCellFormulaOrValue(
+			this.focusedCell.y,
+			this.focusedCell.x,
+		);
+	}
+
+	removeRows(from: number, count: number) {
+		this.doc?.sheets.removeRows(this.sheetId, [from, count]);
+	}
+	removeColumns(from: number, count: number) {
+		this.doc?.sheets.removeColumns(this.sheetId, [from, count]);
+	}
+	addEmptyRows(startIndex: number, count: number) {
+		this.doc?.sheets.batch(() => {
+			this.doc?.sheets.addRows(this.sheetId, [startIndex, count]);
+			this.doc?.sheets.setCellContents(
+				{ col: 0, row: startIndex, sheet: this.sheetId },
+				[...Array(count).keys()].map(() =>
+					[...Array(this.sheetWidth).keys()].map(() => ''),
+				),
+			);
+		});
+	}
+	addEmptyColumns(startIndex: number, count: number) {
+		this.doc?.sheets.batch(() => {
+			this.doc?.sheets.addColumns(this.sheetId, [startIndex, count]);
+			this.doc?.sheets.setCellContents(
+				{ col: startIndex, row: 0, sheet: this.sheetId },
+				[...Array(this.sheetWidth).keys()].map(() =>
+					[...Array(count).keys()].map(() => ''),
+				),
+			);
+		});
+	}
+	addEmptyCell(y: number, x: number, displacementDirection: 'bottom' | 'right') {
+		if (displacementDirection === 'bottom') {
+			const end = this.getCellValue(this.sheetHeight - 1, x);
+			if (end === '' || end === null || end === undefined) {
+				this.doc?.sheets.batch(() => {
+					this.setCellContent(this.sheetHeight - 1, x, null);
+					this.doc?.sheets.moveCells(
+						{
+							start: { col: x, row: y, sheet: this.sheetId },
+							end: { col: x, row: this.sheetHeight - 2, sheet: this.sheetId },
+						},
+						{ col: x, row: y + 1, sheet: this.sheetId },
+					);
+					this.setCellContent(y, x, '');
+				});
+			} else {
+				this.addEmptyRows(y, 1);
+				this.setCellContent(y, x, '');
+			}
+		}
+		if (displacementDirection === 'right') {
+			const end = this.getCellValue(y, this.sheetWidth - 1);
+			if (end === '' || end === null || end === undefined) {
+				this.doc?.sheets.batch(() => {
+					this.setCellContent(y, this.sheetWidth - 1, null);
+					this.doc?.sheets.moveCells(
+						{
+							start: { col: x, row: y, sheet: this.sheetId },
+							end: { col: this.sheetWidth - 2, row: y, sheet: this.sheetId },
+						},
+						{ col: x + 1, row: y, sheet: this.sheetId },
+					);
+					this.setCellContent(y, x, '');
+				});
+			} else {
+				this.addEmptyColumns(x, 1);
+				this.setCellContent(y, x, '');
+			}
+		}
+	}
+	removeCell(y: number, x: number, displacementDirection: 'bottom' | 'right') {
+		if (displacementDirection === 'bottom') {
+			this.doc?.sheets.batch(() => {
+				this.doc?.sheets.moveCells(
+					{
+						start: { col: x, row: y + 1, sheet: this.sheetId },
+						end: { col: x, row: this.sheetHeight - 1, sheet: this.sheetId },
+					},
+					{ col: x, row: y, sheet: this.sheetId },
+				);
+				this.setCellContent(this.sheetHeight - 1, x, '');
+			});
+		}
+		if (displacementDirection === 'right') {
+			this.doc?.sheets.batch(() => {
+				this.doc?.sheets.moveCells(
+					{
+						start: { col: x + 1, row: y, sheet: this.sheetId },
+						end: { col: this.sheetWidth - 1, row: y, sheet: this.sheetId },
+					},
+					{ col: x, row: y, sheet: this.sheetId },
+				);
+				this.setCellContent(y, this.sheetWidth - 1, '');
+			});
+		}
 	}
 }

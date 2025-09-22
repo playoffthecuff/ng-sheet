@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LayoutService } from '../../core/services/layout/layout-service';
 
 @Component({
 	selector: 'app-terms-of-use',
@@ -6,4 +7,9 @@ import { Component } from '@angular/core';
 	templateUrl: './terms-of-use.html',
 	styleUrl: './terms-of-use.less',
 })
-export class TermsOfUse {}
+export class TermsOfUse {
+	private readonly ls = inject(LayoutService);
+	constructor() {
+		this.ls.headerVariant = 'search';
+	}
+}
