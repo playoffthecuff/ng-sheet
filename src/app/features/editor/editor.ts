@@ -6,6 +6,8 @@ import { TuiInputInline, TuiTabs } from '@taiga-ui/kit';
 import { LayoutService } from '../../core/services/layout/layout-service';
 import { BlurDirective } from '../../shared/directives/blur/blur-directive';
 import { SetFocusDirective } from '../../shared/directives/set-focus/set-focus-directive';
+import { ContextMenuService } from './cell-context-menu/context-menu-service/context-menu-service';
+import { ContextMenu } from './cell-context-menu/context-menu/context-menu';
 import { SheetsService } from './sheets-service/sheets-service';
 
 @Component({
@@ -20,7 +22,9 @@ import { SheetsService } from './sheets-service/sheets-service';
 		SetFocusDirective,
 		FormsModule,
 		BlurDirective,
+		ContextMenu,
 	],
+	providers: [ContextMenuService],
 	templateUrl: './editor.html',
 	styleUrl: './editor.less',
 })

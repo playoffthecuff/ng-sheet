@@ -1,0 +1,12 @@
+@let items = contextMenuService.menuItem;
+<tui-data-list role="menu" tuiDataListDropdownManager class="context-menu">
+	@for (item of items; track $index) {
+		<button tuiOption new type="button" (click)="onAction(item.action)">
+			<tui-icon [icon]="item.icon" />
+			{{ item.title }}
+		</button>
+		@if (($index + 1) % 3 === 0 && $index + 1 !== items.length) {
+			<hr class="context-menu__line" />
+		}
+	}
+</tui-data-list>
