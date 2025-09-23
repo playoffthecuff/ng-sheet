@@ -1,5 +1,5 @@
 <a
-	[routerLink]="['/editor', '0', sheetId]"
+	[routerLink]="['/editor', ss.doc?.id, sheetId]"
 	tuiTab
 	class="a"
 	tuiLink
@@ -40,6 +40,7 @@
 				class="option"
 				iconStart="@tui.trash-2"
 				(click)="removeSheet()"
+				[disabled]="removable()"
 			>
 				Remove
 			</button>

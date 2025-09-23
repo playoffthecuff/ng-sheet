@@ -41,13 +41,12 @@ export class SheetSegment implements OnInit {
 	protected readonly editMode = signal(false);
 	sheetId = 0;
 	navigateToSheet() {
-		this.r.navigateByUrl(`/editor/0/${this.sheetId}`);
+		this.r.navigate(['editor', this.ss.doc?.id, this.sheetId]);
 	}
 	name = '';
 	prevent(e: PointerEvent) {
 		e.preventDefault();
 		e.stopPropagation();
-		console.log('PREVENT');
 	}
 	removeSheet() {
 		this.ss.removeSheet(this.sheetId);

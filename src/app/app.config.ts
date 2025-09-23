@@ -37,7 +37,7 @@ export const appConfig: ApplicationConfig = {
 			withNavigationErrorHandler((e: NavigationError) => {
 				const r = inject(Router);
 				if (e.error.message)
-					console.log('Navigation error occurred:', e.error.message);
+					console.error('Navigation error occurred:', e.error.message);
 				r.navigate(['/error']);
 			}),
 		),

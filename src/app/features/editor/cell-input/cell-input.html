@@ -1,9 +1,16 @@
-<tui-textfield class="cell" tuiTextfieldSize="s" [tuiTextfieldCleaner]="false">
+<tui-textfield
+	class="cell"
+	tuiTextfieldSize="s"
+	[tuiTextfieldCleaner]="false"
+	tuiHint="Address (Ctrl + J)"
+>
 	<input
+		#cellAddress
 		placeholder="Enter cell here..."
 		tuiTextfield
 		class="input"
-		[value]="ss.getStrFocusedCellAddress()"
+		[value]="ss.getStrAddressRange()"
+		(keydown.enter)="setSelectedRange($event)"
 	/>
 </tui-textfield>
 <tui-textfield iconStart="f-x" class="value" tuiTextfieldSize="s">

@@ -33,27 +33,9 @@ export class FooterEditor implements OnInit {
 	private readonly r = inject(Router);
 	protected ss = inject(SheetsService);
 	navigateToSheet(id: number) {
-		this.r.navigateByUrl(`/editor/0/${id}`);
+		this.r.navigate(['editor', this.ss.doc?.id, id]);
 	}
 	last = 0;
-	// prevent(e: PointerEvent) {
-	// 	e.preventDefault();
-	// 	e.stopPropagation();
-	// }
-	// sheetNames = [...(this.ss.sheetNames ?? [])];
-	// removeSheet(id: number) {
-	// 	this.ss.removeSheet(id);
-	// 	pipe(
-	// 		O.fromNullable(id === this.ss.sheetId ? id : null),
-	// 		O.flatMap(() => O.fromNullable(this.ss.sheetNames)),
-	// 		O.flatMap(A.head),
-	// 		O.flatMap((name) => O.fromNullable(this.ss.getSheetId(name))),
-	// 		O.tap((id) => (this.navigateToSheet(id), O.of(undefined))),
-	// 	);
-	// }
-	// renameSheet(e: Event, id: number) {
-	// 	this.ss.doc?.sheets.renameSheet(id, (e.target as HTMLInputElement).value);
-	// }
 	ngOnInit() {
 		this.r.events
 			.pipe(filter((e) => e instanceof NavigationEnd))
@@ -68,8 +50,5 @@ export class FooterEditor implements OnInit {
 				(v) => v === this.ss.doc?.sheets.getSheetName(this.last),
 			) ?? 0
 		);
-	}
-	huy() {
-		console.log('huy');
 	}
 }
