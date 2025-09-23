@@ -53,7 +53,6 @@ export class Editor {
 		if (e.key === ' ' && !this.ss.isEditing) e.preventDefault();
 		if (!e.shiftKey && this.ks.isMatchTableArrows(e.key) && !this.ss.isEditing) {
 			e.preventDefault();
-			this.ss.removeCell(0, 0, 'right');
 			this.ss.resetSelectedCells();
 			this.ks.tableMaps.arrows[e.key as keyof typeof this.ks.tableMaps.arrows]();
 			this.ss.updateUserInput();

@@ -359,11 +359,11 @@ export class SheetsService {
 		);
 	}
 
-	removeRows(from: number, count: number) {
-		this.doc?.sheets.removeRows(this.sheetId, [from, count]);
+	removeRows(startIndex: number, count: number) {
+		this.doc?.sheets.removeRows(this.sheetId, [startIndex, count]);
 	}
-	removeColumns(from: number, count: number) {
-		this.doc?.sheets.removeColumns(this.sheetId, [from, count]);
+	removeColumns(startIndex: number, count: number) {
+		this.doc?.sheets.removeColumns(this.sheetId, [startIndex, count]);
 	}
 	addEmptyRows(startIndex: number, count: number) {
 		this.doc?.sheets.batch(() => {
@@ -427,8 +427,8 @@ export class SheetsService {
 			}
 		}
 	}
-	removeCell(y: number, x: number, displacementDirection: 'bottom' | 'right') {
-		if (displacementDirection === 'bottom') {
+	removeCell(y: number, x: number, displacementDirection: 'up' | 'left') {
+		if (displacementDirection === 'up') {
 			this.doc?.sheets.batch(() => {
 				this.doc?.sheets.moveCells(
 					{
@@ -440,7 +440,7 @@ export class SheetsService {
 				this.setCellContent(this.sheetHeight - 1, x, '');
 			});
 		}
-		if (displacementDirection === 'right') {
+		if (displacementDirection === 'left') {
 			this.doc?.sheets.batch(() => {
 				this.doc?.sheets.moveCells(
 					{
