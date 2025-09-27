@@ -1,15 +1,222 @@
 <header class="header">
 	<div class="container">
-		<button
-			tuiIconButton
-			iconStart="@tui.plus"
-			size="xl"
-			tuiHint="Create New Table"
-			tuiHintDirection="right-top"
-			appearance="floating"
-			(click)="createTable()"
-		>
-			Create New Table
-		</button>
+		<h2 class="h2">Create a document</h2>
+		<div class="btn-bar">
+			<button
+				tuiButton
+				tuiButtonVertical
+				iconStart="@tui.file"
+				size="xl"
+				appearance="floating"
+				(click)="openEditorWithEmptyTable()"
+				class="template-btn"
+			>
+				as an empty <br />
+				table
+			</button>
+			@for (item of fms.templates(); track item.id) {
+				<button
+					tuiButton
+					tuiButtonVertical
+					iconStart="@tui.table"
+					size="xl"
+					appearance="floating"
+					(click)="openEditorWithTemplate(item.id)"
+					class="template-btn"
+				>
+					from template <br />
+					"{{ item.name }}"
+				</button>
+			}
+		</div>
 	</div>
 </header>
+<tui-loader [overlay]="true" [showLoader]="isLoading()" size="l">
+	<div class="container">
+		@if (fms.pageDocuments()?.length) {
+			<table
+				tuiTable
+				class="table"
+				[columns]="columns"
+				[tuiSortBy]="fms.sortBy() ?? null"
+				(tuiSortChange)="change($event)"
+			>
+				<thead>
+					<tr tuiThGroup>
+						<th *tuiHead="'name'" tuiSortable tuiTh [requiredSort]="false" class="th">
+							Name
+						</th>
+						<th
+							*tuiHead="'createdAt'"
+							tuiSortable
+							[requiredSort]="false"
+							tuiTh
+							class="th date"
+						>
+							Created at
+						</th>
+						<th
+							*tuiHead="'updatedAt'"
+							tuiSortable
+							[requiredSort]="false"
+							tuiTh
+							class="th date"
+						>
+							Updated at
+						</th>
+						<th
+							tuiTh
+							class="th actions"
+							*tuiHead="'id'"
+							[requiredSort]="false"
+							[sorter]="null"
+						></th>
+					</tr>
+				</thead>
+				<tbody tuiTbody>
+					@for (item of fms.pageDocuments(); let i = $index; track i) {
+						<tr tuiTr class="content-row" (click)="openTable(item.id)">
+							<td
+								*tuiCell="'name'"
+								tuiTd
+								class="td"
+								[class.pointer-events-none]="changingNameIndex === i"
+							>
+								<tui-input-inline class="inline-input pointer-events-none">
+									<input
+										[ngModel]="item.name"
+										(change)="renameTable($event, item.id)"
+										class="input pointer-events-none"
+										[class.pointer-events-all]="changingNameIndex === i"
+										[appSetFocus]="changingNameIndex === i"
+										[appBlur]="changingNameIndex !== i"
+										(click)="stopPropagation($event)"
+										(blur)="endEditTableName($event)"
+										tuiHint="At least one character"
+										tuiHintDirection="top"
+										tuiHintAppearance="error"
+										[tuiHintManual]="showEmptyNameHint && changingNameIndex === i"
+									/>
+								</tui-input-inline>
+							</td>
+							<td *tuiCell="'createdAt'" tuiTd class="td">
+								<div class="double-td">
+									<span>{{ item["createdAt"] | date: "dd MMM yyyy" }}</span>
+									<span>
+										{{ item["createdAt"] | date: "shortTime" }}
+									</span>
+								</div>
+							</td>
+							<td *tuiCell="'updatedAt'" tuiTd class="td">
+								<div class="double-td">
+									<span>
+										{{ item["updatedAt"] | date: "dd MMM yyyy" }}
+									</span>
+									<span>
+										{{ item["updatedAt"] | date: "shortTime" }}
+									</span>
+								</div>
+							</td>
+							<td class="td" *tuiCell="'id'" tuiTd class="td menu-cell">
+								<button
+									tuiIconButton
+									appearance="secondary-grayscale"
+									tuiDropdownOpen
+									[tuiDropdown]="content"
+									iconStart="@tui.ellipsis-vertical"
+									(click)="stopPropagation($event)"
+								>
+									Menu
+								</button>
+								<ng-template #content>
+									<tui-data-list role="menu">
+										<a
+											role="menuitem"
+											tuiOption
+											[routerLink]="['editor', item.id, 0]"
+											class="link"
+											target="_blank"
+										>
+											<tui-icon icon="@tui.external-link" class="icon" /> Open in a new tab
+										</a>
+										<button
+											role="menuitem"
+											tuiOption
+											class="link"
+											(click)="startEditTableName(i)"
+										>
+											<tui-icon icon="@tui.pencil" class="icon" /> Rename
+										</button>
+										<button
+											role="menuitem"
+											tuiOption
+											class="link"
+											(click)="openRemoveTableDialog(dialog)"
+										>
+											<tui-icon icon="@tui.trash-2" class="icon" /> Delete
+										</button>
+										<ng-template #dialog let-observer>
+											<h2 tuiTitle="m">Delete?</h2>
+											<p class="warning">The table "{{ item.name }}" will be deleted.</p>
+
+											<div class="dialog-buttons">
+												<button
+													size="m"
+													tuiButton
+													type="button"
+													(click)="observer.complete()"
+													appearance="secondary-grayscale"
+												>
+													Cancel
+												</button>
+												<button
+													size="m"
+													tuiButton
+													type="button"
+													class="tui-space_right-3"
+													(click)="removeTable(item.id)"
+													appearance="primary-grayscale"
+												>
+													Confirm
+												</button>
+											</div>
+										</ng-template>
+									</tui-data-list>
+								</ng-template>
+							</td>
+						</tr>
+					}
+				</tbody>
+				<tfoot>
+					<tr>
+						<td [colSpan]="columns.length" tuiTd class="td">
+							<tui-table-pagination
+								class="pagination"
+								[page]="fms.currentPage()"
+								[total]="fms.totalDocuments() ?? 0"
+								(paginationChange)="onPagination($event)"
+								[size]="fms.docsPerPage()"
+								[items]="[8, 16, 32, 64]"
+							/>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		} @else {
+			<p class="info">
+				@if (fms.loadingErrorMessage()) {
+					{{ fms.loadingErrorMessage() }}
+				} @else {
+					@if (fms.searchText()) {
+						No tables match the specified search criteria. Please adjust your search
+						query or create a new table by clicking one of the table creation buttons
+						above.
+					} @else {
+						Here you can manage your tables, but you haven't created any yet. Click
+						one of the table creation buttons above to do so.
+					}
+				}
+			</p>
+		}
+	</div>
+</tui-loader>

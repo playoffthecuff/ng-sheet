@@ -8,10 +8,15 @@
 				@case ("editor") {
 					<app-header-editor />
 				}
-				@default {
-					<div class="h-wrapper">
-						<h1 tuiTitle="m" class="h shimmer">Ng Sheet</h1>
+				@case ("search") {
+					<div class="flex-between">
+						<app-heading />
+						<app-header-search />
+						<div class="flex-balance"></div>
 					</div>
+				}
+				@default {
+					<app-heading />
 				}
 			}
 		</app-header>

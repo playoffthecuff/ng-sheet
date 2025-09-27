@@ -124,9 +124,8 @@ export class Editor {
 		this.table?.nativeElement?.focus();
 	}
 	protected handleEnter(y: number, x: number, e: Event) {
-		if (this.firstTypedSign) {
+		if (this.firstTypedSign)
 			this.ss.setParsedCellValue(y, x, (e.target as HTMLInputElement).value);
-		}
 		this.moveFocusDownIfPossible(y, x);
 		this.ss.editingCell.x = this.ss.focusedCell.x;
 		this.ss.editingCell.y = this.ss.focusedCell.y;

@@ -1,1 +1,44 @@
-<p>toolbar works!</p>
+<button
+	[appearance]="savingErrorMessage ? 'negative' : 'info'"
+	size="s"
+	tuiIconButton
+	type="button"
+	iconStart="@tui.save"
+	class="btn"
+	[tuiHint]="savingErrorMessage ? savingErrorMessage : 'Save Table'"
+	tuiHintDirection="right"
+	(click)="trySave()"
+	[loading]="isLoading()"
+	[disabled]="ss.isDataSaved || isTemplateLoading()"
+>
+	Save Table
+</button>
+<button
+	[appearance]="savingErrorMessage ? 'negative' : 'info'"
+	size="s"
+	tuiIconButton
+	type="button"
+	iconStart="@tui.save-all"
+	class="btn"
+	[tuiHint]="savingErrorMessage ? savingErrorMessage : 'Save as Template'"
+	tuiHintDirection="right"
+	(click)="trySave(true)"
+	[loading]="isTemplateLoading()"
+	[disabled]="ss.isDataSaved || isLoading()"
+>
+	Save as Template
+</button>
+<button
+	appearance="positive"
+	size="s"
+	tuiIconButton
+	type="button"
+	iconStart="@tui.plus"
+	class="btn"
+	tuiHint="Create an empty table"
+	tuiHintDirection="right"
+	(click)="createNewTable()"
+	[disabled]="isLoading()"
+>
+	Create an empty table
+</button>

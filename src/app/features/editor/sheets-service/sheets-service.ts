@@ -1,5 +1,4 @@
-import { inject, Injectable, signal } from '@angular/core';
-import type { ActivatedRouteSnapshot, ResolveFn } from '@angular/router';
+import { Injectable, signal } from '@angular/core';
 import * as O from 'fp-ts/Option';
 import { flow, pipe } from 'fp-ts/function';
 import {
@@ -11,7 +10,7 @@ import {
 } from 'hyperformula';
 import { HYPER_FORMULA } from '../../../shared/constants/hyperformula';
 import { createColumnName } from '../../../shared/utils/create-column-name';
-import type { Replace } from '../../../shared/utils/types';
+import { emptySheetData, type Doc } from './doc-resolver';
 
 interface Cell {
 	x: number;
@@ -22,41 +21,14 @@ interface Range {
 	end: number;
 }
 
-const emptySheetData = [...Array(100).keys()].map(() =>
-	[...Array(26).keys()].map(() => ''),
-);
-const emptyTable = HyperFormula.buildFromArray(
-	emptySheetData,
-	HYPER_FORMULA.OPTIONS,
-);
-
-const emptySerializedTable = emptyTable.getAllSheetsSerialized();
-interface FirebaseDoc {
-	id: string;
-	name: string;
-	sheets: string;
-}
-
-type Doc = Replace<FirebaseDoc, 'sheets', HyperFormula>;
-
-const fakeFirebaseDoc: FirebaseDoc = {
-	id: '0',
-	name: 'New Table',
-	sheets: JSON.stringify(emptySerializedTable),
-};
-export const docResolver: ResolveFn<void> = (route: ActivatedRouteSnapshot) => {
-	const ss = inject(SheetsService);
-	const docId = route.paramMap.get('docId')!;
-	const sheetId = route.paramMap.get('sheetId')!;
-	if (!/^\d+$/.test(sheetId)) throw new Error('Invalid sheet Id.');
-	ss.initDoc(docId, +sheetId);
-};
-
 @Injectable({ providedIn: 'root' })
 export class SheetsService {
 	doc: Doc | null = null;
 	docName = signal('');
 	sheetId = 0;
+	isDataSaved = false;
+	isLoading = signal(false);
+	loadingErrorMessage = signal<string | null>(null);
 	readonly focusedCell: Cell = { x: 0, y: 0 };
 	readonly selectedCells: { start: Cell; end: Cell } = {
 		start: { x: -1, y: -1 },
@@ -70,30 +42,35 @@ export class SheetsService {
 	readonly selectedColumns: Range = { end: -1, start: -1 };
 	readonly editingCell: Cell = { x: -1, y: -1 };
 	userInput: string | null = null;
-	private createLoadFlow = (docId: string, sheetId: number) =>
+	private createLoadFlow = (
+		docId: string,
+		docName: string,
+		sheetId: number,
+		sheets: Record<string, RawCellContent[][]>,
+	) =>
 		flow(
 			() =>
-				O.tryCatch(
-					() =>
-						JSON.parse(fakeFirebaseDoc.sheets) as Record<string, RawCellContent[][]>,
-				),
-			O.flatMap((sheets) =>
 				O.fromNullable(HyperFormula.buildFromSheets(sheets, HYPER_FORMULA.OPTIONS)),
-			),
 			O.tap((hf) => {
-				this.doc = { id: docId, name: fakeFirebaseDoc.name, sheets: hf };
-				this.docName.set(fakeFirebaseDoc.name);
+				this.doc = { id: docId, name: docName, sheets: hf };
+				this.docName.set(docName);
 				this.sheetId = sheetId;
+				this.isDataSaved = false;
 				this.userInput = this.getParsedCellFormulaOrValue(0, 0);
 				return O.of(undefined);
 			}),
 		);
-	initDoc(docId: string, sheetId: number) {
+	initDoc(
+		docId: string,
+		docName: string,
+		sheetId: number,
+		sheets: Record<string, RawCellContent[][]>,
+	) {
 		pipe(
 			O.fromNullable(this.doc),
-			O.filter((doc) => doc.id === docId),
+			O.filter((doc) => doc.id === docId && docId !== '0'),
 			O.matchW(
-				this.createLoadFlow(docId, sheetId),
+				this.createLoadFlow(docId, docName, sheetId, sheets),
 				() => (this.sheetId = sheetId),
 			),
 		);
@@ -244,6 +221,7 @@ export class SheetsService {
 	}
 	setCellContent(y: number, x: number, v: RawCellContent | RawCellContent[][]) {
 		this.doc?.sheets.setCellContents({ col: x, row: y, sheet: this.sheetId }, v);
+		this.isDataSaved = false;
 	}
 	copyToClipboard() {
 		const start = {

@@ -1,5 +1,5 @@
 import type { Routes } from '@angular/router';
-import { docResolver } from './features/editor/sheets-service/sheets-service';
+import { docResolver } from './features/editor/sheets-service/doc-resolver';
 
 export const routes: Routes = [
 	{
@@ -17,6 +17,12 @@ export const routes: Routes = [
 		title: 'Registration - Ng Sheet',
 		path: 'register',
 		loadComponent: () => import('./pages/signup/signup').then((m) => m.Signup),
+	},
+	{
+		title: 'Editor - Ng Sheet',
+		path: 'editor/:docId',
+		loadComponent: () => import('./features/editor/editor').then((m) => m.Editor),
+		resolve: { doc: docResolver },
 	},
 	{
 		title: 'Editor - Ng Sheet',

@@ -36,25 +36,41 @@
 	letter-spacing: 0.5px;
 	line-height: 1.25;
 	width: fit-content;
-}
-
-.shimmer {
 	background: linear-gradient(90deg, #222 0%, #fff 50%, #222 100%);
+	background-position: 50%;
 	background-size: 200% auto;
 	background-clip: text;
 	-webkit-background-clip: text;
 	color: transparent;
+}
+
+.shimmer {
 	animation: shimmer 10s linear infinite;
 }
 
 @keyframes shimmer {
 	0% {
-		background-position: 0% 0;
+		background-position: 50% 0;
 	}
 	10% {
-		background-position: -140% 0;
+		background-position: -150% 0;
 	}
 	100% {
-		background-position: -140% 0;
+		background-position: -150% 0;
 	}
+}
+
+.flex-balance {
+	width: 111px;
+	@media screen and (width <= 800px) {
+		width: 0;
+		margin-left: -0.5rem;
+	}
+}
+.flex-between {
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
 }

@@ -1,14 +1,16 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { TuiRoot } from '@taiga-ui/core/components';
 import { LayoutService } from './core/services/layout/layout-service';
 import { ThemeService } from './core/services/theme/theme-service';
+import { CellInput } from './features/editor/cell-input/cell-input';
+import { Heading } from './shared/ui/heading/heading';
 import { FooterAbout } from './widgets/footer/about/footer-about';
 import { FooterEditor } from './widgets/footer/editor/footer-editor';
 import { Footer } from './widgets/footer/footer';
-import { Header } from './widgets/header/header';
-import { CellInput } from './features/editor/cell-input/cell-input';
 import { HeaderEditor } from './widgets/header/editor/header-editor/header-editor';
+import { Header } from './widgets/header/header';
+import { HeaderSearch } from './widgets/header/search/header-search/header-search';
 
 @Component({
 	selector: 'app-root',
@@ -21,6 +23,8 @@ import { HeaderEditor } from './widgets/header/editor/header-editor/header-edito
 		FooterAbout,
 		CellInput,
 		HeaderEditor,
+		HeaderSearch,
+		Heading,
 	],
 	templateUrl: './app.html',
 	styleUrl: './app.less',
@@ -28,5 +32,5 @@ import { HeaderEditor } from './widgets/header/editor/header-editor/header-edito
 export class App {
 	protected readonly ls = inject(LayoutService);
 	protected readonly ts = inject(ThemeService);
-	protected readonly title = signal('ng-sheet');
+	// protected readonly user$ = inject(AuthService).user$;
 }
