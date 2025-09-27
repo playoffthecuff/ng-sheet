@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="container__group" tuiItemGroup>
+		@let items = formatVidgetService.buttonsOptions();
+		@for (item of items; track $index) {
+			<button
+				(click)="formatVidgetService.onAction(item.action)"
+				[appearance]="item.checked ? 'primary' : 'flat'"
+				[tuiHint]="item.hint"
+				tuiHintAppearance="dark"
+				appearance="floating"
+				tuiIconButton
+				size="s"
+				type="button"
+			>
+				<tui-icon [icon]="item.icon" />
+			</button>
+		}
+
+		<app-color-text />
+	</div>
+</div>
