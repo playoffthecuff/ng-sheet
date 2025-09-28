@@ -5,11 +5,12 @@
 	type="button"
 	iconStart="@tui.save"
 	class="btn"
-	[tuiHint]="savingErrorMessage ? savingErrorMessage : 'Save Table'"
+	[tuiHint]="savingErrorMessage ? savingErrorMessage : defaultSaveTablePhrase"
 	tuiHintDirection="right"
 	(click)="trySave()"
 	[loading]="isLoading()"
 	[disabled]="ss.isDataSaved || isTemplateLoading()"
+	i18n
 >
 	Save Table
 </button>
@@ -20,11 +21,12 @@
 	type="button"
 	iconStart="@tui.save-all"
 	class="btn"
-	[tuiHint]="savingErrorMessage ? savingErrorMessage : 'Save as Template'"
+	[tuiHint]="savingErrorMessage ? savingErrorMessage : defaultSaveTemplatePhrase"
 	tuiHintDirection="right"
 	(click)="trySave(true)"
 	[loading]="isTemplateLoading()"
 	[disabled]="ss.isDataSaved || isLoading()"
+	i18n
 >
 	Save as Template
 </button>
@@ -35,10 +37,11 @@
 	type="button"
 	iconStart="@tui.plus"
 	class="btn"
-	tuiHint="Create an empty table"
+	[tuiHint]="createAnEmptyTablePhrase"
 	tuiHintDirection="right"
 	(click)="createNewTable()"
 	[disabled]="isLoading()"
+	i18n
 >
 	Create an empty table
 </button>

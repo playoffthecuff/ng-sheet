@@ -43,7 +43,6 @@ export class FileManagerService {
 
 	constructor() {
 		effect(() => {
-			'load page from fms constructor effect';
 			this.currentPage();
 			this.loadPage();
 		});

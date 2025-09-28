@@ -33,7 +33,9 @@ import { PLACEHOLDERS } from '../../shared/constants/image-placeholders';
 import { Divider } from '../../shared/ui/divider/divider';
 
 const validatePasswordStrength: ValidatorFn = (c) =>
-	calcPasswordStrength(c.value) > 75 ? null : { strength: 'Weak Password' };
+	calcPasswordStrength(c.value) > 75 ? null : (
+		{ strength: $localize`Weak Password` }
+	);
 
 @Component({
 	selector: 'app-register-form',
@@ -101,8 +103,8 @@ export class RegisterForm {
 
 	protected get emailValidationMessage() {
 		return getControlErrorMessage(this.form.get('email'), [
-			{ name: 'required', message: 'Required' },
-			{ name: 'pattern', message: 'Invalid Email' },
+			{ name: 'required', message: $localize`Required` },
+			{ name: 'pattern', message: $localize`Invalid Email` },
 		]);
 	}
 	protected get passwordValidationMessage() {
@@ -110,9 +112,9 @@ export class RegisterForm {
 	}
 	protected get nameValidationMessage() {
 		return getControlErrorMessage(this.form.get('name'), [
-			{ name: 'required', message: 'Required' },
-			{ name: 'minlength', message: 'Minimum 2 characters' },
-			{ name: 'maxlength', message: 'Maximum 30 characters' },
+			{ name: 'required', message: $localize`Required` },
+			{ name: 'minlength', message: $localize`Minimum 2 characters` },
+			{ name: 'maxlength', message: $localize`Maximum 30 characters` },
 		]);
 	}
 }

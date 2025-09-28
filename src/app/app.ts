@@ -34,5 +34,4 @@ import { ProgressBar } from './shared/ui/progress-bar';
 export class App {
 	protected readonly ls = inject(LayoutService);
 	protected readonly ts = inject(ThemeService);
-	// protected readonly user$ = inject(AuthService).user$;
 }

@@ -2,10 +2,10 @@
 	<section class="container">
 		<span class="bg">500</span>
 		<article class="content">
-			<h1 tuiTitle="m" class="h">Oops. Something went wrong</h1>
+			<h1 tuiTitle="m" class="h" i18n>Oops. Something went wrong</h1>
 			<div class="actions-grid">
 				@if (this.canGoBack) {
-					<span class="txt"> You can </span>
+					<span class="txt" i18n> You can </span>
 					<button
 						appearance="action"
 						iconStart="@tui.undo"
@@ -14,12 +14,13 @@
 						type="button"
 						(click)="goBack()"
 						class="btn"
+						i18n
 					>
 						go back
 					</button>
-					<span class="txt">or</span>
+					<span class="txt" i18n>or</span>
 				} @else {
-					<span class="txt">You can</span>
+					<span class="txt" i18n>You can</span>
 				}
 				<button
 					appearance="action"
@@ -29,11 +30,17 @@
 					tuiButton
 					type="button"
 					class="btn"
+					i18n
 				>
 					start over
 				</button>
 			</div>
 		</article>
 	</section>
-	<img src="/assets/img/500.svg" alt="man with a 'warning' sign" class="img" />
+	<img
+		src="/assets/img/500.svg"
+		i18n-alt
+		alt="man with a 'warning' sign"
+		class="img"
+	/>
 </div>

@@ -6,11 +6,11 @@ export class DateToDayPartPipe implements PipeTransform {
 		const x = d.getHours();
 		return (
 			[
-				{ start: 23, end: 4, name: 'night' },
-				{ start: 4, end: 10, name: 'morning' },
-				{ start: 10, end: 17, name: 'day' },
-				{ start: 17, end: 23, name: 'evening' },
-			].find((v) => x >= v.start && x < v.end)?.name ?? 'day'
+				{ start: 23, end: 4, name: $localize`night` },
+				{ start: 4, end: 10, name: $localize`morning` },
+				{ start: 10, end: 17, name: $localize`day` },
+				{ start: 17, end: 23, name: $localize`evening` },
+			].find((v) => x >= v.start && x < v.end)?.name ?? $localize`day`
 		);
 	}
 }

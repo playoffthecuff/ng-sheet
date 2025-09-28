@@ -3,10 +3,11 @@
 		appearance="positive"
 		size="s"
 		tuiIconButton
-		tuiHint="Add Sheet"
+		[tuiHint]="addSheetPhrase"
 		type="button"
 		[style.border-radius.%]="100"
 		(click)="this.ss.addSheet()"
+		i18n
 	>
 		Add Sheet
 		<tui-icon icon="@tui.plus" />
@@ -20,6 +21,7 @@
 		[tuiDropdown]="content"
 		size="s"
 		appearance="info"
+		i18n
 	>
 		All Sheets
 	</button>
@@ -43,38 +45,6 @@
 			}
 		</tui-data-list>
 	</ng-template>
-	<!-- <tui-tabs-with-more class="tabs">
-			@for (sheet of sheets; let i = $index; track $index) {
-				<a
-					*tuiItem
-					[routerLink]="['/editor', '1', i]"
-					tuiTab
-					class="a"
-					tuiLink
-					routerLinkActive
-					[routerLinkActiveOptions]="{ exact: true }"
-				>
-					{{ sheet.name }}
-					<button
-						tuiIconButton
-						iconEnd="@tui.chevron-down"
-						tuiDropdownOpen
-						type="button"
-						[tuiDropdown]="sheetMenu"
-						size="s"
-						appearance="flat-grayscale"
-						(click)="stopP($event)"
-					>
-						All Sheets
-					</button>
-					<ng-template #sheetMenu>
-						<tui-data-list role="menu" size="s" class="data-list">
-							<button tuiOption new type="button" class="option">Item</button>
-						</tui-data-list>
-					</ng-template>
-				</a>
-			}
-		</tui-tabs-with-more> -->
 	<tui-segmented size="s" class="segments" [activeItemIndex]="activeIndex">
 		@for (
 			sheetName of ss.sheetNames ?? [];
@@ -87,48 +57,3 @@
 		}
 	</tui-segmented>
 </div>
-<!-- <a
-				[routerLink]="['/editor', '0', ss.getSheetId(sheetName)]"
-				tuiTab
-				class="a"
-				tuiLink
-				routerLinkActive
-				[routerLinkActiveOptions]="{ exact: true }"
-				(click)="prevent($event)"
-			>
-				<tui-input-inline class="input-inline">
-					<input
-						[(ngModel)]="sheetNames[i]"
-						(change)="renameSheet($event, i)"
-						class="input"
-					/>
-				</tui-input-inline>
-				<button
-					tuiIconButton
-					iconEnd="@tui.chevron-down"
-					tuiDropdownOpen
-					tuiDropdownAlign="right"
-					type="button"
-					[tuiDropdown]="sheetMenu"
-					size="s"
-					appearance="flat-grayscale"
-					(click)="prevent($event)"
-				>
-					{{ sheetName }}
-				</button>
-				<ng-template #sheetMenu>
-					<tui-data-list role="menu" size="s" class="data-list">
-						<button
-							tuiOption
-							new
-							type="button"
-							class="option"
-							iconStart="@tui.trash-2"
-							(click)="removeSheet(i)"
-							[disabled]="c === 1"
-						>
-							Delete
-						</button>
-					</tui-data-list>
-				</ng-template>
-			</a> -->

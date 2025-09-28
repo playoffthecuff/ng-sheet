@@ -1,6 +1,6 @@
 <header class="header">
 	<div class="container">
-		<h2 class="h2">Create a document</h2>
+		<h2 class="h2" i18n>Create a document</h2>
 		<div class="btn-bar">
 			<button
 				tuiButton
@@ -10,6 +10,7 @@
 				appearance="floating"
 				(click)="openEditorWithEmptyTable()"
 				class="template-btn"
+				i18n
 			>
 				as an empty <br />
 				table
@@ -28,6 +29,7 @@
 						appearance="floating"
 						(click)="openEditorWithTemplate(item.id)"
 						class="template-btn"
+						i18n
 					>
 						<button
 							tuiButtonClose
@@ -44,8 +46,8 @@
 					</button>
 				</tui-loader>
 				<ng-template #delTmpl let-observer>
-					<h2 tuiTitle="m">Delete?</h2>
-					<p class="warning">The template "{{ item.name }}" will be deleted.</p>
+					<h2 tuiTitle="m" i18n>Delete?</h2>
+					<p class="warning" i18n>The template "{{ item.name }}" will be deleted.</p>
 
 					<div class="dialog-buttons">
 						<button
@@ -54,6 +56,7 @@
 							type="button"
 							(click)="observer.complete()"
 							appearance="secondary-grayscale"
+							i18n
 						>
 							Cancel
 						</button>
@@ -64,6 +67,7 @@
 							class="tui-space_right-3"
 							(click)="removeTemplate(item.id)"
 							appearance="primary-grayscale"
+							i18n
 						>
 							Confirm
 						</button>
@@ -72,7 +76,7 @@
 			} @empty {
 				<div class="no-template-frame">
 					<tui-icon icon="@tui.file-x" class="tf-icon" />
-					<span class="t-text"
+					<span class="t-text" i18n
 						>Create a table and save it as a template so it will be available
 						here.</span
 					>
@@ -93,7 +97,14 @@
 			>
 				<thead>
 					<tr tuiThGroup>
-						<th *tuiHead="'name'" tuiSortable tuiTh [requiredSort]="false" class="th">
+						<th
+							*tuiHead="'name'"
+							tuiSortable
+							tuiTh
+							[requiredSort]="false"
+							class="th"
+							i18n
+						>
 							Name
 						</th>
 						<th
@@ -102,6 +113,7 @@
 							[requiredSort]="false"
 							tuiTh
 							class="th date"
+							i18ns
 						>
 							Created at
 						</th>
@@ -111,6 +123,7 @@
 							[requiredSort]="false"
 							tuiTh
 							class="th date"
+							i18n
 						>
 							Updated at
 						</th>
@@ -175,6 +188,7 @@
 									[tuiDropdown]="content"
 									iconStart="@tui.ellipsis-vertical"
 									(click)="stopPropagation($event)"
+									i18n
 								>
 									Menu
 								</button>
@@ -186,6 +200,7 @@
 											[routerLink]="['editor', item.id, 0]"
 											class="link"
 											target="_blank"
+											i18n
 										>
 											<tui-icon icon="@tui.external-link" class="icon" /> Open in a new tab
 										</a>
@@ -206,8 +221,10 @@
 											<tui-icon icon="@tui.trash-2" class="icon" /> Delete
 										</button>
 										<ng-template #dialog let-observer>
-											<h2 tuiTitle="m">Delete?</h2>
-											<p class="warning">The table "{{ item.name }}" will be deleted.</p>
+											<h2 tuiTitle="m" i18n>Delete?</h2>
+											<p class="warning" i18n>
+												The table "{{ item.name }}" will be deleted.
+											</p>
 
 											<div class="dialog-buttons">
 												<button
@@ -216,6 +233,7 @@
 													type="button"
 													(click)="observer.complete()"
 													appearance="secondary-grayscale"
+													i18n
 												>
 													Cancel
 												</button>
@@ -226,6 +244,7 @@
 													class="tui-space_right-3"
 													(click)="removeTable(item.id)"
 													appearance="primary-grayscale"
+													i18n
 												>
 													Confirm
 												</button>
@@ -253,7 +272,7 @@
 				</tfoot>
 			</table>
 		} @else {
-			<p class="info">
+			<p class="info" i18n>
 				@if (fms.loadingErrorMessage()) {
 					{{ fms.loadingErrorMessage() }}
 				} @else {

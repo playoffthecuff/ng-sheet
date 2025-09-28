@@ -11,7 +11,7 @@
 <ng-template #dropdown let-close>
 	<div class="menu">
 		<header class="header">
-			<span tuiFade class="email">{{ email() ?? "Login to start" }}</span>
+			<span tuiFade class="email" i18n>{{ email() ?? "Login to start" }}</span>
 			<div class="buttons">
 				<app-theme-switcher></app-theme-switcher>
 				<app-lang-switcher></app-lang-switcher>
@@ -20,7 +20,9 @@
 		<app-divider />
 		<div class="body">
 			<tui-avatar [src]="initials()" size="l" class="avatar"></tui-avatar>
-			<p class="p">Good {{ time | dateToDayPart }}, {{ name() ?? "Guest" }}</p>
+			<p class="p" i18n>
+				Good {{ time | dateToDayPart }}, {{ name() ?? "Guest" }}
+			</p>
 			@if (email()) {
 				<button
 					tuiButton
@@ -30,6 +32,7 @@
 					(click)="logout()"
 					class="btn"
 					[loading]="isLoading()"
+					i18n
 				>
 					Sign Out
 				</button>
@@ -42,6 +45,7 @@
 					(click)="login()"
 					class="btn"
 					[loading]="isLoading()"
+					i18n
 				>
 					Sign In
 				</button>
@@ -50,7 +54,7 @@
 		<app-divider />
 		@if (email()) {
 			<div class="body">
-				<p class="p">Register a new user?</p>
+				<p class="p" i18n>Register a new user?</p>
 				<button
 					tuiButton
 					iconEnd="@tui.user-plus"
@@ -59,6 +63,7 @@
 					(click)="register()"
 					class="btn"
 					[loading]="isLoading()"
+					i18n
 				>
 					Add Account
 				</button>
@@ -68,7 +73,7 @@
 		@if (!email()) {
 			<app-divider />
 			<div class="add-block">
-				<p class="p">Don't have an account?</p>
+				<p class="p" i18n>Don't have an account?</p>
 				<button
 					tuiButton
 					iconEnd="@tui.user-plus"
@@ -77,6 +82,7 @@
 					(click)="register()"
 					class="btn"
 					[loading]="isLoading()"
+					i18n
 				>
 					Register
 				</button>
@@ -84,7 +90,7 @@
 		}
 		<app-divider />
 		<footer class="footer">
-			<a routerLink="/terms-of-use" tuiLink appearance="action-grayscale">
+			<a routerLink="/terms-of-use" tuiLink appearance="action-grayscale" i18n>
 				Terms of use
 			</a>
 		</footer>

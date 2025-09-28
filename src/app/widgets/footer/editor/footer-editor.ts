@@ -32,6 +32,7 @@ import { SheetSegment } from './sheet-segment/sheet-segment';
 export class FooterEditor implements OnInit {
 	private readonly r = inject(Router);
 	protected ss = inject(SheetsService);
+	protected readonly addSheetPhrase = $localize`Add Sheet`;
 	navigateToSheet(id: number) {
 		this.r.navigate(['editor', this.ss.doc?.id, id]);
 	}

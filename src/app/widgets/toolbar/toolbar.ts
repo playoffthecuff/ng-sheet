@@ -28,6 +28,9 @@ export class Toolbar {
 	protected readonly isLoading = signal(false);
 	protected readonly isTemplateLoading = signal(false);
 	savingErrorMessage: string | null = null;
+	protected defaultSaveTablePhrase = $localize`Save Table`;
+	protected defaultSaveTemplatePhrase = $localize`Save as Template`;
+	protected createAnEmptyTablePhrase = $localize`Create an empty table`;
 	protected trySave(isTemplate = false) {
 		const { doc, isDataSaved } = this.ss;
 		if (!doc || isDataSaved) return;
@@ -79,9 +82,9 @@ export class Toolbar {
 	private startWithNewTable(docId: string) {
 		const { sheetId } = this.ss;
 		if (docId === '0' && sheetId === 0)
-			this.ss.initDoc('0', 'New Table', 0, emptySerializedTable);
+			this.ss.initDoc('0', $localize`New Table`, 0, emptySerializedTable);
 		else this.r.navigate(['editor', 0, 0]);
-		this.ss.docName.set('New Table');
+		this.ss.docName.set($localize`New Table`);
 	}
 	protected createNewTable() {
 		const { doc } = this.ss;

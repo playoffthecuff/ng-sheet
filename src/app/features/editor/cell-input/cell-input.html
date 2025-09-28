@@ -2,10 +2,11 @@
 	class="cell"
 	tuiTextfieldSize="s"
 	[tuiTextfieldCleaner]="false"
-	tuiHint="Address (Ctrl + J)"
+	[tuiHint]="addrCtrlJPhrase"
 >
 	<input
 		#cellAddress
+		i18n-placeholder
 		placeholder="Enter cell here..."
 		tuiTextfield
 		class="input"
@@ -16,6 +17,7 @@
 <tui-textfield iconStart="f-x" class="value" tuiTextfieldSize="s">
 	<input
 		#cellValue
+		i18n-placeholder
 		placeholder="Type value or formula here..."
 		tuiTextfield
 		class="input"

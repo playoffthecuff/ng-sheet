@@ -38,6 +38,8 @@ export class CellInput implements AfterViewInit {
 		}
 	}
 
+	protected readonly addrCtrlJPhrase = $localize`Address (Ctrl + J)`;
+
 	protected showNotification(heading: string, text: string): void {
 		this.alerts.open(text, { label: heading }).subscribe();
 	}
@@ -74,7 +76,10 @@ export class CellInput implements AfterViewInit {
 		const cellIn = cell && this.ss.isCellInSheet(cell);
 		const rangeIn = range && this.ss.isRangeInSheet(range);
 		if (!cellIn && !rangeIn)
-			this.showNotification('Input Error!', 'Invalid address or range.');
+			this.showNotification(
+				$localize`Input Error!`,
+				$localize`Invalid address or range.`,
+			);
 		if (cellIn) {
 			this.cellAddress?.nativeElement.blur();
 			this.ss.focusedCell.x = cell.col;

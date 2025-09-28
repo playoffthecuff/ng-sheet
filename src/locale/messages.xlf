@@ -1,0 +1,1158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="7509897479183416236" datatype="html">
+        <source>Navigation Confirm</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/guards/unsaved-table.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6171090112552569541" datatype="html">
+        <source>You are leaving the editor, but the current table is not saved. Do you wish to continue?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/guards/unsaved-table.ts</context>
+          <context context-type="linenumber">15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3542042671420335679" datatype="html">
+        <source>No</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/guards/unsaved-table.ts</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2807800733729323332" datatype="html">
+        <source>Yes</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/core/guards/unsaved-table.ts</context>
+          <context context-type="linenumber">17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3804037606764273869" datatype="html">
+        <source>Cut</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4323470180912194028" datatype="html">
+        <source>Copy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8890504809170904482" datatype="html">
+        <source>Paste</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2422151061505420287" datatype="html">
+        <source>Insert row above</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">56</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2962787881671243654" datatype="html">
+        <source>Insert column left</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1915154957612238134" datatype="html">
+        <source>Insert cell</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">63</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4702676403027981812" datatype="html">
+        <source>and shift down</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">67</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3158073197858915649" datatype="html">
+        <source>and shift right</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">72</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2491995762085788112" datatype="html">
+        <source>Delete row</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5439202652131593109" datatype="html">
+        <source>Delete column</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">80</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1589522116261416347" datatype="html">
+        <source>Delete cell</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="576758111136893345" datatype="html">
+        <source>and shift up</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">86</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2001785812088444114" datatype="html">
+        <source>and shift left</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
+          <context context-type="linenumber">88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6107597928709695137" datatype="html">
+        <source>Input Error!</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-input/cell-input.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7112886930231287365" datatype="html">
+        <source>Invalid address or range.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-input/cell-input.ts</context>
+          <context context-type="linenumber">77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9166568402301437671" datatype="html">
+        <source>Create a document</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="109729744000994490" datatype="html">
+        <source> as an empty <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> table </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">15,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4991175822729880279" datatype="html">
+        <source><x id="START_TAG_BUTTON" ctype="x-button" equiv-text="&lt;button
+							tuiButtonClose
+							tuiIconButton
+							type=&quot;button&quot;
+							size=&quot;s&quot;
+							class=&quot;close-btn&quot;
+							(click)=&quot;openRemoveTableDialog(delTmpl, $event)&quot;
+						&gt;"/> Close <x id="CLOSE_TAG_BUTTON" ctype="x-button" equiv-text="&lt;/button&gt;"/> from template <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> &quot;<x id="INTERPOLATION" equiv-text="{{ item.name }}"/>&quot; </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">35,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5210270493533766316" datatype="html">
+        <source>Delete?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">49,50</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">224,225</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="232369400038852253" datatype="html">
+        <source>The template &quot;<x id="INTERPOLATION" equiv-text="{{ item.name }}"/>&quot; will be deleted.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">50,52</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2330577642930707695" datatype="html">
+        <source> Cancel </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">61,62</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">238</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6249484391846924804" datatype="html">
+        <source> Confirm </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">72,73</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">249</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6031314904717115305" datatype="html">
+        <source>Create a table and save it as a template so it will be available here.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">80,81</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8778616811237742446" datatype="html">
+        <source> Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">108,109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5812854200578196416" datatype="html">
+        <source> Updated at </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">128,129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7101330213384793113" datatype="html">
+        <source> Menu </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">193,194</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2346566441044419057" datatype="html">
+        <source><x id="START_TAG_TUI_ICON" ctype="x-tui_icon" equiv-text="&lt;tui-icon icon=&quot;@tui.external-link&quot; class=&quot;icon&quot; /&gt;"/><x id="CLOSE_TAG_TUI_ICON" ctype="x-tui_icon" equiv-text="&lt;tui-icon icon=&quot;@tui.external-link&quot; class=&quot;icon&quot; /&gt;"/> Open in a new tab </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">205,207</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6670518829745620917" datatype="html">
+        <source> The table &quot;<x id="INTERPOLATION" equiv-text="{{ item.name }}"/>&quot; will be deleted. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">226,229</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2175458367557491956" datatype="html">
+        <source><x id="START_BLOCK_IF" equiv-text="@if (fms.loadingErrorMessage()) {"/> <x id="INTERPOLATION" equiv-text="{{ fms.loadingErrorMessage() }}"/> <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/><x id="START_BLOCK_IF_1" equiv-text="@if (fms.searchText()) {"/> No tables match the specified search criteria. Please adjust your search query or create a new table by clicking one of the table creation buttons above. <x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Here you can manage your tables, but you haven&apos;t created any yet. Click one of the table creation buttons above to do so. <x id="CLOSE_BLOCK_ELSE" equiv-text="}"/><x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">276,290</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5207635742003539443" datatype="html">
+        <source>Sign in</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.html</context>
+          <context context-type="linenumber">4,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1275637307437954197" datatype="html">
+        <source>with provider</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8405631745661831126" datatype="html">
+        <source><x id="TAG_IMG" ctype="image" equiv-text="&lt;img
+						src=&quot;assets/img/google.svg&quot;
+						[style.height.rem]=&quot;1.5&quot;
+						alt=&quot;google logo&quot;
+					/&gt;"/> Google </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.html</context>
+          <context context-type="linenumber">18,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8299615365055512227" datatype="html">
+        <source><x id="START_TAG_TUI_ICON" ctype="x-tui_icon" equiv-text="&lt;tui-icon icon=&quot;github&quot; [style.height.rem]=&quot;1.5&quot; /&gt;"/><x id="CLOSE_TAG_TUI_ICON" ctype="x-tui_icon" equiv-text="&lt;tui-icon icon=&quot;github&quot; [style.height.rem]=&quot;1.5&quot; /&gt;"/> Github </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.html</context>
+          <context context-type="linenumber">33,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2194451444825107407" datatype="html">
+        <source>using credentials</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.html</context>
+          <context context-type="linenumber">38,39</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2944449439955980766" datatype="html">
+        <source>Email </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.html</context>
+          <context context-type="linenumber">41,42</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.html</context>
+          <context context-type="linenumber">15,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4499167573952748411" datatype="html">
+        <source>Password </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.html</context>
+          <context context-type="linenumber">55,56</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="805344189430920143" datatype="html">
+        <source><x id="START_BLOCK_IF" equiv-text="@if (isLoading()) {"/><x id="START_TAG_APP_SPINNER" ctype="x-app_spinner" equiv-text="&lt;app-spinner [inheritColor]=&quot;true&quot; [overlay]=&quot;false&quot; size=&quot;m&quot; /&gt;"/><x id="CLOSE_TAG_APP_SPINNER" ctype="x-app_spinner" equiv-text="&lt;app-spinner [inheritColor]=&quot;true&quot; [overlay]=&quot;false&quot; size=&quot;m&quot; /&gt;"/><x id="CLOSE_BLOCK_IF" equiv-text="}"/><x id="START_BLOCK_ELSE" equiv-text="@else {"/> Sign In <x id="START_TAG_TUI_ICON" ctype="x-tui_icon" equiv-text="&lt;tui-icon icon=&quot;@tui.log-in&quot; [style.height.rem]=&quot;1.5&quot; /&gt;"/><x id="CLOSE_TAG_TUI_ICON" ctype="x-tui_icon" equiv-text="&lt;tui-icon icon=&quot;@tui.log-in&quot; [style.height.rem]=&quot;1.5&quot; /&gt;"/><x id="CLOSE_BLOCK_ELSE" equiv-text="}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.html</context>
+          <context context-type="linenumber">76,83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3979012705508539604" datatype="html">
+        <source> Don&apos;t have an account? </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.html</context>
+          <context context-type="linenumber">86,87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2907733796351584017" datatype="html">
+        <source> Register </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.html</context>
+          <context context-type="linenumber">87,88</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/user-menu/user-menu.html</context>
+          <context context-type="linenumber">87,88</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7045123878111147511" datatype="html">
+        <source>Required</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.ts</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
+          <context context-type="linenumber">104</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/utils/get-control-error-message.ts</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2762478885865197015" datatype="html">
+        <source>Invalid Email</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/login-form/login-form.ts</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1466012768716286509" datatype="html">
+        <source>Sign Up</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.html</context>
+          <context context-type="linenumber">3,4</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3689364453010047341" datatype="html">
+        <source>Name </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.html</context>
+          <context context-type="linenumber">7,8</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4571925985295556472" datatype="html">
+        <source> Submit <x id="START_TAG_TUI_ICON" ctype="x-tui_icon" equiv-text="&lt;tui-icon icon=&quot;@tui.send-horizontal&quot; [style.height.rem]=&quot;1.5&quot; /&gt;"/><x id="CLOSE_TAG_TUI_ICON" ctype="x-tui_icon" equiv-text="&lt;tui-icon icon=&quot;@tui.send-horizontal&quot; [style.height.rem]=&quot;1.5&quot; /&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.html</context>
+          <context context-type="linenumber">54,57</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2005881428249546147" datatype="html">
+        <source> Already have an account? </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.html</context>
+          <context context-type="linenumber">60,61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1908285951500318953" datatype="html">
+        <source> Login </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.html</context>
+          <context context-type="linenumber">61,62</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1064706422258939129" datatype="html">
+        <source>Weak Password</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4444421233822815019" datatype="html">
+        <source>Minimum 2 characters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
+          <context context-type="linenumber">114</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5101311503950207763" datatype="html">
+        <source>Maximum 30 characters</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
+          <context context-type="linenumber">115</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2971281135134045654" datatype="html">
+        <source>Oops. Something went wrong</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/error/error.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3737440804565226731" datatype="html">
+        <source> You can </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/error/error.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6333066272182602973" datatype="html">
+        <source> go back </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/error/error.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.html</context>
+          <context context-type="linenumber">19,20</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6627551976444260400" datatype="html">
+        <source>or</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/error/error.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.html</context>
+          <context context-type="linenumber">21,22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3529246569366854092" datatype="html">
+        <source>You can</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/error/error.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.html</context>
+          <context context-type="linenumber">23,24</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2017349828362502527" datatype="html">
+        <source> start over </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/error/error.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.html</context>
+          <context context-type="linenumber">35,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7323918440009374387" datatype="html">
+        <source>man with a &apos;warning&apos; sign</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/error/error.html</context>
+          <context context-type="linenumber">40</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7936398398057589906" datatype="html">
+        <source>Page are you looking for cannot be found</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4459021845574609101" datatype="html">
+        <source>woman with a &apos;dead end&apos; sign</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/not-found/not-found.html</context>
+          <context context-type="linenumber">42,43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4242389206843989472" datatype="html">
+        <source>Terms of Use</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">2,3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4615628688339214833" datatype="html">
+        <source>This document governs</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">3,5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8278352676108676535" datatype="html">
+        <source>the use of our website, and,</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">5,6</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="413201980220418377" datatype="html">
+        <source>any other related agreement or legal relationship with us</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6793106680410429538" datatype="html">
+        <source>in a legally binding way.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">8,9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5222480397409294459" datatype="html">
+        <source>You must read this document carefully.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">9,10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6711081103153476982" datatype="html">
+        <source>What you should know at a glance</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">10,11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1624470478362526656" datatype="html">
+        <source> Please note that some provisions may only apply to certain categories of users. In particular, certain provisions may only apply to consumers or to those users that do not qualify as consumers. Such limitations are always explicitly mentioned within each affected clause. In the absence of any such mention, clauses apply to all users. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">12,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6783143754421406389" datatype="html">
+        <source>TERMS OF USE</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">18,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1946679857569615876" datatype="html">
+        <source> Unless stated otherwise, the terms in this section apply generally when using our website. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">20,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7593178480895785754" datatype="html">
+        <source> Specific or additional conditions may apply in certain situations and are noted in this document. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">24,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5907675949139024986" datatype="html">
+        <source>Account registration</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">27,28</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4521866722046532049" datatype="html">
+        <source> To use the service, you can register or create an account by providing complete and truthful information. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">29,32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8763689877719700202" datatype="html">
+        <source> You are responsible for keeping your login details confidential and must choose passwords that meet the highest standards of strength as allowed by our website. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">33,36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7804160156283921272" datatype="html">
+        <source> By registering, you agree to take full responsibility for all activities under your username and password. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> You must immediately inform us using the contact details in this document if you believe your personal information, account, or login details have been violated, disclosed, or stolen. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">38,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7405120045832313611" datatype="html">
+        <source>Conditions for account registration</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">44,45</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5521410065982038699" datatype="html">
+        <source> Registration of accounts on our website is subject to the conditions outlined below. By registering, you agree to meet such conditions. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">46,49</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6528048633624104340" datatype="html">
+        <source> It is not permitted to register accounts by bots or any other automated methods; </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">51,53</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3248391238822757545" datatype="html">
+        <source>You must register only one account, unless otherwise specified;</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">54,55</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4075991939459441172" datatype="html">
+        <source> Your account must not be shared with other persons unless otherwise specified. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">56,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1613538312589717709" datatype="html">
+        <source>Account termination</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">60,61</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5420527981863310200" datatype="html">
+        <source> You can close your account and stop using our service anytime by contacting us at the contact details provided in this document. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">62,65</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7557332838836165455" datatype="html">
+        <source>Account suspension and deletion</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">65,66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6474652416164040345" datatype="html">
+        <source> We reserve the right to suspend or delete your account at any time and without notice if we find it inappropriate, offensive, or in violation of these terms. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">67,70</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3080463611587434312" datatype="html">
+        <source> Suspending or deleting accounts does not entitle you to claim for any compensation, damages, or reimbursement. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">71,74</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8320353220846052260" datatype="html">
+        <source> The suspension or deletion of accounts due to causes attributable to you does not exempt you from paying any applicable fees or prices. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">75,78</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4976639063792288280" datatype="html">
+        <source>Content on the website</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">78,79</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5388914173232088559" datatype="html">
+        <source> Unless otherwise noted, all content on our website is owned or provided by us or our licensors. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">80,83</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="631066563904057944" datatype="html">
+        <source> We do our best to ensure the content on our website complies with all laws and respects third-party rights. However, this may not always be achievable. <x id="LINE_BREAK" ctype="lb" equiv-text="&lt;br /&gt;"/> If you believe your rights are being infringed, without prejudice to any legal prerogatives to enforce your rights, please report any issues using the contact details provided in this document. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">84,91</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="989959506706448629" datatype="html">
+        <source>Rights regarding content on our website</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">91,92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2841516969454743421" datatype="html">
+        <source>You may not use such content in any way.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">92,93</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8930863112744477264" datatype="html">
+        <source> Specifically, but without limitation, you may copy, download, share (beyond the limits mentioned below), modify, translate, transform, publish, transmit, sell, sublicense, edit, transfer, assign to third parties, or create derivative works from the content on our website. You also can allow any third party to do so through your account or device, even unknowingly. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">94,99</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="706966114035789685" datatype="html">
+        <source>Any statutory limitations or exceptions to copyright remain unaffected.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">100,101</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8650403839011349093" datatype="html">
+        <source>Access to external resources</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">101,102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6164220244437633974" datatype="html">
+        <source> Through our website, you may access external resources provided by third parties. You acknowledge and accept that we have no control over these resources and are not responsible for their content or availability. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">103,106</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3102985827790841414" datatype="html">
+        <source> Conditions for third-party resources, including any rights granted in their content, are governed by those third parties&apos; terms and conditions or by applicable law. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">108,111</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6198800499416559784" datatype="html">
+        <source>Acceptable use</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">112,113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8954076475952721634" datatype="html">
+        <source> Our website and service may only be used within the scope of what is provided for, under these terms and applicable law. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">114,117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6724211654317465511" datatype="html">
+        <source> You are solely responsible for ensuring your use of our website and service does not violate any laws, regulations, or third-party rights. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">118,121</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8514343821458249274" datatype="html">
+        <source> We reserve the right to protect our interests by denying you access to our website or service, terminating contracts, and reporting any misconduct to the appropriate authorities if you are involved in or suspected of the following: </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">122,125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5470255923601542383" datatype="html">
+        <source>violating laws, regulations, or these terms;</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">127,128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8497834513832166060" datatype="html">
+        <source>infringing on third-party rights;</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">128,129</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3294484476909486394" datatype="html">
+        <source>significantly impairing our legitimate interests;</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">129,130</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3387928767016452432" datatype="html">
+        <source>offending us or any third party.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">130,131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8050997626710852345" datatype="html">
+        <source>COMMON PROVISIONS</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">132,133</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2867028014275711424" datatype="html">
+        <source>No waiver</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">133,134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2983025804385916488" datatype="html">
+        <source> Our failure to assert any right or provision under these terms does not waive that right or provision. No waiver will constitute a continuing waiver of such term or any other term. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">135,138</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8555295987695740850" datatype="html">
+        <source>Service interruption</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">139,140</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6796239542429693289" datatype="html">
+        <source> To maintain the best service level, we reserve the right to interrupt the service for maintenance, updates, or other changes, with appropriate notification. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">141,144</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7279851078727431264" datatype="html">
+        <source> We may suspend or discontinue the service within legal limits. If discontinued, we will assist you in withdrawing personal data and respect your rights regarding continued product use and compensation under applicable law. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">146,149</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4887573926922794370" datatype="html">
+        <source> The service may be unavailable due to events beyond our reasonable control, such as infrastructure breakdowns or blackouts. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">151,154</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7814376328873583841" datatype="html">
+        <source>Service reselling</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">154,155</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9056193586213797522" datatype="html">
+        <source> You may not reproduce, duplicate, copy, sell, or exploit any part of our website or its service without our express written permission, granted either directly or through a legitimate reselling program. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">156,159</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6090931838305354672" datatype="html">
+        <source>Privacy policy</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">160,161</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7619437231844577897" datatype="html">
+        <source> For information on the use of personal data, you can refer to our website&apos;s privacy policy. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">162,165</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2738728152398246029" datatype="html">
+        <source>Changes to the terms</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">165,166</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4867667181061861196" datatype="html">
+        <source> We reserve the right to modify these terms at any time, informing you of any changes. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">167,170</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6177829755694566995" datatype="html">
+        <source> Such changes will only affect the relationship with you from the date communicated onwards. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">171,174</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3374526776914706392" datatype="html">
+        <source> Your continued use of the service will signify your acceptance of the revised terms. If you do not wish to be bound by the changes, you must stop using the service and terminate the agreement. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">175,178</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7292787661299682655" datatype="html">
+        <source> The applicable previous version will govern the relationship prior to your acceptance. You can obtain any previous version from us. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">180,183</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7481786266893250800" datatype="html">
+        <source> If legally required, we will notify you in advance of when the modified terms will take effect. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">184,187</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7922989125096435449" datatype="html">
+        <source>Contact</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">187,188</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="322123680688720615" datatype="html">
+        <source> All communications regarding the use of our website must be sent using the contact information provided in this document. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">189,192</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6211009793584835462" datatype="html">
+        <source>Severability</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">192,193</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6231406184814652254" datatype="html">
+        <source> Invalidity or unenforceability of any provision under applicable law will not affect the validity of other provisions, which will remain in full force and effect. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">194,197</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3985668248966297585" datatype="html">
+        <source>night</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/pipes/date-to-day-part/date-to-day-part-pipe.ts</context>
+          <context context-type="linenumber">9</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1622073066684319161" datatype="html">
+        <source>morning</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/pipes/date-to-day-part/date-to-day-part-pipe.ts</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6320319413541466015" datatype="html">
+        <source>day</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/pipes/date-to-day-part/date-to-day-part-pipe.ts</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/pipes/date-to-day-part/date-to-day-part-pipe.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3917378747384052796" datatype="html">
+        <source>evening</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/pipes/date-to-day-part/date-to-day-part-pipe.ts</context>
+          <context context-type="linenumber">12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7708270344948043036" datatype="html">
+        <source> <x id="INTERPOLATION" equiv-text="{{ context.data.cancelText ?? &quot;Cancel&quot; }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/confirm-dialog/confirm-dialog.html</context>
+          <context context-type="linenumber">13,15</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/confirm-dialog/confirm-dialog.html</context>
+          <context context-type="linenumber">23,25</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4277841123119697385" datatype="html">
+        <source>flag</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/lang-switcher/lang-switcher.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2959599686805351550" datatype="html">
+        <source> Toggle <x id="INTERPOLATION" equiv-text="{{ darkMode() ? &quot;dark&quot; : &quot;light&quot; }}"/>
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/ui/theme-switcher/theme-switcher.html</context>
+          <context context-type="linenumber">12,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6884621695450613692" datatype="html">
+        <source>rolling scopes school logo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/footer/about/footer-about.html</context>
+          <context context-type="linenumber">6,7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4723754793478194714" datatype="html">
+        <source>angular framework logo</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/footer/about/footer-about.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5206655694031716110" datatype="html">
+        <source> Add Sheet <x id="START_TAG_TUI_ICON" ctype="x-tui_icon" equiv-text="&lt;tui-icon icon=&quot;@tui.plus&quot; /&gt;"/><x id="CLOSE_TAG_TUI_ICON" ctype="x-tui_icon" equiv-text="&lt;tui-icon icon=&quot;@tui.plus&quot; /&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/footer/editor/footer-editor.html</context>
+          <context context-type="linenumber">12,16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3080242516070353577" datatype="html">
+        <source> All Sheets </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/footer/editor/footer-editor.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8212177249756365917" datatype="html">
+        <source> Remove </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/footer/editor/sheet-segment/sheet-segment.html</context>
+          <context context-type="linenumber">46,47</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="93162959517833998" datatype="html">
+        <source> Rename </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/footer/editor/sheet-segment/sheet-segment.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2785898836458042194" datatype="html">
+        <source> Save Table
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
+          <context context-type="linenumber">16,18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3485416866119094525" datatype="html">
+        <source> Save as Template
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
+          <context context-type="linenumber">33,35</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1691205636135848099" datatype="html">
+        <source> Create an empty table
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
+          <context context-type="linenumber">48,50</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1217251625458416147" datatype="html">
+        <source>New Table</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
+          <context context-type="linenumber">84</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="187187500641108332" datatype="html">
+        <source><x id="INTERPOLATION" equiv-text="{{ email() ?? &quot;Login to start&quot; }}"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/user-menu/user-menu.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5363715654433713356" datatype="html">
+        <source> Good <x id="INTERPOLATION" equiv-text="{{ time | dateToDayPart }}"/>, <x id="INTERPOLATION_1" equiv-text="{{ name() ?? &quot;Guest&quot; }}"/> </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/user-menu/user-menu.html</context>
+          <context context-type="linenumber">24,26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1428384729921254001" datatype="html">
+        <source> Sign Out </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/user-menu/user-menu.html</context>
+          <context context-type="linenumber">37,38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4476224839121490369" datatype="html">
+        <source> Sign In </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/user-menu/user-menu.html</context>
+          <context context-type="linenumber">50,51</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5707083987227806034" datatype="html">
+        <source>Register a new user?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/user-menu/user-menu.html</context>
+          <context context-type="linenumber">57,58</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5491848775523265382" datatype="html">
+        <source> Add Account </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/user-menu/user-menu.html</context>
+          <context context-type="linenumber">68,69</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8164791295086777340" datatype="html">
+        <source>Don&apos;t have an account?</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/user-menu/user-menu.html</context>
+          <context context-type="linenumber">76,77</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2681949070560068258" datatype="html">
+        <source> Terms of use </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/user-menu/user-menu.html</context>
+          <context context-type="linenumber">94,95</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

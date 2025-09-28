@@ -110,8 +110,8 @@ export class LoginForm {
 
 	protected get emailValidationMessage() {
 		return getControlErrorMessage(this.form.get('email'), [
-			{ name: 'required', message: 'Required' },
-			{ name: 'email', message: 'Invalid Email' },
+			{ name: 'required', message: $localize`Required` },
+			{ name: 'pattern', message: $localize`Invalid Email` },
 		]);
 	}
 	protected get passwordValidationMessage() {

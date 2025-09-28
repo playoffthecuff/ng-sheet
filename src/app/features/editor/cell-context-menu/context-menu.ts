@@ -50,42 +50,54 @@ export class ContextMenu {
 		deleteCellLeft: (y: number, x: number) => this.ss.removeCell(y, x, 'left'),
 	};
 	readonly items: MenuItem[] = [
-		{ title: 'Cut', icon: '@tui.scissors', action: 'cut' },
-		{ title: 'Copy', icon: '@tui.copy', action: 'copy' },
-		{ title: 'Paste', icon: '@tui.clipboard', action: 'paste' },
-		{ title: 'Insert row above', icon: '@tui.plus', action: 'insertRowAbove' },
+		{ title: $localize`Cut`, icon: '@tui.scissors', action: 'cut' },
+		{ title: $localize`Copy`, icon: '@tui.copy', action: 'copy' },
+		{ title: $localize`Paste`, icon: '@tui.clipboard', action: 'paste' },
 		{
-			title: 'Insert column left',
+			title: $localize`Insert row above`,
+			icon: '@tui.plus',
+			action: 'insertRowAbove',
+		},
+		{
+			title: $localize`Insert column left`,
 			icon: '@tui.plus',
 			action: 'insertColumnLeft',
 		},
 		{
-			title: 'Insert cell',
+			title: $localize`Insert cell`,
 			icon: '@tui.plus',
 			children: [
 				{
-					title: 'and shift down',
+					title: $localize`and shift down`,
 					icon: '@tui.arrow-down',
 					action: 'insertCellDown',
 				},
 				{
-					title: 'and shift right',
+					title: $localize`and shift right`,
 					icon: '@tui.arrow-right',
 					action: 'insertCellRight',
 				},
 			],
 		},
 
-		{ title: 'Delete row', icon: '@tui.trash-2', action: 'deleteRow' },
-		{ title: 'Delete column', icon: '@tui.trash-2', action: 'deleteColumn' },
+		{ title: $localize`Delete row`, icon: '@tui.trash-2', action: 'deleteRow' },
+		{
+			title: $localize`Delete column`,
+			icon: '@tui.trash-2',
+			action: 'deleteColumn',
+		},
 
 		{
-			title: 'Delete cell',
+			title: $localize`Delete cell`,
 			icon: '@tui.trash-2',
 			children: [
-				{ title: 'and shift up', icon: '@tui.arrow-up', action: 'deleteCellUp' },
 				{
-					title: 'and shift left',
+					title: $localize`and shift up`,
+					icon: '@tui.arrow-up',
+					action: 'deleteCellUp',
+				},
+				{
+					title: $localize`and shift left`,
 					icon: '@tui.arrow-left',
 					action: 'deleteCellLeft',
 				},

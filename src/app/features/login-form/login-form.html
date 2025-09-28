@@ -1,9 +1,9 @@
 <div class="container">
 	<tui-loader size="l" [overlay]="true" [showLoader]="isGlobalLoading()">
 		<form [formGroup]="form" (ngSubmit)="submit()" class="form">
-			<h2 tuiTitle="m" class="h">Sign in</h2>
+			<h2 tuiTitle="m" class="h" i18n>Sign in</h2>
 			<app-divider></app-divider>
-			<p class="p">with provider</p>
+			<p class="p" i18n>with provider</p>
 			<div class="row gap-4">
 				<button
 					type="button"
@@ -12,6 +12,7 @@
 					class="btn"
 					appearance="secondary-grayscale"
 					(click)="signinWithProvider('google')"
+					i18n
 				>
 					<img
 						src="assets/img/google.svg"
@@ -27,13 +28,14 @@
 					class="btn"
 					appearance="secondary-grayscale"
 					(click)="signinWithProvider('github')"
+					i18n
 				>
 					<tui-icon icon="github" [style.height.rem]="1.5" />
 					Github
 				</button>
 			</div>
 			<app-divider></app-divider>
-			<p class="p">using credentials</p>
+			<p class="p" i18n>using credentials</p>
 			<div>
 				<tui-textfield>
 					<label tuiLabel htmlFor="email" i18n>Email </label>
@@ -42,6 +44,7 @@
 						formControlName="email"
 						id="email"
 						type="email"
+						i18n-placeholder
 						placeholder="type email here..."
 					/>
 					<tui-icon icon="@tui.mail" class="no-events" />
@@ -56,6 +59,7 @@
 						formControlName="password"
 						id="password"
 						type="password"
+						i18n-placeholder
 						placeholder="type password here..."
 					/>
 					<tui-icon tuiPassword />
@@ -81,8 +85,8 @@
 				<tui-error [error]="loadingErrorMessage()" class="error" />
 			</div>
 			<div class="row">
-				<span i18n> Don't have an account? </span>
-				<a tuiLink routerLink="/register" i18n> Register </a>
+				<span i18n i18n> Don't have an account? </span>
+				<a tuiLink routerLink="/register" i18n i18n> Register </a>
 			</div>
 		</form>
 	</tui-loader>

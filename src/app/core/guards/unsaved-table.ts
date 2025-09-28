@@ -10,10 +10,9 @@ export const unsavedTableGuard: CanDeactivateFn<Editor> = () => {
 	if (ss.isDataSaved) return of(true);
 	const dialogService = inject(ConfirmDialogService);
 	return dialogService.confirm({
-		title: 'Navigation Confirm',
-		message:
-			'You are leaving the editor, but the current table is not saved. Do you wish to continue?',
-		cancelText: 'No',
-		okText: 'Yes',
+		title: $localize`Navigation Confirm`,
+		message: $localize`You are leaving the editor, but the current table is not saved. Do you wish to continue?`,
+		cancelText: $localize`No`,
+		okText: $localize`Yes`,
 	});
 };
