@@ -2,6 +2,7 @@ import { Injectable, signal } from '@angular/core';
 import * as O from 'fp-ts/Option';
 import { flow, pipe } from 'fp-ts/function';
 import {
+	CellValueDetailedType,
 	HyperFormula,
 	type CellValue,
 	type RawCellContent,
@@ -57,7 +58,6 @@ export class SheetsService {
 				this.doc = { id: docId, name: docName, sheets: hf };
 				this.isDataSaved = false;
 				this.userInput = this.getParsedCellFormulaOrValue(0, 0);
-				console.log('sheet data is ready');
 				return O.of(undefined);
 			}),
 		);
@@ -187,7 +187,8 @@ export class SheetsService {
 		return this.parseCellValue(this.getCellValue(y, x));
 	}
 	getParsedCellFormulaOrValue(y: number, x: number) {
-		return this.parseCellValue(this.getMaybeCellFormulaOrValue(y, x));
+		const cv = this.getMaybeCellFormulaOrValue(y, x);
+		return this.parseCellValue(cv ? this.getFormattedCellStr(y, x, cv) : cv);
 	}
 	setParsedCellValue(y: number, x: number, input: string) {
 		this.setCellContent(y, x, this.parseUserInput(input));
@@ -227,6 +228,34 @@ export class SheetsService {
 	getColumnLetter(x: number) {
 		return createColumnName(x);
 	}
+	getFormattedCellStr(y: number, x: number, v: CellValue) {
+		const t = this.doc?.sheets.getCellValueDetailedType({
+			col: x,
+			row: y,
+			sheet: this.sheetId,
+		});
+		if (v) {
+			if (
+				t === CellValueDetailedType.NUMBER_DATE ||
+				t === CellValueDetailedType.NUMBER_DATETIME ||
+				t === CellValueDetailedType.NUMBER_TIME
+			) {
+				const date = this.doc?.sheets.numberToDate(+v);
+				if (date) {
+					return new Date(
+						'year' in date ? date.year : 0,
+						'month' in date ? date.month - 1 : 0,
+						'day' in date ? date.day : 0,
+						'hours' in date ? date.hours : 0,
+						'minutes' in date ? date.minutes : 0,
+						'seconds' in date ? date.seconds : 0,
+					).toLocaleDateString();
+				}
+			}
+		}
+		return v;
+	}
+
 	setCellContent(y: number, x: number, v: RawCellContent | RawCellContent[][]) {
 		this.doc?.sheets?.setCellContents({ col: x, row: y, sheet: this.sheetId }, v);
 		this.isDataSaved = false;

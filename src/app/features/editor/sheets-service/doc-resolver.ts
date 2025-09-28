@@ -45,10 +45,14 @@ export const docResolver: ResolveFn<void> = (route: ActivatedRouteSnapshot) => {
 					(e) => ss.loadingErrorMessage.set(e.message),
 					(d) => {
 						if (d) {
-							const sheets: Record<string, RawCellContent[][]> = JSON.parse(d.data);
+							const sheets: Record<string, RawCellContent[][]> = JSON.parse(
+								d.data,
+								(_, v) =>
+									typeof v === 'string' && /^\d{4}-\d{2}-\d{2}T/.test(v) ?
+										new Date(v)
+									:	v,
+							);
 							const dsid = sheetId ? +sheetId : null;
-							console.log('init doc from resolver');
-
 							ss.initDoc(docId, d.name, dsid ?? 0, sheets);
 						} else {
 							throw new Error(

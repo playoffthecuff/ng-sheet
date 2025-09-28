@@ -69,8 +69,6 @@ export class FirestoreService {
 		);
 	}
 	getTemplates() {
-		console.log('GET TEMPLATES');
-
 		return this.as.user$.pipe(
 			withUser((u) => {
 				const ref = collection(this.fs, `users/${u.uid}/tables`);
@@ -163,8 +161,6 @@ export class FirestoreService {
 		);
 	}
 	patchDoc(p: { id: string; sheets?: HyperFormula; name?: string }) {
-		console.log('patch doc with', p.id, p.name);
-
 		return this.as.user$.pipe(
 			withUser((u) => {
 				const payload: Partial<StoredTable> = {};

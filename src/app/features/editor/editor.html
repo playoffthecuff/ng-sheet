@@ -100,7 +100,7 @@
 											[value]="
 												ss.editingCell.x === j && ss.editingCell.y === i ?
 													ss.userInput
-												:	cell
+												:	ss.getFormattedCellStr(i, j, cell)
 											"
 											[appSetFocus]="ss.editingCell.x === j && ss.editingCell.y === i"
 											[appBlur]="ss.editingCell.x !== j || ss.editingCell.y !== i"
