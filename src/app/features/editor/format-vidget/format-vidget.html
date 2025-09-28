@@ -1,9 +1,9 @@
 <div class="container">
 	<div class="container__group" tuiItemGroup>
-		@let items = formatVidgetService.buttonsOptions();
+		@let items = baseIconsService.buttonsOptions();
 		@for (item of items; track $index) {
 			<button
-				(click)="formatVidgetService.onAction(item.action)"
+				(click)="baseIconsService.onAction(item.action)"
 				[appearance]="item.checked ? 'primary' : 'flat'"
 				[tuiHint]="item.hint"
 				tuiHintAppearance="dark"
@@ -16,6 +16,17 @@
 			</button>
 		}
 
-		<app-color-text />
+		<app-color-picker
+			(colorChange)="menuIconsService.updateColorPicker($event)"
+			[data]="{ icon: '@tui.baseline', hint: 'Цвет текста', context: 'text' }"
+		/>
+		<app-color-picker
+			(colorChange)="menuIconsService.updateColorPicker($event)"
+			[data]="{
+				icon: '@tui.paint-bucket',
+				hint: 'Цвет заливки',
+				context: 'field',
+			}"
+		/>
 	</div>
 </div>

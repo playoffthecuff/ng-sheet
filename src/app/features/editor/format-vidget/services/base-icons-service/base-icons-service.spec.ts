@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { FormatVidgetService } from './format-vidget-service';
+import { BaseIconsService } from './base-icons-service';
 
 describe('FormatVidgetService', () => {
-	let service: FormatVidgetService;
+	let service: BaseIconsService;
 
 	beforeEach(() => {
 		TestBed.configureTestingModule({});
-		service = TestBed.inject(FormatVidgetService);
+		service = TestBed.inject(BaseIconsService);
 	});
 
 	it('should be created', () => {

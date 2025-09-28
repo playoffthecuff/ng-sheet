@@ -1,0 +1,33 @@
+<button
+	class="button"
+	tuiIconButton
+	size="s"
+	[tuiHint]="data()?.hint"
+	tuiHintAppearance="dark"
+	[appearance]="'flat'"
+	tuiDropdownOpen
+	type="button"
+	[tuiDropdown]="content"
+>
+	<tui-icon [icon]="data()?.icon ?? ''" />
+</button>
+<ng-template #content>
+	<div class="colors-blok">
+		@for (items of colors; track items) {
+			<div class="colors-blok__line">
+				@for (item of items; track item) {
+					<button
+						(click)="updateColor(item)"
+						[ngStyle]="{ backgroundColor: item }"
+						class="colors-blok__button"
+					>
+						<div
+							[ngStyle]="{ backgroundColor: item }"
+							class="colors-blok__button-color"
+						></div>
+					</button>
+				}
+			</div>
+		}
+	</div>
+</ng-template>

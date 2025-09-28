@@ -1,5 +1,5 @@
 import { inject, Injectable, signal, type WritableSignal } from '@angular/core';
-import { SheetsService } from '../../sheets-service/sheets-service';
+import { SheetsService } from '../../../sheets-service/sheets-service';
 
 export const buttonsActions = {
 	cancel: 'Отменить (Ctrl+Z)',
@@ -23,7 +23,7 @@ export interface IbuttonsOption {
 }
 
 @Injectable()
-export class FormatVidgetService {
+export class BaseIconsService {
 	public k: SheetsService = inject(SheetsService);
 
 	public buttonsOptions: WritableSignal<IbuttonsOption[]> = signal<

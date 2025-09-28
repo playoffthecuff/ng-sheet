@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ColorText } from './color-text';
+import { ColorPicker } from './color-picker';
 
 describe('ColorText', () => {
-	let component: ColorText;
-	let fixture: ComponentFixture<ColorText>;
+	let component: ColorPicker;
+	let fixture: ComponentFixture<ColorPicker>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			imports: [ColorText],
+			imports: [ColorPicker],
 		}).compileComponents();
 
-		fixture = TestBed.createComponent(ColorText);
+		fixture = TestBed.createComponent(ColorPicker);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});
