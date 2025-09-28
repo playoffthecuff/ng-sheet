@@ -7,6 +7,6 @@ export const CUSTOM_ICON_RESOLVER_PROVIDER: Provider = {
 	deps: [[new SkipSelf(), TUI_ICON_RESOLVER]],
 	useFactory(defaultResolver: TuiStringHandler<string>) {
 		return (name: string) =>
-			name.startsWith('@tui.') ? defaultResolver(name) : `/assets/img/${name}.svg`;
+			name.startsWith('@tui.') ? defaultResolver(name) : `assets/img/${name}.svg`;
 	},
 };

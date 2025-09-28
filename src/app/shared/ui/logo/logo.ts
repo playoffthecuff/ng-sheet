@@ -8,7 +8,7 @@ import { TuiIcon, tuiIconResolverProvider } from '@taiga-ui/core';
 	changeDetection: ChangeDetectionStrategy.OnPush,
 	providers: [
 		tuiIconResolverProvider((icon) =>
-			icon.includes('/') ? icon : `/assets/icons/${icon}.svg`,
+			icon.includes('/') ? icon : `assets/icons/${icon}.svg`,
 		),
 	],
 })

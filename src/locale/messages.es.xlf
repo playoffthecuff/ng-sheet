@@ -892,6 +892,14 @@
           <context context-type="linenumber">94,99</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="4667857632648160844" datatype="html">
+        <source> Any statutory limitations or exceptions to copyright remain unaffected. </source>
+        <target>Las limitaciones o excepciones legales a los derechos de autor no se verán afectadas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/terms-of-use/terms-of-use.html</context>
+          <context context-type="linenumber">101,103</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="706966114035789685" datatype="html">
         <source>Any statutory limitations or exceptions to copyright remain unaffected.</source>
         <target>Las limitaciones o excepciones legales a los derechos de autor no se verán afectadas.</target>

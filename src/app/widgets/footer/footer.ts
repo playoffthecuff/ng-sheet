@@ -14,7 +14,7 @@ import { TUI_ICON_RESOLVER } from '@taiga-ui/core';
 				return (name: string) =>
 					name.startsWith('@tui.') ?
 						defaultResolver(name)
-					:	`/assets/img/${name}.svg`;
+					:	`assets/img/${name}.svg`;
 			},
 		},
 	],

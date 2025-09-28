@@ -1,5 +1,6 @@
-[images]
-  remote_images = ["https://my-images.com/.*", "https://animals.more-images.com/[bcr]at/.*"]
+[build]
+  command = "ng build --configuration production"
+  publish = "dist/ng-sheet/browser"
 
 [[redirects]]
   from = "/en/*"
