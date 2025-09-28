@@ -1,4 +1,6 @@
 import type { Routes } from '@angular/router';
+import { authGuard } from './core/guards/auth';
+import { unsavedTableGuard } from './core/guards/unsaved-table';
 import { docResolver } from './features/editor/sheets-service/doc-resolver';
 
 export const routes: Routes = [
@@ -23,12 +25,16 @@ export const routes: Routes = [
 		path: 'editor/:docId',
 		loadComponent: () => import('./features/editor/editor').then((m) => m.Editor),
 		resolve: { doc: docResolver },
+		canActivate: [authGuard],
+		canDeactivate: [unsavedTableGuard],
 	},
 	{
 		title: 'Editor - Ng Sheet',
 		path: 'editor/:docId/:sheetId',
 		loadComponent: () => import('./features/editor/editor').then((m) => m.Editor),
 		resolve: { doc: docResolver },
+		canActivate: [authGuard],
+		canDeactivate: [unsavedTableGuard],
 	},
 	{
 		title: 'Terms Of Use - Ng Sheet',

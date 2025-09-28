@@ -1,4 +1,5 @@
 import { inject, Injectable } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import {
 	Auth,
 	createUserWithEmailAndPassword,
@@ -19,6 +20,7 @@ export type AuthProvider = 'github' | 'google';
 export class AuthService {
 	private readonly fa = inject(Auth);
 	user$ = user(this.fa);
+	userSignal = toSignal(this.user$);
 	private readonly fs = inject(Firestore);
 
 	register(email: string, name: string, password: string) {
