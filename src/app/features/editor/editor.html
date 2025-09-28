@@ -60,6 +60,9 @@
 							@for (cell of row; let j = $index; track $index) {
 								<td
 									tuiTd
+									tuiDropdownContext
+									#dropdown="tuiDropdown"
+									[tuiDropdown]="contextMenu"
 									class="td"
 									[class.highlighted-td]="
 										ss.isCellRowInSelectedRange(i) && ss.isCellColInSelectedRange(j)
@@ -86,7 +89,7 @@
 									}"
 									(mousedown)="handleMouseDown(i, j, $event)"
 									(mouseenter)="handleMouseEnter(i, j)"
-									(mouseup)="handleMouseUp()"
+									(mouseup)="handleMouseUp($event)"
 								>
 									<tui-input-inline
 										[class.no-events]="false"
@@ -110,6 +113,9 @@
 											(keydown.enter)="handleEnter(i, j, $event)"
 										/>
 									</tui-input-inline>
+									<ng-template #contextMenu let-close>
+										<app-context-menu [data]="{ i, j }" [close]="close" />
+									</ng-template>
 								</td>
 							}
 						</tr>

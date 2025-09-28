@@ -14,6 +14,7 @@ import { LayoutService } from '../../core/services/layout/layout-service';
 import { BlurDirective } from '../../shared/directives/blur/blur-directive';
 import { ScrollIntoViewDirective } from '../../shared/directives/scroll-into-view/scroll-into-view-directive';
 import { SetFocusDirective } from '../../shared/directives/set-focus/set-focus-directive';
+import { ContextMenu } from './cell-context-menu/context-menu';
 import { KeyboardService } from './keyboard-service/keyboard-service';
 import { SheetsService } from './sheets-service/sheets-service';
 
@@ -31,6 +32,7 @@ import { SheetsService } from './sheets-service/sheets-service';
 		BlurDirective,
 		ScrollIntoViewDirective,
 		TuiLoader,
+		ContextMenu,
 	],
 	templateUrl: './editor.html',
 	styleUrl: './editor.less',
@@ -138,6 +140,7 @@ export class Editor {
 		this.ss.editingCell.y = this.ss.focusedCell.y;
 	}
 	protected handleMouseDown(y: number, x: number, e: MouseEvent) {
+		if (e.button !== 0) return;
 		this.isSelectingFlag = true;
 		if (this.firstTypedSign) {
 			this.ss.setParsedCellValue(
@@ -179,7 +182,8 @@ export class Editor {
 		this.ss.selectedCells.end.x = x;
 		this.ss.selectedCells.end.y = y;
 	}
-	protected handleMouseUp() {
+	protected handleMouseUp(e: MouseEvent) {
+		if (e.button !== 0) return;
 		this.isSelectingFlag = false;
 	}
 
