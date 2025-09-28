@@ -52,11 +52,12 @@ export class SheetsService {
 			() =>
 				O.fromNullable(HyperFormula.buildFromSheets(sheets, HYPER_FORMULA.OPTIONS)),
 			O.tap((hf) => {
-				this.doc = { id: docId, name: docName, sheets: hf };
 				this.docName.set(docName);
 				this.sheetId = sheetId;
+				this.doc = { id: docId, name: docName, sheets: hf };
 				this.isDataSaved = false;
 				this.userInput = this.getParsedCellFormulaOrValue(0, 0);
+				console.log('sheet data is ready');
 				return O.of(undefined);
 			}),
 		);
@@ -173,7 +174,7 @@ export class SheetsService {
 		return this.doc?.sheets.getCellValue({ col: x, row: y, sheet: this.sheetId });
 	}
 	getCellFormula(y: number, x: number) {
-		return this.doc?.sheets.getCellFormula({
+		return this.doc?.sheets?.getCellFormula({
 			col: x,
 			row: y,
 			sheet: this.sheetId,
@@ -192,17 +193,24 @@ export class SheetsService {
 		this.setCellContent(y, x, this.parseUserInput(input));
 	}
 	getSheetId(name: string) {
-		return this.doc?.sheets.getSheetId(name);
+		return this.doc?.sheets?.getSheetId(name);
 	}
 	getCellAddress(strAddress: string) {
-		return this.doc?.sheets.simpleCellAddressFromString(strAddress, this.sheetId);
+		return this.doc?.sheets?.simpleCellAddressFromString(
+			strAddress,
+			this.sheetId,
+		);
 	}
 	getStrCellAddress(y: number, x: number) {
-		return this.doc?.sheets.simpleCellAddressToString({
-			col: x,
-			row: y,
-			sheet: this.sheetId,
-		});
+		try {
+			return this.doc?.sheets?.simpleCellAddressToString({
+				col: x,
+				row: y,
+				sheet: this.sheetId,
+			});
+		} catch {
+			return undefined;
+		}
 	}
 	getStrFocusedCellAddress() {
 		return this.getStrCellAddress(this.focusedCell.y, this.focusedCell.x);
@@ -220,7 +228,7 @@ export class SheetsService {
 		return createColumnName(x);
 	}
 	setCellContent(y: number, x: number, v: RawCellContent | RawCellContent[][]) {
-		this.doc?.sheets.setCellContents({ col: x, row: y, sheet: this.sheetId }, v);
+		this.doc?.sheets?.setCellContents({ col: x, row: y, sheet: this.sheetId }, v);
 		this.isDataSaved = false;
 	}
 	copyToClipboard() {
@@ -236,7 +244,7 @@ export class SheetsService {
 		};
 		this.copiedCells.end = end;
 		this.copiedCells.start = start;
-		navigator.clipboard.writeText(String(this.doc?.sheets.copy({ end, start })));
+		navigator.clipboard.writeText(String(this.doc?.sheets?.copy({ end, start })));
 	}
 	cutToClipboard() {
 		const start = {
@@ -251,10 +259,10 @@ export class SheetsService {
 		};
 		this.copiedCells.end = end;
 		this.copiedCells.start = start;
-		navigator.clipboard.writeText(String(this.doc?.sheets.cut({ end, start })));
+		navigator.clipboard.writeText(String(this.doc?.sheets?.cut({ end, start })));
 	}
 	pasteFromClipboard() {
-		this.doc?.sheets.paste({
+		this.doc?.sheets?.paste({
 			col: this.focusedCell.x,
 			row: this.focusedCell.y,
 			sheet: this.sheetId,
@@ -277,19 +285,31 @@ export class SheetsService {
 		return [...Array(this.sheetWidth).keys()].map((v) => createColumnName(v));
 	}
 	get sheetValues() {
-		return this.doc?.sheets.getSheetValues(this.sheetId);
+		try {
+			return this.doc?.sheets?.getSheetValues(this.sheetId);
+		} catch {
+			return undefined;
+		}
 	}
 	get sheetNames() {
-		return this.doc?.sheets.getSheetNames();
+		try {
+			return this.doc?.sheets?.getSheetNames();
+		} catch {
+			return undefined;
+		}
 	}
 	get sheetIds() {
 		return this.sheetNames?.map(this.getSheetId);
 	}
 	get sheetName() {
-		return this.doc?.sheets.getSheetName(this.sheetId);
+		return this.doc?.sheets?.getSheetName(this.sheetId);
 	}
 	get sheetDimensions() {
-		return this.doc?.sheets.getSheetDimensions(this.sheetId);
+		try {
+			return this.doc?.sheets?.getSheetDimensions(this.sheetId);
+		} catch {
+			return undefined;
+		}
 	}
 	get sheetHeight() {
 		return this.sheetDimensions?.height ?? 0;
@@ -338,15 +358,15 @@ export class SheetsService {
 	}
 
 	removeRows(startIndex: number, count: number) {
-		this.doc?.sheets.removeRows(this.sheetId, [startIndex, count]);
+		this.doc?.sheets?.removeRows(this.sheetId, [startIndex, count]);
 	}
 	removeColumns(startIndex: number, count: number) {
-		this.doc?.sheets.removeColumns(this.sheetId, [startIndex, count]);
+		this.doc?.sheets?.removeColumns(this.sheetId, [startIndex, count]);
 	}
 	addEmptyRows(startIndex: number, count: number) {
-		this.doc?.sheets.batch(() => {
-			this.doc?.sheets.addRows(this.sheetId, [startIndex, count]);
-			this.doc?.sheets.setCellContents(
+		this.doc?.sheets?.batch(() => {
+			this.doc?.sheets?.addRows(this.sheetId, [startIndex, count]);
+			this.doc?.sheets?.setCellContents(
 				{ col: 0, row: startIndex, sheet: this.sheetId },
 				[...Array(count).keys()].map(() =>
 					[...Array(this.sheetWidth).keys()].map(() => ''),
@@ -355,9 +375,9 @@ export class SheetsService {
 		});
 	}
 	addEmptyColumns(startIndex: number, count: number) {
-		this.doc?.sheets.batch(() => {
-			this.doc?.sheets.addColumns(this.sheetId, [startIndex, count]);
-			this.doc?.sheets.setCellContents(
+		this.doc?.sheets?.batch(() => {
+			this.doc?.sheets?.addColumns(this.sheetId, [startIndex, count]);
+			this.doc?.sheets?.setCellContents(
 				{ col: startIndex, row: 0, sheet: this.sheetId },
 				[...Array(this.sheetWidth).keys()].map(() =>
 					[...Array(count).keys()].map(() => ''),
@@ -369,9 +389,9 @@ export class SheetsService {
 		if (displacementDirection === 'bottom') {
 			const end = this.getCellValue(this.sheetHeight - 1, x);
 			if (end === '' || end === null || end === undefined) {
-				this.doc?.sheets.batch(() => {
+				this.doc?.sheets?.batch(() => {
 					this.setCellContent(this.sheetHeight - 1, x, null);
-					this.doc?.sheets.moveCells(
+					this.doc?.sheets?.moveCells(
 						{
 							start: { col: x, row: y, sheet: this.sheetId },
 							end: { col: x, row: this.sheetHeight - 2, sheet: this.sheetId },
@@ -388,9 +408,9 @@ export class SheetsService {
 		if (displacementDirection === 'right') {
 			const end = this.getCellValue(y, this.sheetWidth - 1);
 			if (end === '' || end === null || end === undefined) {
-				this.doc?.sheets.batch(() => {
+				this.doc?.sheets?.batch(() => {
 					this.setCellContent(y, this.sheetWidth - 1, null);
-					this.doc?.sheets.moveCells(
+					this.doc?.sheets?.moveCells(
 						{
 							start: { col: x, row: y, sheet: this.sheetId },
 							end: { col: this.sheetWidth - 2, row: y, sheet: this.sheetId },
@@ -407,8 +427,8 @@ export class SheetsService {
 	}
 	removeCell(y: number, x: number, displacementDirection: 'up' | 'left') {
 		if (displacementDirection === 'up') {
-			this.doc?.sheets.batch(() => {
-				this.doc?.sheets.moveCells(
+			this.doc?.sheets?.batch(() => {
+				this.doc?.sheets?.moveCells(
 					{
 						start: { col: x, row: y + 1, sheet: this.sheetId },
 						end: { col: x, row: this.sheetHeight - 1, sheet: this.sheetId },
@@ -419,8 +439,8 @@ export class SheetsService {
 			});
 		}
 		if (displacementDirection === 'left') {
-			this.doc?.sheets.batch(() => {
-				this.doc?.sheets.moveCells(
+			this.doc?.sheets?.batch(() => {
+				this.doc?.sheets?.moveCells(
 					{
 						start: { col: x + 1, row: y, sheet: this.sheetId },
 						end: { col: this.sheetWidth - 1, row: y, sheet: this.sheetId },

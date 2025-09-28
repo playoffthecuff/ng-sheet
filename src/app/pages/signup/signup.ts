@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { RegisterForm } from '../../features/register-form/register-form';
 import { LayoutService } from '../../core/services/layout/layout-service';
+import { RegisterForm } from '../../features/register-form/register-form';
 
 @Component({
 	selector: 'app-signup',
@@ -11,6 +11,7 @@ import { LayoutService } from '../../core/services/layout/layout-service';
 export class Signup {
 	private readonly ls = inject(LayoutService);
 	constructor() {
-		this.ls.headerVariant = 'search';
+		this.ls.headerVariant = 'default';
+		this.ls.footerVariant = 'about';
 	}
 }

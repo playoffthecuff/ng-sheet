@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
-import { LoginForm } from '../../features/login-form/login-form';
 import { LayoutService } from '../../core/services/layout/layout-service';
+import { LoginForm } from '../../features/login-form/login-form';
 
 @Component({
 	selector: 'app-signin',
@@ -11,6 +11,7 @@ import { LayoutService } from '../../core/services/layout/layout-service';
 export class Signin {
 	private readonly ls = inject(LayoutService);
 	constructor() {
-		this.ls.headerVariant = 'search';
+		this.ls.headerVariant = 'default';
+		this.ls.footerVariant = 'about';
 	}
 }

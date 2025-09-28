@@ -1,9 +1,11 @@
 import {
+	ChangeDetectorRef,
 	Component,
 	ElementRef,
 	HostListener,
 	inject,
 	ViewChild,
+	type AfterViewInit,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
@@ -21,11 +23,12 @@ import { SheetsService } from '../sheets-service/sheets-service';
 	styleUrl: './cell-input.less',
 	providers: [CUSTOM_ICON_RESOLVER_PROVIDER],
 })
-export class CellInput {
+export class CellInput implements AfterViewInit {
 	@ViewChild('cellValue') cellValue: ElementRef | undefined;
 	@ViewChild('cellAddress') cellAddress: ElementRef | undefined;
 	protected readonly ss = inject(SheetsService);
 	private readonly alerts = inject(TuiAlertService);
+	private readonly cdr = inject(ChangeDetectorRef);
 
 	@HostListener('document:keydown', ['$event'])
 	handleDocumentKeydown(e: KeyboardEvent) {
@@ -44,6 +47,10 @@ export class CellInput {
 		if (addr) {
 			this.ss.setCellContent(addr.row, addr.col, this.ss.parseUserInput(value));
 		}
+	}
+	protected getAddressRange() {
+		queueMicrotask(() => this.cdr.detectChanges());
+		return this.ss.getStrAddressRange();
 	}
 	protected setFocusedCellValue(e: Event) {
 		const { value } = e.target as HTMLInputElement;
@@ -83,5 +90,8 @@ export class CellInput {
 			this.ss.focusedCell.x = mnx;
 			this.ss.focusedCell.y = mny;
 		}
+	}
+	ngAfterViewInit() {
+		this.cdr.detectChanges();
 	}
 }

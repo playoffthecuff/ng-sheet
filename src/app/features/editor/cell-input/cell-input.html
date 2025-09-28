@@ -9,7 +9,7 @@
 		placeholder="Enter cell here..."
 		tuiTextfield
 		class="input"
-		[value]="ss.getStrAddressRange()"
+		[value]="ss.getStrAddressRange() ?? null"
 		(keydown.enter)="setSelectedRange($event)"
 	/>
 </tui-textfield>

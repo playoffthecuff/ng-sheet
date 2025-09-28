@@ -47,6 +47,8 @@ export const docResolver: ResolveFn<void> = (route: ActivatedRouteSnapshot) => {
 						if (d) {
 							const sheets: Record<string, RawCellContent[][]> = JSON.parse(d.data);
 							const dsid = sheetId ? +sheetId : null;
+							console.log('init doc from resolver');
+
 							ss.initDoc(docId, d.name, dsid ?? 0, sheets);
 						} else {
 							throw new Error(

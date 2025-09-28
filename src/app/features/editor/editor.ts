@@ -6,8 +6,9 @@ import {
 	ViewChild,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 import { TuiTable } from '@taiga-ui/addon-table';
-import { TuiDataList, TuiDropdown, TuiHint } from '@taiga-ui/core';
+import { TuiDataList, TuiDropdown, TuiHint, TuiLoader } from '@taiga-ui/core';
 import { TuiInputInline, TuiTabs } from '@taiga-ui/kit';
 import { LayoutService } from '../../core/services/layout/layout-service';
 import { BlurDirective } from '../../shared/directives/blur/blur-directive';
@@ -29,18 +30,24 @@ import { SheetsService } from './sheets-service/sheets-service';
 		FormsModule,
 		BlurDirective,
 		ScrollIntoViewDirective,
+		TuiLoader,
 	],
 	templateUrl: './editor.html',
 	styleUrl: './editor.less',
 })
 export class Editor {
 	private readonly ls = inject(LayoutService);
-	constructor() {
-		this.ls.footerVariant = 'editor';
-		this.ls.headerVariant = 'editor';
-	}
+	private readonly ar = inject(ActivatedRoute);
 	protected readonly ss = inject(SheetsService);
 	private readonly ks = inject(KeyboardService);
+
+	constructor() {
+		const id = this.ar.snapshot.paramMap.get('docId');
+		if (this.ss.doc && this.ss.doc.id !== id) this.ss.doc.sheets.destroy();
+		if (this.ss) this.ls.footerVariant = 'editor';
+		this.ls.headerVariant = 'editor';
+	}
+
 	private cancelFlag = false;
 	private firstTypedSign = '';
 	private isSelectingFlag = false;

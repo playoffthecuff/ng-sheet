@@ -14,7 +14,8 @@ export class NotFound {
 	private readonly location = inject(Location);
 	private readonly ls = inject(LayoutService);
 	constructor() {
-		this.ls.headerVariant = 'search';
+		this.ls.headerVariant = 'default';
+		this.ls.footerVariant = 'about';
 	}
 	protected goBack() {
 		this.location.back();
