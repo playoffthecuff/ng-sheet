@@ -11,6 +11,7 @@ import { Footer } from './widgets/footer/footer';
 import { HeaderEditor } from './widgets/header/editor/header-editor/header-editor';
 import { Header } from './widgets/header/header';
 import { HeaderSearch } from './widgets/header/search/header-search/header-search';
+import { ProgressBar } from './shared/ui/progress-bar';
 
 @Component({
 	selector: 'app-root',
@@ -25,6 +26,7 @@ import { HeaderSearch } from './widgets/header/search/header-search/header-searc
 		HeaderEditor,
 		HeaderSearch,
 		Heading,
+		ProgressBar,
 	],
 	templateUrl: './app.html',
 	styleUrl: './app.less',
