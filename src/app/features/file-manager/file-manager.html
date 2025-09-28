@@ -15,18 +15,68 @@
 				table
 			</button>
 			@for (item of fms.templates(); track item.id) {
-				<button
-					tuiButton
-					tuiButtonVertical
-					iconStart="@tui.table"
-					size="xl"
-					appearance="floating"
-					(click)="openEditorWithTemplate(item.id)"
-					class="template-btn"
+				<tui-loader
+					[overlay]="true"
+					[showLoader]="fms.isTemplateLoading() && fms.templateLoadingId === item.id"
+					size="m"
 				>
-					from template <br />
-					"{{ item.name }}"
-				</button>
+					<button
+						tuiButton
+						tuiButtonVertical
+						iconStart="@tui.table"
+						size="xl"
+						appearance="floating"
+						(click)="openEditorWithTemplate(item.id)"
+						class="template-btn"
+					>
+						<button
+							tuiButtonClose
+							tuiIconButton
+							type="button"
+							size="s"
+							class="close-btn"
+							(click)="openRemoveTableDialog(delTmpl, $event)"
+						>
+							Close
+						</button>
+						from template <br />
+						"{{ item.name }}"
+					</button>
+				</tui-loader>
+				<ng-template #delTmpl let-observer>
+					<h2 tuiTitle="m">Delete?</h2>
+					<p class="warning">The template "{{ item.name }}" will be deleted.</p>
+
+					<div class="dialog-buttons">
+						<button
+							size="m"
+							tuiButton
+							type="button"
+							(click)="observer.complete()"
+							appearance="secondary-grayscale"
+						>
+							Cancel
+						</button>
+						<button
+							size="m"
+							tuiButton
+							type="button"
+							class="tui-space_right-3"
+							(click)="removeTemplate(item.id)"
+							appearance="primary-grayscale"
+						>
+							Confirm
+						</button>
+					</div>
+				</ng-template>
+			} @empty {
+				<div class="no-template-frame">
+					<tui-icon icon="@tui.file-x" class="tf-icon" />
+					<span class="t-text"
+						>Create a table and save it as a template so it will be available
+						here.</span
+					>
+				</div>
 			}
 		</div>
 	</div>

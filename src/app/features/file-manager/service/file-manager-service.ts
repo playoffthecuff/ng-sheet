@@ -27,6 +27,7 @@ export type TableSortKey = Exclude<TableMetadataKeys, 'id'>;
 export class FileManagerService {
 	private readonly fs = inject(FirestoreService);
 	isLoading = signal(false);
+	isTemplateLoading = signal(false);
 	loadingErrorMessage = signal<string | null>(null);
 	totalDocuments = signal<number | null>(null);
 	pageDocuments = signal<Table[] | null>(null);
@@ -38,6 +39,7 @@ export class FileManagerService {
 	searchBy = signal<TableSortKey>('name');
 	sortDirection = signal<TuiSortDirection>(1);
 	paginationDirection = signal<PaginationDirection | undefined>(undefined);
+	templateLoadingId: string | null = null;
 
 	constructor() {
 		effect(() => {
@@ -117,6 +119,24 @@ export class FileManagerService {
 					({ count, docs }) => {
 						this.pageDocuments.set(docs);
 						this.totalDocuments.set(count);
+					},
+				),
+			);
+	}
+	removeTemplate(id: string) {
+		this.fs
+			.deleteDoc(id)
+			.pipe(
+				switchMap(() => this.fs.getTemplates()),
+				withLoading(this.isTemplateLoading.set),
+				withEither(FirebaseError),
+			)
+			.subscribe(
+				E.match(
+					(e) => this.loadingErrorMessage.set(e.message),
+					(t) => {
+						if (t) this.templates.set(t);
+						this.templateLoadingId = null;
 					},
 				),
 			);

@@ -21,7 +21,7 @@ import {
 	TuiTitle,
 	type TuiDialogContext,
 } from '@taiga-ui/core';
-import { TuiInputInline, TuiInputNumber } from '@taiga-ui/kit';
+import { TuiButtonClose, TuiInputInline, TuiInputNumber } from '@taiga-ui/kit';
 import { type PolymorpheusContent } from '@taiga-ui/polymorpheus';
 import type { Subscription } from 'rxjs';
 import { BlurDirective } from '../../shared/directives/blur/blur-directive';
@@ -52,6 +52,7 @@ import {
 		BlurDirective,
 		SetFocusDirective,
 		TuiTitle,
+		TuiButtonClose,
 	],
 	templateUrl: './file-manager.html',
 	styleUrl: './file-manager.less',
@@ -112,6 +113,11 @@ export class FileManager {
 	protected openTable(id: string) {
 		this.r.navigate(['editor', id]);
 	}
+	protected removeTemplate(id: string) {
+		this.fms.templateLoadingId = id;
+		this.fms.removeTemplate(id);
+		this.closeRemoveTableDialog();
+	}
 	protected removeTable(id: string) {
 		this.fms.removeTable(id);
 		this.closeRemoveTableDialog();
@@ -121,7 +127,9 @@ export class FileManager {
 	}
 	protected openRemoveTableDialog(
 		content: PolymorpheusContent<TuiDialogContext>,
+		e?: PointerEvent,
 	) {
+		e?.stopPropagation();
 		this.dialogSubscription = this.dialogs.open(content).subscribe();
 	}
 	protected closeRemoveTableDialog() {
