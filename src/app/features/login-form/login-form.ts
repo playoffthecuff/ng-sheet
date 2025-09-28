@@ -19,7 +19,7 @@ import { FirebaseError } from '@angular/fire/app';
 import type { User } from '@angular/fire/auth';
 import { TuiProgress } from '@taiga-ui/kit';
 import * as E from 'fp-ts/Either';
-import type { Observable } from 'rxjs';
+import { type Observable } from 'rxjs';
 import {
 	AuthService,
 	type AuthProvider,
@@ -33,6 +33,7 @@ import { calcPasswordStrength } from '../../shared/utils/calc-password-strength'
 import { getControlErrorMessage } from '../../shared/utils/get-control-error-message';
 import { withEither } from '../../shared/utils/with-either';
 import { withLoading } from '../../shared/utils/with-loading';
+import { FileManagerService } from '../file-manager/service/file-manager-service';
 
 @Component({
 	selector: 'app-login-form',
@@ -63,6 +64,7 @@ export class LoginForm {
 	private readonly fb = inject(FormBuilder);
 	private readonly as = inject(AuthService);
 	private readonly r = inject(Router);
+	private readonly fms = inject(FileManagerService);
 
 	protected readonly isLoading = signal(false);
 	protected readonly isGlobalLoading = signal(false);
@@ -92,7 +94,11 @@ export class LoginForm {
 		).subscribe(
 			E.match(
 				(e) => this.loadingErrorMessage.set(e.message),
-				() => void this.r.navigateByUrl('/'),
+				() => {
+					this.fms.loadPage();
+					this.fms.loadTemplates();
+					void this.r.navigateByUrl('/');
+				},
 			),
 		);
 	}
