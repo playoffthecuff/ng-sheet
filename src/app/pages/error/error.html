@@ -4,19 +4,23 @@
 		<article class="content">
 			<h1 tuiTitle="m" class="h">Oops. Something went wrong</h1>
 			<div class="actions-grid">
-				<span class="txt"> You can </span>
-				<button
-					appearance="action"
-					iconStart="@tui.undo"
-					size="m"
-					tuiButton
-					type="button"
-					(click)="goBack()"
-					class="btn"
-				>
-					Go Back
-				</button>
-				<span class="txt">or</span>
+				@if (this.canGoBack) {
+					<span class="txt"> You can </span>
+					<button
+						appearance="action"
+						iconStart="@tui.undo"
+						size="m"
+						tuiButton
+						type="button"
+						(click)="goBack()"
+						class="btn"
+					>
+						go back
+					</button>
+					<span class="txt">or</span>
+				} @else {
+					<span class="txt">You can</span>
+				}
 				<button
 					appearance="action"
 					routerLink="/"
@@ -26,7 +30,7 @@
 					type="button"
 					class="btn"
 				>
-					Start over
+					start over
 				</button>
 			</div>
 		</article>

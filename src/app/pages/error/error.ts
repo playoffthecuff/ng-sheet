@@ -17,6 +17,9 @@ export class Error {
 		this.ls.headerVariant = 'default';
 		this.ls.footerVariant = 'about';
 	}
+	protected get canGoBack() {
+		return history.length > 1;
+	}
 	protected goBack() {
 		this.location.back();
 	}
