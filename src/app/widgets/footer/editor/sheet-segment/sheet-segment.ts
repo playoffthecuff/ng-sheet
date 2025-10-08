@@ -12,7 +12,7 @@ import { Router, RouterLink } from '@angular/router';
 import { TuiButton, TuiDataList, TuiDropdown, TuiHint } from '@taiga-ui/core';
 import { TuiInputInline } from '@taiga-ui/kit';
 import * as A from 'fp-ts/Array';
-import { pipe } from 'fp-ts/lib/function';
+import { pipe } from 'fp-ts/function';
 import * as O from 'fp-ts/Option';
 import { SheetsService } from '../../../../features/editor/sheets-service/sheets-service';
 import { SetFocusDirective } from '../../../../shared/directives/set-focus/set-focus-directive';

@@ -26,10 +26,12 @@ import {
 import { of } from 'rxjs';
 import { environment } from '../environments/environment';
 import { routes } from './app.routes';
+import { formulas, FORMULAS } from './shared/constants/formulas';
 
 export const appConfig: ApplicationConfig = {
 	providers: [
 		// provideAnimations(),
+		{ provide: FORMULAS, useValue: formulas },
 		provideBrowserGlobalErrorListeners(),
 		provideZonelessChangeDetection(),
 		provideRouter(

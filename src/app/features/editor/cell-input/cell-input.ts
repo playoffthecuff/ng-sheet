@@ -1,34 +1,46 @@
 import {
-	ChangeDetectorRef,
 	Component,
 	ElementRef,
 	HostListener,
 	inject,
 	ViewChild,
-	type AfterViewInit,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
 	TuiAlertService,
+	TuiButton,
+	TuiDataList,
+	TuiDropdown,
 	TuiHintDirective,
+	TuiIcon,
 	TuiTextfield,
 } from '@taiga-ui/core';
+import { TuiChevron, TuiTooltip } from '@taiga-ui/kit';
 import { CUSTOM_ICON_RESOLVER_PROVIDER } from '../../../shared/providers/icon-resolver';
 import { SheetsService } from '../sheets-service/sheets-service';
 
 @Component({
 	selector: 'app-cell-input',
-	imports: [TuiTextfield, FormsModule, TuiHintDirective],
+	imports: [
+		TuiTextfield,
+		FormsModule,
+		TuiHintDirective,
+		TuiButton,
+		TuiChevron,
+		TuiDataList,
+		TuiDropdown,
+		TuiIcon,
+		TuiTooltip,
+	],
 	templateUrl: './cell-input.html',
 	styleUrl: './cell-input.less',
 	providers: [CUSTOM_ICON_RESOLVER_PROVIDER],
 })
-export class CellInput implements AfterViewInit {
+export class CellInput {
 	@ViewChild('cellValue') cellValue: ElementRef | undefined;
 	@ViewChild('cellAddress') cellAddress: ElementRef | undefined;
 	protected readonly ss = inject(SheetsService);
 	private readonly alerts = inject(TuiAlertService);
-	private readonly cdr = inject(ChangeDetectorRef);
 
 	@HostListener('document:keydown', ['$event'])
 	handleDocumentKeydown(e: KeyboardEvent) {
@@ -51,7 +63,6 @@ export class CellInput implements AfterViewInit {
 		}
 	}
 	protected getAddressRange() {
-		queueMicrotask(() => this.cdr.detectChanges());
 		return this.ss.getStrAddressRange();
 	}
 	protected setFocusedCellValue(e: Event) {
@@ -65,6 +76,7 @@ export class CellInput implements AfterViewInit {
 			this.ss.focusedCell.y = y + 1;
 		}
 		this.cellValue?.nativeElement.blur();
+		this.ss.manualUpdateTrigger.update((v) => !v);
 	}
 	protected setSelectedRange(e: Event) {
 		const { value } = e.target as HTMLInputElement;
@@ -96,7 +108,14 @@ export class CellInput implements AfterViewInit {
 			this.ss.focusedCell.y = mny;
 		}
 	}
-	ngAfterViewInit() {
-		this.cdr.detectChanges();
+	protected pasteFormulaToCellValueInput(v: string) {
+		const el = this.cellValue?.nativeElement;
+		const start = el?.selectionStart;
+		const end = el?.selectionEnd;
+		const newV = el.value.slice(0, start) + v + el.value.slice(end);
+		el.value = newV;
+		const newP = start + v.length;
+		el.selectionStart = el.selectionEnd = newP;
+		el?.focus();
 	}
 }

@@ -62,7 +62,11 @@
 									tuiTd
 									tuiDropdownContext
 									#dropdown="tuiDropdown"
-									[tuiDropdown]="contextMenu"
+									[tuiDropdown]="
+										ss.focusedCell.x === j && ss.focusedCell.y === i && !ss.isEditing ?
+											contextMenu
+										:	null
+									"
 									class="td"
 									[class.highlighted-td]="
 										ss.isCellRowInSelectedRange(i) && ss.isCellColInSelectedRange(j)
@@ -97,6 +101,13 @@
 										[class.pointer-events-all]="
 											ss.editingCell.x === j && ss.editingCell.y === i
 										"
+										[tuiDropdown]="
+											ss.editingCell.x === j && ss.editingCell.y === i ?
+												formulaContextMenu
+											:	null
+										"
+										tuiDropdownContext
+										[tuiDropdownOffset]="20"
 									>
 										<input
 											tabindex="-1"
@@ -115,6 +126,29 @@
 									</tui-input-inline>
 									<ng-template #contextMenu let-close>
 										<app-context-menu [data]="{ i, j }" [close]="close" />
+									</ng-template>
+									<ng-template #formulaContextMenu>
+										<tui-data-list
+											role="menu"
+											tuiDataListDropdownManager
+											class="formulas"
+										>
+											@for (item of ss.formulas; track $index) {
+												<button
+													tuiOption
+													new
+													type="button"
+													class="option"
+													(click)="pasteFormulaIntoInput(i, j, item.id)"
+												>
+													{{ item.id }}
+													<tui-icon
+														tuiHintDirection="right"
+														[tuiTooltip]="item.description"
+													/>
+												</button>
+											}
+										</tui-data-list>
 									</ng-template>
 								</td>
 							}

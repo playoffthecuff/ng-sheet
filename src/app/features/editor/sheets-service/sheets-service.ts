@@ -1,4 +1,4 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, signal } from '@angular/core';
 import * as O from 'fp-ts/Option';
 import { flow, pipe } from 'fp-ts/function';
 import {
@@ -9,6 +9,7 @@ import {
 	type SimpleCellAddress,
 	type SimpleCellRange,
 } from 'hyperformula';
+import { FORMULAS } from '../../../shared/constants/formulas';
 import { HYPER_FORMULA } from '../../../shared/constants/hyperformula';
 import { createColumnName } from '../../../shared/utils/create-column-name';
 import { emptySheetData, type Doc } from './doc-resolver';
@@ -24,12 +25,14 @@ interface Range {
 
 @Injectable({ providedIn: 'root' })
 export class SheetsService {
+	formulas = inject(FORMULAS);
 	doc: Doc | null = null;
 	docName = signal('');
 	sheetId = 0;
 	isDataSaved = false;
 	isLoading = signal(false);
 	loadingErrorMessage = signal<string | null>(null);
+	manualUpdateTrigger = signal(false);
 	readonly focusedCell: Cell = { x: 0, y: 0 };
 	readonly selectedCells: { start: Cell; end: Cell } = {
 		start: { x: -1, y: -1 },
@@ -234,28 +237,37 @@ export class SheetsService {
 			row: y,
 			sheet: this.sheetId,
 		});
-		if (v) {
-			if (
-				t === CellValueDetailedType.NUMBER_DATE ||
-				t === CellValueDetailedType.NUMBER_DATETIME ||
-				t === CellValueDetailedType.NUMBER_TIME
-			) {
-				const date = this.doc?.sheets.numberToDate(+v);
-				if (date) {
-					return new Date(
-						'year' in date ? date.year : 0,
-						'month' in date ? date.month - 1 : 0,
-						'day' in date ? date.day : 0,
-						'hours' in date ? date.hours : 0,
-						'minutes' in date ? date.minutes : 0,
-						'seconds' in date ? date.seconds : 0,
-					).toLocaleDateString();
-				}
-			}
+		if (typeof v === 'number') {
+			let date;
+			if (t === CellValueDetailedType.NUMBER_DATE)
+				date = this.doc?.sheets.numberToDate(v);
+			if (t === CellValueDetailedType.NUMBER_DATETIME)
+				date = this.doc?.sheets.numberToDateTime(v);
+			if (t === CellValueDetailedType.NUMBER_TIME)
+				date = this.doc?.sheets.numberToTime(v);
+			if (date)
+				return new Date(
+					'year' in date ? date.year : 0,
+					'month' in date ? date.month - 1 : 0,
+					'day' in date ? date.day : 0,
+					'hours' in date ? date.hours : 0,
+					'minutes' in date ? date.minutes : 0,
+					'seconds' in date ? date.seconds : 0,
+				).toLocaleDateString();
 		}
 		return v;
 	}
-
+	getFormattedCellOrFormulaStr(y: number, x: number, v: CellValue) {
+		return (
+				this.doc?.sheets.doesCellHaveSimpleValue({
+					col: x,
+					row: y,
+					sheet: this.sheetId,
+				})
+			) ?
+				this.getFormattedCellStr(y, x, v)
+			:	v;
+	}
 	setCellContent(y: number, x: number, v: RawCellContent | RawCellContent[][]) {
 		this.doc?.sheets?.setCellContents({ col: x, row: y, sheet: this.sheetId }, v);
 		this.isDataSaved = false;

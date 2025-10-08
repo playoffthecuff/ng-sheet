@@ -154,6 +154,14 @@
           <context context-type="linenumber">21,22</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="6865957579299802925" datatype="html">
+        <source> Formulas </source>
+        <target> Fórmulas </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/cell-input/cell-input.html</context>
+          <context context-type="linenumber">39,41</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="7529729617455240569" datatype="html">
         <source>Address (Ctrl + J)</source>
         <target>Dirección (Ctrl + J)</target>
@@ -274,6 +282,14 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
           <context context-type="linenumber">108,109</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4070888718648503727" datatype="html">
+        <source> Created at </source>
+        <target> Creado en </target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/file-manager/file-manager.html</context>
+          <context context-type="linenumber">118,119</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5812854200578196416" datatype="html">
@@ -1164,6 +1180,2766 @@
           <context context-type="linenumber">194,197</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="5264603693964547838" datatype="html">
+        <source>Enables the array arithmetic mode for a single formula.</source>
+        <target>Habilita el modo aritmético de matriz para una sola fórmula.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">7</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8423912256830866062" datatype="html">
+        <source>Filters an array, based on multiple conditions (boolean arrays).</source>
+        <target>Filtra una matriz según múltiples condiciones (matrices booleanas).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1707253996376046022" datatype="html">
+        <source>Truncates an array to given dimensions.</source>
+        <target>Trunca una matriz a las dimensiones dadas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2314973530805767977" datatype="html">
+        <source>Returns the specified date as the number of full days since nullDate.</source>
+        <target>Devuelve la fecha especificada como el número de días completos desde nullDate.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4396990154780039560" datatype="html">
+        <source>Calculates distance between two dates, in provided unit parameter.</source>
+        <target>Calcula la distancia entre dos fechas, en el parámetro de unidad proporcionado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7810358820520109921" datatype="html">
+        <source>Parses a date string and returns it as the number of full days since nullDate.Accepts formats set by the dateFormats option.</source>
+        <target>Analiza una cadena de fecha y la devuelve como el número de días completos desde nullDate. Acepta formatos establecidos por la opción dateFormats.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2499005709194190717" datatype="html">
+        <source>Returns the day of the given date value.</source>
+        <target>Devuelve el día del valor de fecha dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">43</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6918601181004419634" datatype="html">
+        <source>Calculates the difference between two date values.</source>
+        <target>Calcula la diferencia entre dos valores de fecha.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3989188711402794153" datatype="html">
+        <source>Calculates the difference between two date values in days, in 360-day basis.</source>
+        <target>Calcula la diferencia entre dos valores de fecha en días, en un período de 360 ​​días.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">54</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2976932568785060776" datatype="html">
+        <source>Shifts the given startdate by given number of months and returns it as the number of full days since nullDate.[1]</source>
+        <target>Desplaza la fecha de inicio dada por una cantidad determinada de meses y la devuelve como la cantidad de días completos desde nullDate.[1]</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">60</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2290635951503168765" datatype="html">
+        <source>Returns the date of the last day of a month which falls months away from the start date. Returns the value in the form of number of full days since nullDate.[1:1]</source>
+        <target>Devuelve la fecha del último día de un mes que corresponde a meses de la fecha de inicio. Devuelve el valor en forma de número de días completos desde nullDate.[1:1]</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">66</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5862044297636805397" datatype="html">
+        <source>Returns hour component of given time.</source>
+        <target>Devuelve el componente de hora del tiempo dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">71</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="722001027043172149" datatype="html">
+        <source>Returns interval string from given number of seconds.</source>
+        <target>Devuelve una cadena de intervalo de un número determinado de segundos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">76</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5942424248531468602" datatype="html">
+        <source>Returns an ISO week number that corresponds to the week of year.</source>
+        <target>Devuelve un número de semana ISO que corresponde a la semana del año.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">82</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6303286224674506675" datatype="html">
+        <source>Returns minute component of given time.</source>
+        <target>Devuelve el componente de minutos del tiempo dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">87</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="724263251770695133" datatype="html">
+        <source>Returns the month for the given date value.</source>
+        <target>Devuelve el mes para el valor de fecha dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">92</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1280261154900297440" datatype="html">
+        <source>Returns the number of working days between two given dates.</source>
+        <target>Devuelve el número de días laborables entre dos fechas determinadas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">97</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5090990139752461522" datatype="html">
+        <source>Returns current date + time as a number of days since nullDate.</source>
+        <target>Devuelve la fecha y hora actuales como un número de días desde nullDate.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">108</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1159843586269656375" datatype="html">
+        <source>Returns second component of given time.</source>
+        <target>Devuelve el segundo componente del tiempo dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">113</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7194608345102028555" datatype="html">
+        <source>Returns the number that represents a given time as a fraction of full day.</source>
+        <target>Devuelve el número que representa un tiempo determinado como una fracción del día completo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">119</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8119725343827128692" datatype="html">
+        <source>Parses a time string and returns a number that represents it as a fraction of a full day.Accepts formats set by the timeFormats option.</source>
+        <target>Analiza una cadena de tiempo y devuelve un número que la representa como una fracción de un día completo. Acepta formatos establecidos por la opción timeFormats.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">125</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3358794999045923160" datatype="html">
+        <source>Returns an integer representing the current date as the number of full days since nullDate.</source>
+        <target>Devuelve un entero que representa la fecha actual como el número de días completos desde nullDate.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">131</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1131429060356925681" datatype="html">
+        <source>Computes a number between 1-7 representing the day of week.</source>
+        <target>Calcula un número entre 1 y 7 que representa el día de la semana.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">136</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3594737767617107292" datatype="html">
+        <source>Returns a week number that corresponds to the week of year.</source>
+        <target>Devuelve un número de semana que corresponde a la semana del año.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">141</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1911264615016688219" datatype="html">
+        <source>Returns the working day number of days from start day.</source>
+        <target>Devuelve el número de días laborables a partir del día de inicio.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">146</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">151</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8449635869887495287" datatype="html">
+        <source>Returns the year as a number according to the internal calculation rules.</source>
+        <target>Devuelve el año como un número según las reglas de cálculo internas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">157</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2234069702193078376" datatype="html">
+        <source>Computes the difference between two date values, in fraction of years.</source>
+        <target>Calcula la diferencia entre dos valores de fecha, en fracciones de años.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">163</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4342191854005300126" datatype="html">
+        <source>The result is the decimal number for the binary number entered.</source>
+        <target>El resultado es el número decimal del número binario ingresado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">171</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8881717032323684196" datatype="html">
+        <source>The result is the hexadecimal number for the binary number entered.</source>
+        <target>El resultado es el número hexadecimal del número binario ingresado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">177</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1940540160226176252" datatype="html">
+        <source>The result is the octal number for the binary number entered.</source>
+        <target>El resultado es el número octal del número binario ingresado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">182</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7172888395148153936" datatype="html">
+        <source>Returns a bitwise logical &quot;and&quot; of the parameters.</source>
+        <target>Devuelve un "y" lógico bit a bit de los parámetros.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">187</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2027370983194289504" datatype="html">
+        <source>Shifts a number left by n bits.</source>
+        <target>Desplaza un número a la izquierda n bits.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">192</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3690463033867358743" datatype="html">
+        <source>Returns a bitwise logical &quot;or&quot; of the parameters.</source>
+        <target>Devuelve un &quot;o&quot; lógico bit a bit de los parámetros.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">197</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5422168195259630545" datatype="html">
+        <source>Shifts a number right by n bits.</source>
+        <target>Desplaza un número a la derecha n bits.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">202</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1754384866756710430" datatype="html">
+        <source>Returns a bitwise logical &quot;exclusive or&quot; of the parameters.</source>
+        <target>Devuelve un &quot;o exclusivo&quot; lógico bit a bit de los parámetros.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">207</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4275354892469197500" datatype="html">
+        <source>Returns complex number from Re and Im parts.</source>
+        <target>Devuelve un número complejo de las partes Re e Im.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">212</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7519989681088044642" datatype="html">
+        <source>Returns the binary number for the decimal number entered between –512 and 511.</source>
+        <target>Devuelve el número binario para el número decimal ingresado entre –512 y 511.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">218</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4699561820516826893" datatype="html">
+        <source>Returns the hexadecimal number for the decimal number entered.</source>
+        <target>Devuelve el número hexadecimal del número decimal ingresado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">224</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5442051935891384738" datatype="html">
+        <source>Returns the octal number for the decimal number entered.</source>
+        <target>Devuelve el número octal del número decimal ingresado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">229</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3722826388482451703" datatype="html">
+        <source>Returns TRUE (1) if both numbers are equal, otherwise returns FALSE (0).</source>
+        <target>Devuelve TRUE (1) si ambos números son iguales, de lo contrario devuelve FALSE (0).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">235</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8918563419165955502" datatype="html">
+        <source>Returns values of the Gaussian error integral.</source>
+        <target>Returns values of the Gaussian error integral.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">240</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6633699205364241099" datatype="html">
+        <source>Returns complementary values of the Gaussian error integral between x and infinity.</source>
+        <target>Devuelve valores complementarios de la integral del error gaussiano entre x e infinito.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">246</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1184629671495881523" datatype="html">
+        <source>The result is the binary number for the hexadecimal number entered.</source>
+        <target>El resultado es el número binario del número hexadecimal ingresado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">252</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="330977781461605128" datatype="html">
+        <source>The result is the decimal number for the hexadecimal number entered.</source>
+        <target>El resultado es el número decimal del número hexadecimal ingresado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">258</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8290964187410831261" datatype="html">
+        <source>The result is the octal number for the hexadecimal number entered.</source>
+        <target>El resultado es el número octal del número hexadecimal ingresado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">264</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="527695297296017755" datatype="html">
+        <source>Returns modulus of a complex number.</source>
+        <target>Devuelve el módulo de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">269</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6030326144890448470" datatype="html">
+        <source>Returns imaginary part of a complex number.</source>
+        <target>Devuelve la parte imaginaria de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">274</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2733440488740849618" datatype="html">
+        <source>Returns argument of a complex number.</source>
+        <target>Devuelve el argumento de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">279</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5225897492000102482" datatype="html">
+        <source>Returns conjugate of a complex number.</source>
+        <target>Devuelve el conjugado de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">284</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4204014197171446721" datatype="html">
+        <source>Returns cosine of a complex number.</source>
+        <target>Devuelve el coseno de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">289</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7019501592723704292" datatype="html">
+        <source>Returns hyperbolic cosine of a complex number.</source>
+        <target>Devuelve el coseno hiperbólico de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">294</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7980200453462970778" datatype="html">
+        <source>Returns cotangent of a complex number.</source>
+        <target>Devuelve la cotangente de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">299</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4830276719430368980" datatype="html">
+        <source>Returns cosecant of a complex number.</source>
+        <target>Returns cosecant of a complex number.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">304</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5284897020382079628" datatype="html">
+        <source>Returns hyperbolic cosecant of a complex number.</source>
+        <target>Devuelve la cosecante hiperbólica de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">309</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3283532524596324892" datatype="html">
+        <source>Divides two complex numbers.</source>
+        <target>Divide dos números complejos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">314</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7142343764974434819" datatype="html">
+        <source>Returns exponent of a complex number.</source>
+        <target>Devuelve el exponente de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">319</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2899211874746239515" datatype="html">
+        <source>Returns natural logarithm of a complex number.</source>
+        <target>Devuelve el logaritmo natural de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">324</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2960433064866654080" datatype="html">
+        <source>Returns binary logarithm of a complex number.</source>
+        <target>Returns binary logarithm of a complex number.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">329</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8233927385105620132" datatype="html">
+        <source>Returns base-10 logarithm of a complex number.</source>
+        <target>Devuelve el logaritmo en base 10 de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">334</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2313155844684540104" datatype="html">
+        <source>Returns a complex number raised to a given power.</source>
+        <target>Devuelve un número complejo elevado a una potencia dada.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">339</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6050793170843045394" datatype="html">
+        <source>Multiplies complex numbers.</source>
+        <target>Multiplica números complejos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">344</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1056713345053490375" datatype="html">
+        <source>Returns real part of a complex number.</source>
+        <target>Devuelve la parte real de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">349</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2252705745207589378" datatype="html">
+        <source>Returns the secant of a complex number.</source>
+        <target>Devuelve la secante de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">354</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4710678911253175034" datatype="html">
+        <source>Returns the hyperbolic secant of a complex number.</source>
+        <target>Devuelve la secante hiperbólica de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">359</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5424013705526919926" datatype="html">
+        <source>Returns sine of a complex number.</source>
+        <target>Devuelve el seno de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">364</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1883794740034692364" datatype="html">
+        <source>Returns hyperbolic sine of a complex number.</source>
+        <target>Devuelve el seno hiperbólico de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">369</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4807761134483302280" datatype="html">
+        <source>Returns a square root of a complex number.</source>
+        <target>Devuelve una raíz cuadrada de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">374</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4522059265611684262" datatype="html">
+        <source>Subtracts two complex numbers.</source>
+        <target>Resta dos números complejos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">379</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5273519925548914349" datatype="html">
+        <source>Adds complex numbers.</source>
+        <target>Suma números complejos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">384</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1143011029973536319" datatype="html">
+        <source>Returns the tangent of a complex number.</source>
+        <target>Devuelve la tangente de un número complejo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">389</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2831003074494044079" datatype="html">
+        <source>The result is the binary number for the octal number entered.</source>
+        <target>The result is the binary number for the octal number entered.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">394</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4284765593381744856" datatype="html">
+        <source>The result is the decimal number for the octal number entered.</source>
+        <target>El resultado es el número decimal del número octal ingresado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">400</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="254465285601523265" datatype="html">
+        <source>The result is the hexadecimal number for the octal number entered.</source>
+        <target>El resultado es el número hexadecimal del número octal ingresado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">406</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6380457242685414223" datatype="html">
+        <source>Returns TRUE if provided value is a valid binary number.</source>
+        <target>Devuelve TRUE si el valor proporcionado es un número binario válido.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">413</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5637404152195910607" datatype="html">
+        <source>Returns TRUE if the reference to a cell is blank.</source>
+        <target>Devuelve TRUE si la referencia a una celda está en blanco.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">418</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7226914118144890954" datatype="html">
+        <source>Returns TRUE if the value is error value except #N/A!.</source>
+        <target>Devuelve TRUE si el valor es un valor de error excepto #N/A!.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">423</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5769270381089366998" datatype="html">
+        <source>Returns TRUE if the value is general error value.</source>
+        <target>Devuelve TRUE si el valor es un valor de error general.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">428</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8839685913286661868" datatype="html">
+        <source>Returns TRUE if the value is an even integer, or FALSE if the value is odd.</source>
+        <target>Devuelve TRUE si el valor es un entero par, o FALSO si el valor es impar.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">434</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2432692151303896214" datatype="html">
+        <source>Checks whether referenced cell is a formula.</source>
+        <target>Comprueba si la celda referenciada es una fórmula.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">439</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5541908591489924664" datatype="html">
+        <source>Tests for a logical value (TRUE or FALSE).</source>
+        <target>Prueba un valor lógico (TRUE or FALSE).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">444</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8755636965711816765" datatype="html">
+        <source>Returns TRUE if the value is #N/A! error.</source>
+        <target>Devuelve TRUE si el valor es #N/A! error.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">449</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2790052518893929923" datatype="html">
+        <source>Tests if the cell contents are text or numbers, and returns FALSE if the contents are text.</source>
+        <target>Prueba si el contenido de la celda es texto o números y devuelve FALSE si el contenido es texto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">455</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4170914079738871797" datatype="html">
+        <source>Returns TRUE if the value refers to a number.</source>
+        <target>Devuelve TRUE si el valor hace referencia a un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">460</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3460860574172280539" datatype="html">
+        <source>Returns TRUE if the value is odd, or FALSE if the number is even.</source>
+        <target>Devuelve TRUE si el valor es impar o FALSO si el número es par.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">466</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9009228662938441245" datatype="html">
+        <source>Returns TRUE if provided value is #REF! error.</source>
+        <target>Devuelve TRUE si el valor proporcionado es el error #REF!.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">471</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6363541376684710939" datatype="html">
+        <source>Returns TRUE if the cell contents reference text.</source>
+        <target>Devuelve TRUE si el contenido de la celda hace referencia a texto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">476</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4472301001547032239" datatype="html">
+        <source>Returns sheet number of a given value or a formula sheet number if no argument is provided.</source>
+        <target>Devuelve el número de hoja de un valor dado o un número de hoja de fórmula si no se proporciona ningún argumento.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">482</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2991412410390297800" datatype="html">
+        <source>Returns number of sheet of a given reference or number of all sheets in workbook when no argument is provided.</source>
+        <target>Devuelve el número de hoja de una referencia dada o el número de todas las hojas del libro cuando no se proporciona ningún argumento.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">488</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4070258089713673751" datatype="html">
+        <source>Returns #N/A! error value.</source>
+        <target>Devuelve el valor de error #N/A!.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">491</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9133829273473127819" datatype="html">
+        <source>Returns the cumulative interest paid on a loan between a start period and an end period.</source>
+        <target>Devuelve el interés acumulado pagado sobre un préstamo entre un período de inicio y un período final.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">497</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5731239782762557250" datatype="html">
+        <source>Returns the cumulative principal paid on a loan between a start period and an end period.</source>
+        <target>Devuelve el capital acumulado pagado por un préstamo entre un período de inicio y un período final.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">503</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5034920278886584760" datatype="html">
+        <source>Returns the depreciation of an asset for a period using the fixed-declining balance method.</source>
+        <target>Devuelve la depreciación de un activo durante un período utilizando el método de saldo fijo decreciente.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">509</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1777595496934292546" datatype="html">
+        <source>Returns the depreciation of an asset for a period using the double-declining balance method.</source>
+        <target>Devuelve la depreciación de un activo durante un período utilizando el método de saldo doblemente decreciente.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">515</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8006915307170786122" datatype="html">
+        <source>Converts a price entered with a special notation to a price displayed as a decimal number.</source>
+        <target>Convierte un precio ingresado con una notación especial en un precio mostrado como un número decimal.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">521</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5032679923347461354" datatype="html">
+        <source>Converts a price displayed as a decimal number to a price entered with a special notation.</source>
+        <target>Convierte un precio mostrado como un número decimal en un precio ingresado con una notación especial.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">527</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5047100490794727573" datatype="html">
+        <source>Calculates the effective annual interest rate from a nominal interest rate and the number of compounding periods per year.</source>
+        <target>Calcula la tasa de interés anual efectiva a partir de una tasa de interés nominal y el número de períodos de capitalización por año.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">533</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8192568732632031911" datatype="html">
+        <source>Returns the future value of an investment.</source>
+        <target>Devuelve el valor futuro de una inversión.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">538</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2113768866239622223" datatype="html">
+        <source>Returns the future value of an investment based on a rate schedule.</source>
+        <target>Devuelve el valor futuro de una inversión según una tabla de tasas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">544</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="222058993535681066" datatype="html">
+        <source>Returns the interest portion of a given loan payment in a given payment period.</source>
+        <target>Devuelve la parte de interés de un pago de préstamo determinado en un período de pago determinado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">550</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8326371560486608690" datatype="html">
+        <source>Returns the interest paid for a given period of an investment with equal principal payments.</source>
+        <target>Devuelve el interés pagado durante un período determinado de una inversión con pagos de capital iguales.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">556</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="770846559883068253" datatype="html">
+        <source>Returns modified internal value for cashflows.</source>
+        <target>Devuelve el valor interno modificado para los flujos de efectivo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">561</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5402384901590372682" datatype="html">
+        <source>Returns the nominal interest rate.</source>
+        <target>Devuelve la tasa de interés nominal.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">566</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4299716760079132180" datatype="html">
+        <source>Returns the number of periods for an investment assuming periodic, constant payments and a constant interest rate.</source>
+        <target>Devuelve el número de períodos de una inversión asumiendo pagos periódicos y constantes y una tasa de interés constante.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">572</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7306126075570764911" datatype="html">
+        <source>Returns net present value.</source>
+        <target>Devuelve el valor actual neto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">577</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">640</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6319371257472322209" datatype="html">
+        <source>Returns number of periods to reach specific value.</source>
+        <target>Devuelve el número de períodos para alcanzar un valor específico.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">582</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3996339882237008588" datatype="html">
+        <source>Returns the periodic payment for a loan.</source>
+        <target>Devuelve el pago periódico de un préstamo.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">587</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5777924622869518971" datatype="html">
+        <source>Calculates the principal portion of a given loan payment.</source>
+        <target>Calcula la parte principal de un pago de préstamo determinado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">592</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="256837642874524677" datatype="html">
+        <source>Returns the present value of an investment.</source>
+        <target>Devuelve el valor actual de una inversión.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">597</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6110185391133002343" datatype="html">
+        <source>Returns the interest rate per period of an annuity.</source>
+        <target>Devuelve la tasa de interés por período de una anualidad.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">602</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2686009781416809419" datatype="html">
+        <source>Returns an equivalent interest rate for the growth of an investment.</source>
+        <target>Devuelve una tasa de interés equivalente para el crecimiento de una inversión.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">608</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7838776085602301209" datatype="html">
+        <source>Returns the depreciation of an asset for one period, based on a straight-line method.</source>
+        <target>Devuelve la depreciación de un activo durante un período, según un método de línea recta.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">614</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1609023801187987988" datatype="html">
+        <source>Returns the &quot;sum-of-years&quot; depreciation for an asset in a period.</source>
+        <target>Devuelve la depreciación de la &quot;suma de años&quot; de un activo en un período.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">620</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5466367116387432204" datatype="html">
+        <source>Returns the bond-equivalent yield for a Treasury bill.</source>
+        <target>Devuelve el rendimiento equivalente al bono de una letra del Tesoro.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">625</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5091134520129380169" datatype="html">
+        <source>Returns the price per $100 face value for a Treasury bill.</source>
+        <target>Devuelve el precio por cada $100 de valor nominal de una letra del Tesoro.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">630</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3354984216832452054" datatype="html">
+        <source>Returns the yield for a Treasury bill.</source>
+        <target>Devuelve el rendimiento de una letra del Tesoro.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">635</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3283290778817072045" datatype="html">
+        <source>Returns TRUE if all arguments are TRUE.</source>
+        <target>Devuelve VERDADERO si todos los argumentos son VERDADEROS.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">647</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1559815430048822081" datatype="html">
+        <source>Returns the logical value FALSE.</source>
+        <target>Devuelve el valor lógico FALSO.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">652</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7728960120158839659" datatype="html">
+        <source>Specifies a logical test to be performed.</source>
+        <target>Especifica una prueba lógica que se realizará.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">657</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4608356766378780775" datatype="html">
+        <source>Evaluates multiple logical tests and returns a value that corresponds to the first true condition.</source>
+        <target>Evalúa múltiples pruebas lógicas y devuelve un valor que corresponde a la primera condición verdadera.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">663</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4437812727637413520" datatype="html">
+        <source>Returns the value if the cell does not contains the #N/A (value not available) error value, or the alternative value if it does.</source>
+        <target>Devuelve el valor si la celda no contiene el valor de error #N/A (valor no disponible), o el valor alternativo si lo contiene.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">670</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6879369615213624750" datatype="html">
+        <source>Returns the value if the cell does not contains an error value, or the alternative value if it does.</source>
+        <target>Devuelve el valor si la celda no contiene un valor de error, o el valor alternativo si lo contiene.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">676</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1082861276390801455" datatype="html">
+        <source>Complements (inverts) a logical value.</source>
+        <target>Complementa (invierte) un valor lógico.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">681</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3707515812162628081" datatype="html">
+        <source>Evaluates a list of arguments, consisting of an expression followed by a value.</source>
+        <target>Evalúa una lista de argumentos, que consta de una expresión seguida de un valor.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">687</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3684146619493986831" datatype="html">
+        <source>Returns TRUE if at least one argument is TRUE.</source>
+        <target>Devuelve VERDADERO si al menos un argumento es VERDADERO.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">693</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="767692068258544367" datatype="html">
+        <source>The logical value is set to TRUE.</source>
+        <target>El valor lógico se establece en VERDADERO.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">698</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="154151999072504356" datatype="html">
+        <source>Returns true if an odd number of arguments evaluates to TRUE.</source>
+        <target>Devuelve verdadero si un número impar de argumentos se evalúa como VERDADERO.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">703</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8147792370408348935" datatype="html">
+        <source>Returns a cell reference as a string.</source>
+        <target>Devuelve una referencia de celda como una cadena.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">710</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8170461934807333333" datatype="html">
+        <source>Uses an index to return a value from a list of values.</source>
+        <target>Utiliza un índice para devolver un valor de una lista de valores.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">716</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6959313647927374448" datatype="html">
+        <source>Returns column number of a given reference or formula reference if argument not provided.</source>
+        <target>Devuelve el número de columna de una referencia dada o una referencia de fórmula si no se proporciona el argumento.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">722</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2033353199652637383" datatype="html">
+        <source>Returns the number of columns in the given reference.</source>
+        <target>Devuelve el número de columnas en la referencia dada.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">727</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4479449775495260921" datatype="html">
+        <source>Returns a formula in a given cell as a string.</source>
+        <target>Devuelve una fórmula en una celda determinada como una cadena.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">732</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9174000647670674326" datatype="html">
+        <source>Searches horizontally with reference to adjacent cells to the bottom.</source>
+        <target>Busca horizontalmente con referencia a las celdas adyacentes en la parte inferior.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">738</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5173765833976503781" datatype="html">
+        <source>Stores the url in the cell&apos;s metadata. It can be read using method getCellHyperlink</source>
+        <target>Almacena la URL en los metadatos de la celda. Se puede leer mediante el método getCellHyperlink.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">744</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6366909745411039335" datatype="html">
+        <source>Returns the contents of a cell specified by row and column number. The column number is optional and defaults to 1.</source>
+        <target>Devuelve el contenido de una celda especificada por número de fila y columna. El número de columna es opcional y su valor predeterminado es 1.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">750</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5575356615084701042" datatype="html">
+        <source>Returns the relative position of an item in an array that matches a specified value.</source>
+        <target>Devuelve la posición relativa de un elemento en una matriz que coincide con un valor especificado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">756</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9150132901021633098" datatype="html">
+        <source>Returns the value of a cell offset by a certain number of rows and columns from a given reference point.</source>
+        <target>Devuelve el valor de una celda desplazada por un cierto número de filas y columnas desde un punto de referencia determinado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">762</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4210291340998914527" datatype="html">
+        <source>Returns row number of a given reference or formula reference if argument not provided.</source>
+        <target>Devuelve el número de fila de una referencia dada o una referencia de fórmula si no se proporciona el argumento.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">768</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1853345778786139331" datatype="html">
+        <source>Returns the number of rows in the given reference.</source>
+        <target>Devuelve el número de filas en la referencia dada.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">773</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5419058542441773503" datatype="html">
+        <source>Searches vertically with reference to adjacent cells to the right.</source>
+        <target>Busca verticalmente con referencia a las celdas adyacentes a la derecha.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">779</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="925710927445722681" datatype="html">
+        <source>Searches for a key in a range and returns the item corresponding to the match it finds. If no match exists, then XLOOKUP can return the closest (approximate) match.</source>
+        <target>Busca una clave en un rango y devuelve el elemento correspondiente a la coincidencia encontrada. Si no existe ninguna coincidencia, XLOOKUP puede devolver la coincidencia más cercana (aproximada).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">785</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7161201295684971841" datatype="html">
+        <source>Returns the absolute value of a number.</source>
+        <target>Devuelve el valor absoluto de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">793</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="424765813338756716" datatype="html">
+        <source>Returns the inverse trigonometric cosine of a number.</source>
+        <target>Devuelve el coseno trigonométrico inverso de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">798</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="741326766717939899" datatype="html">
+        <source>Returns the inverse hyperbolic cosine of a number.</source>
+        <target>Devuelve el coseno hiperbólico inverso de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">803</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3807583473484032279" datatype="html">
+        <source>Returns the inverse trigonometric cotangent of a number.</source>
+        <target>Devuelve la cotangente trigonométrica inversa de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">808</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7334824177272944860" datatype="html">
+        <source>Returns the inverse hyperbolic cotangent of a number.</source>
+        <target>Devuelve la cotangente hiperbólica inversa de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">813</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4565092006368043956" datatype="html">
+        <source>Converts number from roman form.</source>
+        <target>Convierte números de forma romana.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">818</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4437694321440091086" datatype="html">
+        <source>Returns the inverse trigonometric sine of a number.</source>
+        <target>Devuelve el seno trigonométrico inverso de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">823</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4663437487467371095" datatype="html">
+        <source>Returns the inverse hyperbolic sine of a number.</source>
+        <target>Devuelve el seno hiperbólico inverso de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">828</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7878963572174785023" datatype="html">
+        <source>Returns the inverse trigonometric tangent of a number.</source>
+        <target>Devuelve la tangente trigonométrica inversa de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">833</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6542739412596755242" datatype="html">
+        <source>Returns the inverse trigonometric tangent of the specified x and y coordinates.</source>
+        <target>Devuelve la tangente trigonométrica inversa de las coordenadas x e y especificadas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">839</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3504847357893197170" datatype="html">
+        <source>Returns the inverse hyperbolic tangent of a number.</source>
+        <target>Devuelve la tangente hiperbólica inversa de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">844</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7606093095375505546" datatype="html">
+        <source>Converts a positive integer to a specified base into a text from the numbering system.</source>
+        <target>Convierte un entero positivo de una base especificada en un texto del sistema de numeración.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">850</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3675076221418321201" datatype="html">
+        <source>Rounds a number up to the nearest multiple of Significance.</source>
+        <target>Redondea un número al múltiplo de significado más cercano.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">855</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">860</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">865</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">973</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7621994137685772368" datatype="html">
+        <source>Returns number of combinations (without repetitions).</source>
+        <target>Devuelve el número de combinaciones (sin repeticiones).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">870</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5524801292319428132" datatype="html">
+        <source>Returns number of combinations (with repetitions).</source>
+        <target>Devuelve el número de combinaciones (con repeticiones).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">875</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5965204920734415472" datatype="html">
+        <source>Returns the cosine of the given angle (in radians).</source>
+        <target>Devuelve el coseno del ángulo dado (en radianes).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">880</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2278419485785922520" datatype="html">
+        <source>Returns the hyperbolic cosine of the given value.</source>
+        <target>Devuelve el coseno hiperbólico del valor dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">885</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="569450153600843164" datatype="html">
+        <source>Returns the cotangent of the given angle (in radians).</source>
+        <target>Devuelve la cotangente del ángulo dado (en radianes).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">890</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6541755749093179621" datatype="html">
+        <source>Returns the hyperbolic cotangent of the given value.</source>
+        <target>Devuelve la cotangente hiperbólica del valor dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">895</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3548810164083956591" datatype="html">
+        <source>Counts the number of unique values in a list of specified values and ranges.</source>
+        <target>Cuenta la cantidad de valores únicos en una lista de valores y rangos especificados.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">901</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8337815464211465452" datatype="html">
+        <source>Returns the cosecant of the given angle (in radians).</source>
+        <target>Devuelve la cosecante del ángulo dado (en radianes).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">906</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7431306659659895346" datatype="html">
+        <source>Returns the hyperbolic cosecant of the given value.</source>
+        <target>Devuelve la cosecante hiperbólica del valor dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">911</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1326052036921136516" datatype="html">
+        <source>Converts text with characters from a number system to a positive integer in the base radix given.</source>
+        <target>Convierte texto con caracteres de un sistema numérico a un entero positivo en el radio base dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">917</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4713526454506478586" datatype="html">
+        <source>Converts radians into degrees.</source>
+        <target>Convierte radianes en grados.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">922</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6096884595297009003" datatype="html">
+        <source>Rounds a positive number up to the next even integer and a negative number down to the next even integer.</source>
+        <target>Redondea un número positivo hasta el siguiente entero par y un número negativo hasta el siguiente entero par.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">928</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6398162887747947157" datatype="html">
+        <source>Returns constant e raised to the power of a number.</source>
+        <target>Devuelve la constante e elevada a la potencia de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">933</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7109128948088444111" datatype="html">
+        <source>Returns a factorial of a number.</source>
+        <target>Devuelve un factorial de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">938</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="363537224448359076" datatype="html">
+        <source>Returns a double factorial of a number.</source>
+        <target>Devuelve un factorial doble de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">943</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5228496939196511589" datatype="html">
+        <source>Rounds a number down to the nearest multiple of Significance.</source>
+        <target>Redondea un número hacia abajo hasta el múltiplo de significado más cercano.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">948</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">953</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">958</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4159319605888934003" datatype="html">
+        <source>Computes greatest common divisor of numbers.</source>
+        <target>Calcula el máximo común divisor de números.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">963</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8149217115328562551" datatype="html">
+        <source>Rounds a number down to the nearest integer.</source>
+        <target>Redondea un número hacia abajo hasta el entero más cercano.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">968</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8274013838479601710" datatype="html">
+        <source>Computes least common multiple of numbers.</source>
+        <target>Calcula el mínimo común múltiplo de números.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">978</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3390985816028604432" datatype="html">
+        <source>Returns the natural logarithm based on the constant e of a number.</source>
+        <target>Devuelve el logaritmo natural basado en la constante e de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">984</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1449769147281029192" datatype="html">
+        <source>Returns the logarithm of a number to the specified base.</source>
+        <target>Devuelve el logaritmo de un número en la base especificada.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">989</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1145345187118345992" datatype="html">
+        <source>Returns the base-10 logarithm of a number.</source>
+        <target>Devuelve el logaritmo en base 10 de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">994</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="200936420349691460" datatype="html">
+        <source>Returns the remainder when one integer is divided by another.</source>
+        <target>Devuelve el resto cuando un entero se divide por otro.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">999</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2769011386886808531" datatype="html">
+        <source>Rounds number to the neares multiplicity.</source>
+        <target>Redondea el número a la multiplicidad más cercana.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1004</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5322546976227191904" datatype="html">
+        <source>Returns number of multiset combinations.</source>
+        <target>Devuelve el número de combinaciones de múltiples conjuntos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1009</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5599977887326231045" datatype="html">
+        <source>Rounds a positive number up to the nearest odd integer and a negative number down to the nearest odd integer.</source>
+        <target>Redondea un número positivo hasta el entero impar más cercano y un número negativo hasta el entero impar más cercano.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1015</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1290120272564759043" datatype="html">
+        <source>Returns 3.14159265358979, the value of the mathematical constant PI to 14 decimal places.</source>
+        <target>Devuelve 3,14159265358979, el valor de la constante matemática PI hasta 14 decimales.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1021</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4622566235287707543" datatype="html">
+        <source>Returns a number raised to another number.</source>
+        <target>Devuelve un número elevado a otro número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1026</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7158243490794927377" datatype="html">
+        <source>Returns product of numbers.</source>
+        <target>Devuelve el producto de números.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1031</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1728660710076772546" datatype="html">
+        <source>Returns integer part of a division.</source>
+        <target>Devuelve la parte entera de una división.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1036</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="567462022837132473" datatype="html">
+        <source>Converts degrees to radians.</source>
+        <target>Convierte grados a radianes.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1041</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3255569875437486020" datatype="html">
+        <source>Returns a random number between 0 and 1.</source>
+        <target>Devuelve un número aleatorio entre 0 y 1.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1046</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3916010143135474690" datatype="html">
+        <source>Returns a random integer between two numbers.</source>
+        <target>Devuelve un entero aleatorio entre dos números.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1051</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4357804754424808633" datatype="html">
+        <source>Converts number to roman form.</source>
+        <target>Convierte números a forma romana.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1056</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2303895382811451412" datatype="html">
+        <source>Rounds a number to a certain number of decimal places.</source>
+        <target>Redondea un número a una cierta cantidad de decimales.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1061</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6200969120575164728" datatype="html">
+        <source>Rounds a number down, toward zero, to a certain precision.</source>
+        <target>Redondea un número hacia abajo, hacia cero, hasta una cierta precisión.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1066</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5404587486247869454" datatype="html">
+        <source>Rounds a number up, away from zero, to a certain precision.</source>
+        <target>Redondea un número hacia arriba, alejándolo del cero, hasta una cierta precisión.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1071</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8473969796679000229" datatype="html">
+        <source>Returns the secant of the given angle (in radians).</source>
+        <target>Devuelve la secante del ángulo dado (en radianes).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1076</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="568961847669450190" datatype="html">
+        <source>Returns the hyperbolic secant of the given angle (in radians).</source>
+        <target>Devuelve la secante hiperbólica del ángulo dado (en radianes).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1082</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7969633791168810073" datatype="html">
+        <source>Evaluates series at a point.</source>
+        <target>Evalúa la serie en un punto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1087</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3584943204311005188" datatype="html">
+        <source>Returns the sine of the given angle (in radians).</source>
+        <target>Devuelve el seno del ángulo dado (en radianes).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1092</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2752752887088657254" datatype="html">
+        <source>Returns the hyperbolic sine of the given value.</source>
+        <target>Devuelve el seno hiperbólico del valor dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1097</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3183292894787022632" datatype="html">
+        <source>Returns sign of a number.</source>
+        <target>Devuelve el signo de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1102</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="172929939786319558" datatype="html">
+        <source>Returns the positive square root of a number.</source>
+        <target>Devuelve la raíz cuadrada positiva de un número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1107</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4178790124246516422" datatype="html">
+        <source>Returns sqrt of number times pi.</source>
+        <target>Devuelve la raíz cuadrada del número multiplicado por pi.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1112</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8203014427546588391" datatype="html">
+        <source>Computes aggregation using function specified by number.</source>
+        <target>Calcula la agregación utilizando la función especificada por el número.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1117</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8385643463097518804" datatype="html">
+        <source>Sums up the values of the specified cells.</source>
+        <target>Suma los valores de las celdas especificadas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1122</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6177016568239265926" datatype="html">
+        <source>Sums up the values of cells that belong to the specified range and meet the specified condition.</source>
+        <target>Suma los valores de las celdas que pertenecen al rango especificado y cumplen la condición especificada.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1128</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3260510027021095099" datatype="html">
+        <source>Sums up the values of cells that belong to the specified range and meet the specified sets of conditions.</source>
+        <target>Suma los valores de las celdas que pertenecen al rango especificado y cumplen los conjuntos de condiciones especificados.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1134</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6836843903585843000" datatype="html">
+        <source>Multiplies corresponding elements in the given arrays, and returns the sum of those products.</source>
+        <target>Multiplica los elementos correspondientes en las matrices dadas y devuelve la suma de esos productos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1141</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6133284182430102154" datatype="html">
+        <source>Returns the sum of the squares of the arguments</source>
+        <target>Devuelve la suma de los cuadrados de los argumentos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1146</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4097846351278033422" datatype="html">
+        <source>Returns the sum of the square differences.</source>
+        <target>Devuelve la suma de las diferencias cuadradas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1151</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8144656614812429239" datatype="html">
+        <source>Returns the sum of the square sums.</source>
+        <target>Devuelve la suma de las sumas cuadradas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1156</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8197011311738227039" datatype="html">
+        <source>Returns the sum of the square of differences.</source>
+        <target>Devuelve la suma del cuadrado de las diferencias.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1161</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9012655520071585282" datatype="html">
+        <source>Returns the tangent of the given angle (in radians).</source>
+        <target>Devuelve la tangente del ángulo dado (en radianes).</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1166</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4009892498777071180" datatype="html">
+        <source>Returns the hyperbolic tangent of the given value.</source>
+        <target>Devuelve la tangente hiperbólica del valor dado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1171</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5113112678613375207" datatype="html">
+        <source>Truncates a number by removing decimal places.</source>
+        <target>Trunca un número eliminando decimales.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1176</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="91251839009145708" datatype="html">
+        <source>Calculates the array product of two arrays.</source>
+        <target>Calcula el producto de dos matrices.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1183</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3313383651034924323" datatype="html">
+        <source>Calculates a smaller range which is a median of a Window_size, in a given Range, for every Stride element.</source>
+        <target>Calcula un rango más pequeño, que es la mediana de un tamaño de ventana, en un rango determinado, para cada elemento Stride.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1189</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9222791122627968786" datatype="html">
+        <source>Calculates a smaller range which is a maximum of a Window_size, in a given Range, for every Stride element.</source>
+        <target>Calcula un rango más pequeño, que es un máximo de un tamaño de ventana, en un rango determinado, para cada elemento Stride.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1195</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6719500838342065004" datatype="html">
+        <source>Transposes the rows and columns of an array.</source>
+        <target>Transpone las filas y columnas de una matriz.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1200</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="191773425031571807" datatype="html">
+        <source>Returns the average deviation of the arguments.</source>
+        <target>Devuelve la desviación promedio de los argumentos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1207</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7248281183438747360" datatype="html">
+        <source>Returns the average of the arguments.</source>
+        <target>Devuelve el promedio de los argumentos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1212</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1217</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8299824440424688147" datatype="html">
+        <source>Returns the arithmetic mean of all cells in a range that satisfy a given condition.</source>
+        <target>Devuelve la media aritmética de todas las celdas de un rango que satisfacen una condición determinada.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1223</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4538575368166791328" datatype="html">
+        <source>Returns value of Bessel function.</source>
+        <target>Devuelve el valor de la función de Bessel.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1228</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1233</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1238</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1243</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7997783132593793450" datatype="html">
+        <source>Returns the density of Beta distribution.</source>
+        <target>Devuelve la densidad de la distribución Beta.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1248</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1254</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4343846464020715376" datatype="html">
+        <source>Returns the inverse Beta distribution value.</source>
+        <target>Devuelve el valor de la distribución Beta inversa.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1259</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8485507675551897601" datatype="html">
+        <source>Returns the inverse of Beta distribution value.</source>
+        <target>Devuelve el inverso del valor de la distribución Beta.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1264</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3740203505063593213" datatype="html">
+        <source>Returns density of binomial distribution.</source>
+        <target>Devuelve la densidad de la distribución binomial.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1269</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1274</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3165198905005322549" datatype="html">
+        <source>Returns inverse binomial distribution value.</source>
+        <target>Devuelve el valor de la distribución binomial inversa.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1279</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1412</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8228849217738575381" datatype="html">
+        <source>Returns probability of chi-square right-side distribution.</source>
+        <target>Devuelve la probabilidad de distribución de chi-cuadrado del lado derecho.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1284</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1304</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1309</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8373704131683218474" datatype="html">
+        <source>Returns inverse of chi-square right-side distribution.</source>
+        <target>Devuelve la inversa de la distribución del lado derecho de chi-cuadrado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1289</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1294</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1319</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9118447324618859226" datatype="html">
+        <source>Returns value of chi-square distribution.</source>
+        <target>Devuelve el valor de la distribución de chi-cuadrado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1299</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7432366946085936054" datatype="html">
+        <source>Returns inverse of chi-square distribution.</source>
+        <target>Devuelve la inversa de la distribución de chi-cuadrado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1314</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3069223312099753160" datatype="html">
+        <source>Returns chisquared-test value for a dataset.</source>
+        <target>Devuelve el valor de la prueba de chi cuadrado para un conjunto de datos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1324</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1329</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1588855722570157569" datatype="html">
+        <source>Returns upper confidence bound for normal distribution.</source>
+        <target>Devuelve el límite de confianza superior para la distribución normal.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1334</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1339</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6751250943379242683" datatype="html">
+        <source>Returns upper confidence bound for T distribution.</source>
+        <target>Devuelve el límite de confianza superior para la distribución T.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1344</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="752790923761291968" datatype="html">
+        <source>Returns the correlation coefficient between two data sets.</source>
+        <target>Devuelve el coeficiente de correlación entre dos conjuntos de datos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1349</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1672</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2518496283445910464" datatype="html">
+        <source>Counts how many numbers are in the list of arguments.</source>
+        <target>Cuenta cuántos números hay en la lista de argumentos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1354</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5063810773273661326" datatype="html">
+        <source>Counts how many values are in the list of arguments.</source>
+        <target>Cuenta cuántos valores hay en la lista de argumentos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1359</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1978269164743799958" datatype="html">
+        <source>Returns the number of empty cells.</source>
+        <target>Devuelve el número de celdas vacías.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1364</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6282273493108007905" datatype="html">
+        <source>Returns the number of cells that meet with certain criteria within a cell range.</source>
+        <target>Devuelve el número de celdas que cumplen ciertos criterios dentro de un rango de celdas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1370</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4584425255590403067" datatype="html">
+        <source>Returns the count of rows or columns that meet criteria in multiple ranges.</source>
+        <target>Devuelve el recuento de filas o columnas que cumplen los criterios en múltiples rangos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1376</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2845238382154344243" datatype="html">
+        <source>Returns the covariance between two data sets, population normalized.</source>
+        <target>Devuelve la covarianza entre dos conjuntos de datos, normalizada poblacionalmente.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1383</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1389</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1395</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4996153515608858823" datatype="html">
+        <source>Returns the covariance between two data sets, sample normalized.</source>
+        <target>Devuelve la covarianza entre dos conjuntos de datos, muestra normalizada.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1401</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1407</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7258541137558672001" datatype="html">
+        <source>Returns sum of squared deviations.</source>
+        <target>Devuelve la suma de las desviaciones al cuadrado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1417</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4065195529722904736" datatype="html">
+        <source>Returns density of a exponential distribution.</source>
+        <target>Devuelve la densidad de una distribución exponencial.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1422</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1427</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="818257677835121549" datatype="html">
+        <source>Returns probability of F right-side distribution.</source>
+        <target>Devuelve la probabilidad de la distribución del lado derecho F.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1432</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1447</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1452</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2619270763735264742" datatype="html">
+        <source>Returns inverse of F right-side distribution.</source>
+        <target>Devuelve la inversa de la distribución del lado derecho F.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1437</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1462</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1467</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5332041365996364430" datatype="html">
+        <source>Returns value of F distribution.</source>
+        <target>Devuelve el valor de la distribución F.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1442</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8886383418785295677" datatype="html">
+        <source>Returns inverse of F distribution.</source>
+        <target>Devuelve la inversa de la distribución F.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1457</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4774023781193409349" datatype="html">
+        <source>Returns Fisher transformation value.</source>
+        <target>Devuelve el valor de la transformación de Fisher.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1472</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5799145719081055465" datatype="html">
+        <source>Returns inverse Fischer transformation value.</source>
+        <target>Devuelve el valor de la transformación inversa de Fischer.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1477</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4434258568194858829" datatype="html">
+        <source>Returns f-test value for a dataset.</source>
+        <target>Devuelve el valor de la prueba f para un conjunto de datos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1482</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1487</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7347819682471491897" datatype="html">
+        <source>Returns value of Gamma function.</source>
+        <target>Devuelve el valor de la función Gamma.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1492</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6733489080122113305" datatype="html">
+        <source>Returns density of Gamma distribution.</source>
+        <target>Devuelve la densidad de la distribución Gamma.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1497</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1502</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1554216995325424314" datatype="html">
+        <source>Returns natural logarithm of Gamma function.</source>
+        <target>Devuelve el logaritmo natural de la función Gamma.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1507</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1512</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7184893962664225014" datatype="html">
+        <source>Returns inverse Gamma distribution value.</source>
+        <target>Devuelve el valor de la distribución Gamma inversa.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1517</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1522</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1724939898091712954" datatype="html">
+        <source>Returns the probability of gaussian variable falling more than this many times standard deviation from mean.</source>
+        <target>Devuelve la probabilidad de que la variable gaussiana caiga más que esta cantidad de veces la desviación estándar de la media.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1528</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6738987391157770030" datatype="html">
+        <source>Returns the geometric average.</source>
+        <target>Devuelve el promedio geométrico.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1533</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2149633521168726837" datatype="html">
+        <source>Returns the harmonic average.</source>
+        <target>Devuelve el promedio armónico.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1538</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3276126445972856414" datatype="html">
+        <source>Returns density of hypergeometric distribution.</source>
+        <target>Devuelve la densidad de la distribución hipergeométrica.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1543</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1548</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5028751846464761979" datatype="html">
+        <source>Returns k-th largest value in a range.</source>
+        <target>Devuelve el k-ésimo valor más grande en un rango.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1553</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9175721203843064271" datatype="html">
+        <source>Returns density of lognormal distribution.</source>
+        <target>Devuelve la densidad de la distribución lognormal.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1558</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1563</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2546145151039599397" datatype="html">
+        <source>Returns value of inverse lognormal distribution.</source>
+        <target>Devuelve el valor de la distribución lognormal inversa.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1568</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1573</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1578</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4371089416636450456" datatype="html">
+        <source>Returns the maximum value in a list of arguments.</source>
+        <target>Devuelve el valor máximo en una lista de argumentos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1583</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1588</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7018822063209171153" datatype="html">
+        <source>Returns the maximum value of the cells in a range that meet a set of criteria.</source>
+        <target>Devuelve el valor máximo de las celdas de un rango que cumplen un conjunto de criterios.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1594</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7956586742818196356" datatype="html">
+        <source>Returns the median of a set of numbers.</source>
+        <target>Devuelve la mediana de un conjunto de números.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1600</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7329205396694315367" datatype="html">
+        <source>Returns the minimum value in a list of arguments.</source>
+        <target>Devuelve el valor mínimo en una lista de argumentos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1605</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1610</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7957950747594106224" datatype="html">
+        <source>Returns the minimum value of the cells in a range that meet a set of criteria.</source>
+        <target>Devuelve el valor mínimo de las celdas de un rango que cumplen un conjunto de criterios.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1616</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3920023270438401621" datatype="html">
+        <source>Returns density of negative binomial distribution.</source>
+        <target>Devuelve la densidad de la distribución binomial negativa.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1622</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1627</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5404125992912773862" datatype="html">
+        <source>Returns density of normal distribution.</source>
+        <target>Devuelve la densidad de distribución normal.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1632</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1637</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1642</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1647</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9113256652215648040" datatype="html">
+        <source>Returns value of inverse normal distribution.</source>
+        <target>Devuelve el valor de la distribución normal inversa.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1652</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1657</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1662</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1667</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5128442812965665158" datatype="html">
+        <source>Returns probability densitity of normal distribution.</source>
+        <target>Devuelve la densidad de probabilidad de distribución normal.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1677</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4650471849867289659" datatype="html">
+        <source>Returns density of Poisson distribution.</source>
+        <target>Devuelve la densidad de la distribución de Poisson.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1682</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1687</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1692</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1313180351953202700" datatype="html">
+        <source>Returns the squared correlation coefficient between two data sets.</source>
+        <target>Devuelve el coeficiente de correlación al cuadrado entre dos conjuntos de datos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1698</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2087594320630081581" datatype="html">
+        <source>Returns skeweness of a sample.</source>
+        <target>Devuelve la asimetría de una muestra.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1703</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="777368360461262139" datatype="html">
+        <source>Returns skeweness of a population.</source>
+        <target>Devuelve la asimetría de una población.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1708</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1713</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2257859394478976028" datatype="html">
+        <source>Returns the slope of a linear regression line.</source>
+        <target>Devuelve la pendiente de una línea de regresión lineal.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1718</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8343688888605182013" datatype="html">
+        <source>Returns k-th smallest value in a range.</source>
+        <target>Devuelve el k-ésimo valor más pequeño en un rango.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1723</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6246540224140454261" datatype="html">
+        <source>Returns normalized value wrt expected value and standard deviation.</source>
+        <target>Devuelve el valor normalizado con respecto al valor esperado y la desviación estándar.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1729</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6473541930911964230" datatype="html">
+        <source>Returns standard deviation of a sample.</source>
+        <target>Devuelve la desviación estándar de una muestra.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1734</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1739</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1759</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1764</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5635077329029028122" datatype="html">
+        <source>Returns standard deviation of a population.</source>
+        <target>Devuelve la desviación estándar de una población.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1744</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1749</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1754</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7964456277040119888" datatype="html">
+        <source>Returns standard error for predicted of the predicted y value for each x value.</source>
+        <target>Devuelve el error estándar previsto del valor y previsto para cada valor x.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1770</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4787277506409958715" datatype="html">
+        <source>Returns density of Student-t distribution, both-sided or right-tailed.</source>
+        <target>Devuelve la densidad de la distribución t de Student, de ambos lados o de cola derecha.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1776</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3630724067027784786" datatype="html">
+        <source>Returns density of Student-t distribution.</source>
+        <target>Devuelve la densidad de la distribución t de Student.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1781</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6676644122276386674" datatype="html">
+        <source>Returns density of Student-t distribution, both-sided.</source>
+        <target>Devuelve la densidad de la distribución t de Student, de ambos lados.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1786</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1791</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4644635515255651781" datatype="html">
+        <source>Returns density of Student-t distribution, right-tailed.</source>
+        <target>Devuelve la densidad de la distribución t de Student, de cola derecha.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1796</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1801</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5938269976391055236" datatype="html">
+        <source>Returns inverse Student-t distribution, both-sided.</source>
+        <target>Devuelve una distribución t de Student inversa, de ambos lados.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1806</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1816</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1821</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="649946113946223283" datatype="html">
+        <source>Returns inverse Student-t distribution.</source>
+        <target>Devuelve la distribución t de Student inversa.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1811</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6625155530825724565" datatype="html">
+        <source>Returns t-test value for a dataset.</source>
+        <target>Devuelve el valor de la prueba t para un conjunto de datos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1826</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1831</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7261763014886496020" datatype="html">
+        <source>Returns variance of a sample.</source>
+        <target>Devuelve la varianza de una muestra.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1836</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1841</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1861</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1866</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4021432862364645094" datatype="html">
+        <source>Returns variance of a population.</source>
+        <target>Devuelve la varianza de una población.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1846</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1851</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1856</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2279190294485645260" datatype="html">
+        <source>Returns density of Weibull distribution.</source>
+        <target>Devuelve la densidad de la distribución de Weibull.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1871</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1876</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1881</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8181513567536213241" datatype="html">
+        <source>Returns z-test value for a dataset.</source>
+        <target>Devuelve el valor de la prueba z para un conjunto de datos.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1886</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1891</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7934304082809093792" datatype="html">
+        <source>Converts a number into a character according to the current code table.</source>
+        <target>Convierte un número en un carácter según la tabla de códigos actual.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1899</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5373229723213966236" datatype="html">
+        <source>Returns text that has been &quot;cleaned&quot; of line breaks and other non-printable characters.</source>
+        <target>Devuelve texto que ha sido "limpiado" de saltos de línea y otros caracteres no imprimibles.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1905</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8784455228114613442" datatype="html">
+        <source>Returns a numeric code for the first character in a text string.</source>
+        <target>Devuelve un código numérico para el primer carácter de una cadena de texto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1911</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1622897519764149686" datatype="html">
+        <source>Combines several text strings into one string.</source>
+        <target>Combina varias cadenas de texto en una sola cadena.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1916</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3077884590991899395" datatype="html">
+        <source>Returns TRUE if both text strings are exactly the same.</source>
+        <target>Devuelve TRUE si ambas cadenas de texto son exactamente iguales.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1921</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9804155519454440" datatype="html">
+        <source>Returns the location of one text string inside another.</source>
+        <target>Devuelve la ubicación de una cadena de texto dentro de otra.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1926</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2721002713931241593" datatype="html">
+        <source>Extracts a given number of characters from the left side of a text string.</source>
+        <target>Extrae una cantidad determinada de caracteres del lado izquierdo de una cadena de texto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1932</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6141303218009728497" datatype="html">
+        <source>Returns length of a given text.</source>
+        <target>Returns length of a given text.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1937</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5325553518413544637" datatype="html">
+        <source>Returns text converted to lowercase.</source>
+        <target>Devuelve texto convertido a minúsculas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1942</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7707774547776806716" datatype="html">
+        <source>Returns substring of a given length starting from Start_position.</source>
+        <target>Devuelve una subcadena de una longitud determinada a partir de Start_position.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1948</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3804101695381075968" datatype="html">
+        <source>Capitalizes words given text string.</source>
+        <target>Capitalizes words given text string.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1953</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7001524551687208178" datatype="html">
+        <source>Replaces substring of a text of a given length that starts at given position.</source>
+        <target>Reemplaza la subcadena de un texto de una longitud determinada que comienza en una posición determinada.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1959</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8959331651848595402" datatype="html">
+        <source>Repeats text a given number of times.</source>
+        <target>Repite el texto un número determinado de veces.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1964</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2477412375666782968" datatype="html">
+        <source>Extracts a given number of characters from the right side of a text string.</source>
+        <target>Extrae una cantidad determinada de caracteres del lado derecho de una cadena de texto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1970</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6443100355053770675" datatype="html">
+        <source>Returns the location of Search_string inside Text. Case-insensitive. Allows the use of wildcards.</source>
+        <target>Returns the location of Search_string inside Text. Case-insensitive. Allows the use of wildcards.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1976</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7249006298283857312" datatype="html">
+        <source>Divides the provided text using the space character as a separator and returns the substring at the zero-based position specified by the second argument.SPLIT(&quot;Lorem ipsum&quot;, 0) -&gt; &quot;Lorem&quot;SPLIT(&quot;Lorem ipsum&quot;, 1) -&gt; &quot;ipsum&quot;</source>
+        <target>Divide el texto proporcionado utilizando el carácter de espacio como separador y devuelve la subcadena en la posición basada en cero especificada por el segundo argumento.SPLIT(&quot;Lorem ipsum&quot;, 0) -&gt; &quot;Lorem&quot;SPLIT(&quot;Lorem ipsum&quot;, 1) -&gt; &quot;ipsum&quot;</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1982</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3927083397522343921" datatype="html">
+        <source>Returns string where occurrences of Old_text are replaced by New_text. Replaces only specific occurrence if last parameter is provided.</source>
+        <target>Devuelve una cadena donde las ocurrencias de Old_text se reemplazan por New_text. Reemplaza solo la ocurrencia específica si se proporciona el último parámetro.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1988</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5111075870029248693" datatype="html">
+        <source>Returns text if given value is text, empty string otherwise.</source>
+        <target>Devuelve texto si el valor dado es texto, cadena vacía en caso contrario.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1993</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8813269457264597605" datatype="html">
+        <source>Converts a number into text according to a given format.By default, accepts the same formats that can be passed to the dateFormats option, but can be further customized with the stringifyDateTime option.</source>
+        <target>Convierte un número en texto según un formato determinado. De forma predeterminada, acepta los mismos formatos que se pueden pasar a la opción dateFormats, pero se pueden personalizar aún más con la opción stringifyDateTime.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">1999</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6056971741601414051" datatype="html">
+        <source>Strips extra spaces from text.</source>
+        <target>Elimina espacios adicionales del texto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">2004</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8888972399579462750" datatype="html">
+        <source>Returns the character created by using provided code point.</source>
+        <target>Devuelve el carácter creado mediante el punto de código proporcionado.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">2009</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="4861765070887972165" datatype="html">
+        <source>Returns the Unicode code point of a first character of a text.</source>
+        <target>Devuelve el punto de código Unicode del primer carácter de un texto.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">2015</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8465936296710664397" datatype="html">
+        <source>Returns text converted to uppercase.</source>
+        <target>Devuelve el texto convertido a mayúsculas.</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
+          <context context-type="linenumber">2020</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="3985668248966297585" datatype="html">
         <source>night</source>
         <target>noche</target>
@@ -1221,10 +3997,8 @@
         </context-group>
       </trans-unit>
       <trans-unit id="2959599686805351550" datatype="html">
-        <source> Toggle <x id="INTERPOLATION" equiv-text="{{ darkMode() ? &quot;dark&quot; : &quot;light&quot; }}"/>
-</source>
-        <target> Palanca <x id="INTERPOLATION" equiv-text="{{ darkMode() ? &quot;oscura&quot; : &quot;Ligera&quot; }}"/>
-</target>
+        <source> Toggle <x id="INTERPOLATION" equiv-text="{{ darkMode() ? &quot;dark&quot; : &quot;light&quot; }}"/></source>
+        <target> Palanca <x id="INTERPOLATION" equiv-text="{{ darkMode() ? &quot;oscura&quot; : &quot;Ligera&quot; }}"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/ui/theme-switcher/theme-switcher.html</context>
           <context context-type="linenumber">12,14</context>
@@ -1295,30 +4069,24 @@
         </context-group>
       </trans-unit>
       <trans-unit id="2785898836458042194" datatype="html">
-        <source> Save Table
-</source>
-        <target> Guardar tabla
-</target>
+        <source> Save Table </source>
+        <target> Guardar tabla </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
           <context context-type="linenumber">16,18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3485416866119094525" datatype="html">
-        <source> Save as Template
-</source>
-        <target> Guardar como plantilla
-</target>
+        <source> Save as Template </source>
+        <target> Guardar como plantilla </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
           <context context-type="linenumber">33,35</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1691205636135848099" datatype="html">
-        <source> Create an empty table
-</source>
-        <target> Crear una tabla vacía
-</target>
+        <source> Create an empty table </source>
+        <target> Crear una tabla vacía </target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
           <context context-type="linenumber">48,50</context>

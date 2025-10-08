@@ -1,5 +1,8 @@
 import {
+	ChangeDetectionStrategy,
+	ChangeDetectorRef,
 	Component,
+	effect,
 	ElementRef,
 	HostListener,
 	inject,
@@ -8,8 +11,19 @@ import {
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { TuiTable } from '@taiga-ui/addon-table';
-import { TuiDataList, TuiDropdown, TuiHint, TuiLoader } from '@taiga-ui/core';
-import { TuiInputInline, TuiTabs } from '@taiga-ui/kit';
+import {
+	TuiDataList,
+	TuiDropdown,
+	TuiHint,
+	TuiIcon,
+	TuiLoader,
+} from '@taiga-ui/core';
+import {
+	TuiDataListDropdownManager,
+	TuiInputInline,
+	TuiTabs,
+	TuiTooltip,
+} from '@taiga-ui/kit';
 import { LayoutService } from '../../core/services/layout/layout-service';
 import { BlurDirective } from '../../shared/directives/blur/blur-directive';
 import { ScrollIntoViewDirective } from '../../shared/directives/scroll-into-view/scroll-into-view-directive';
@@ -23,8 +37,6 @@ import { SheetsService } from './sheets-service/sheets-service';
 	imports: [
 		TuiTable,
 		TuiHint,
-		TuiDataList,
-		TuiDropdown,
 		TuiTabs,
 		TuiInputInline,
 		SetFocusDirective,
@@ -33,21 +45,32 @@ import { SheetsService } from './sheets-service/sheets-service';
 		ScrollIntoViewDirective,
 		TuiLoader,
 		ContextMenu,
+		TuiDataList,
+		TuiDropdown,
+		TuiDataListDropdownManager,
+		TuiIcon,
+		TuiTooltip,
 	],
 	templateUrl: './editor.html',
 	styleUrl: './editor.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Editor {
 	private readonly ls = inject(LayoutService);
 	private readonly ar = inject(ActivatedRoute);
 	protected readonly ss = inject(SheetsService);
 	private readonly ks = inject(KeyboardService);
+	private readonly cdr = inject(ChangeDetectorRef);
 
 	constructor() {
 		const id = this.ar.snapshot.paramMap.get('docId');
 		if (this.ss.doc && this.ss.doc.id !== id) this.ss.doc.sheets.destroy();
 		if (this.ss) this.ls.footerVariant = 'editor';
 		this.ls.headerVariant = 'editor';
+		effect(() => {
+			this.ss.manualUpdateTrigger();
+			this.cdr.detectChanges();
+		});
 	}
 
 	private cancelFlag = false;
@@ -192,5 +215,19 @@ export class Editor {
 			(this.ss.selectedCells.end.x === x && this.ss.selectedCells.end.y === y) ||
 			(this.ss.focusedCell.x === x && this.ss.focusedCell.y === y)
 		);
+	}
+
+	pasteFormulaIntoInput(y: number, x: number, v: string) {
+		const el =
+			this.table?.nativeElement?.tBodies?.[0]?.rows?.[y]?.cells?.[
+				x + 1
+			].querySelector('input');
+		const start = el?.selectionStart;
+		const end = el?.selectionEnd;
+		const newV = el.value.slice(0, start) + v + el.value.slice(end);
+		el.value = newV;
+		const newP = start + v.length;
+		el.selectionStart = el.selectionEnd = newP;
+		el?.focus();
 	}
 }

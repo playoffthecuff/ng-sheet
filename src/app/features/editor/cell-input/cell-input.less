@@ -21,8 +21,36 @@
 	width: 6rem;
 	& > .input {
 		text-align: center;
-		font-weight: 700;
+		font-weight: 600;
 		padding: 0.25rem;
 	}
 	font-size: 0.875rem;
+}
+.option {
+	padding: 0 0.5rem !important;
+	min-block-size: 2rem !important;
+	font-size: 0.875rem !important;
+	font-weight: 500 !important;
+	gap: 0.75rem !important;
+	&::before {
+		font-size: 1.25rem;
+	}
+	width: 100%;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+	z-index: 100;
+}
+.formulas {
+	border-radius: 1.25rem;
+	width: 240px;
+}
+.dropdown {
+	border-radius: 0;
+	font-weight: 600;
+	color: var(--tui-text-secondary);
+	&:hover {
+		color: var(--tui-text-primary);
+	}
 }

@@ -25,3 +25,32 @@
 		[(ngModel)]="ss.userInput"
 	/>
 </tui-textfield>
+<button
+	tuiButton
+	tuiChevron
+	tuiDropdownOpen
+	type="button"
+	[tuiDropdown]="contextMenu"
+	size="s"
+	appearance="outline-grayscale"
+	i18n
+	class="dropdown"
+>
+	Formulas
+</button>
+<ng-template #contextMenu>
+	<tui-data-list role="menu" tuiDataListDropdownManager>
+		@for (item of ss.formulas; track $index) {
+			<button
+				tuiOption
+				new
+				type="button"
+				class="option"
+				(click)="pasteFormulaToCellValueInput(item.id)"
+			>
+				{{ item.id }}
+				<tui-icon tuiHintDirection="right" [tuiTooltip]="item.description" />
+			</button>
+		}
+	</tui-data-list>
+</ng-template>

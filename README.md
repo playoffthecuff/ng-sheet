@@ -24,7 +24,7 @@ Once the server is running, open your browser and navigate to `http://localhost:
 
 - Login to the app using convenient method
 - Create a new table
-- Enter the data you want to process into the table sheets cells using the editor capabilities
+- Enter the data you want to process into the table sheets cells using the editor capabilities (In data entry mode, you have access to a context menu with formulas, and outside of it, with operations on cells by right-clicking)
 - After each input, the results of dependent calculations will be updated and actualized in the corresponding cells of the sheet
 - You can save the result of your work as a document or as a starter template
 
