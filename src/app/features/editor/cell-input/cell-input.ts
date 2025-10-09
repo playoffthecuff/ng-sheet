@@ -1,10 +1,4 @@
-import {
-	Component,
-	ElementRef,
-	HostListener,
-	inject,
-	ViewChild,
-} from '@angular/core';
+import { Component, ElementRef, inject, viewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
 	TuiAlertService,
@@ -35,22 +29,24 @@ import { SheetsService } from '../sheets-service/sheets-service';
 	templateUrl: './cell-input.html',
 	styleUrl: './cell-input.less',
 	providers: [CUSTOM_ICON_RESOLVER_PROVIDER],
+	host: { '(document:keydown)': 'handleDocumentKeydown($event)' },
 })
 export class CellInput {
-	@ViewChild('cellValue') cellValue: ElementRef | undefined;
-	@ViewChild('cellAddress') cellAddress: ElementRef | undefined;
 	protected readonly ss = inject(SheetsService);
 	private readonly alerts = inject(TuiAlertService);
-
-	@HostListener('document:keydown', ['$event'])
-	handleDocumentKeydown(e: KeyboardEvent) {
-		if (e.ctrlKey && e.key === 'j') {
-			e.preventDefault();
-			this.cellAddress?.nativeElement.focus();
-		}
-	}
+	private readonly cellValue =
+		viewChild.required<ElementRef<HTMLInputElement>>('cellValue');
+	private readonly cellAddress =
+		viewChild.required<ElementRef<HTMLInputElement>>('cellAddress');
 
 	protected readonly addrCtrlJPhrase = $localize`Address (Ctrl + J)`;
+
+	protected handleDocumentKeydown(e: KeyboardEvent) {
+		if (e.ctrlKey && e.key === 'j') {
+			e.preventDefault();
+			this.cellAddress().nativeElement.focus();
+		}
+	}
 
 	protected showNotification(heading: string, text: string): void {
 		this.alerts.open(text, { label: heading }).subscribe();
@@ -75,7 +71,7 @@ export class CellInput {
 			this.ss.userInput = this.ss.getParsedCellFormulaOrValue(y + 1, x);
 			this.ss.focusedCell.y = y + 1;
 		}
-		this.cellValue?.nativeElement.blur();
+		this.cellValue().nativeElement.blur();
 		this.ss.manualUpdateTrigger.update((v) => !v);
 	}
 	protected setSelectedRange(e: Event) {
@@ -93,7 +89,7 @@ export class CellInput {
 				$localize`Invalid address or range.`,
 			);
 		if (cellIn) {
-			this.cellAddress?.nativeElement.blur();
+			this.cellAddress().nativeElement.blur();
 			this.ss.focusedCell.x = cell.col;
 			this.ss.focusedCell.y = cell.row;
 		}
@@ -103,19 +99,19 @@ export class CellInput {
 			const mny = Math.min(range.start.row, range.end.row);
 			const mxy = Math.max(range.start.row, range.end.row);
 			this.ss.setSelectedCells({ x: mnx, y: mny }, { x: mxx, y: mxy });
-			this.cellAddress?.nativeElement.blur();
+			this.cellAddress().nativeElement.blur();
 			this.ss.focusedCell.x = mnx;
 			this.ss.focusedCell.y = mny;
 		}
 	}
 	protected pasteFormulaToCellValueInput(v: string) {
-		const el = this.cellValue?.nativeElement;
-		const start = el?.selectionStart;
-		const end = el?.selectionEnd;
+		const el = this.cellValue().nativeElement;
+		const start = el.selectionStart ?? 0;
+		const end = el.selectionEnd ?? 0;
 		const newV = el.value.slice(0, start) + v + el.value.slice(end);
 		el.value = newV;
 		const newP = start + v.length;
 		el.selectionStart = el.selectionEnd = newP;
-		el?.focus();
+		el.focus();
 	}
 }

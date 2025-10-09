@@ -4,7 +4,7 @@ import {
 	inject,
 	input,
 	signal,
-	ViewChild,
+	viewChild,
 	type OnInit,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -33,7 +33,8 @@ import { SetFocusDirective } from '../../../../shared/directives/set-focus/set-f
 	styleUrl: './sheet-segment.less',
 })
 export class SheetSegment implements OnInit {
-	@ViewChild('input') input: ElementRef | undefined;
+	private readonly input =
+		viewChild.required<ElementRef<HTMLInputElement>>('input');
 	private readonly r = inject(Router);
 	protected readonly ss = inject(SheetsService);
 	sheetName = input('');
@@ -73,11 +74,11 @@ export class SheetSegment implements OnInit {
 	}
 	setEditMode() {
 		this.editMode.set(true);
-		this.input?.nativeElement.focus();
+		this.input().nativeElement.focus();
 	}
 	resetEditMode() {
 		this.editMode.set(false);
-		this.input?.nativeElement.blur();
+		this.input().nativeElement.blur();
 	}
 	cancelInput() {
 		this.name = this.sheetName();

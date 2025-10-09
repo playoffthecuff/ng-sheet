@@ -3,7 +3,7 @@ import {
 	ElementRef,
 	inject,
 	signal,
-	ViewChild,
+	viewChild,
 } from '@angular/core';
 import { FirebaseError } from '@angular/fire/app';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -34,7 +34,8 @@ export class HeaderEditor {
 	protected readonly ss = inject(SheetsService);
 	protected isLoading = signal(false);
 	protected errorLoadingMessage = signal('');
-	@ViewChild('input') input: ElementRef | undefined;
+	private readonly input =
+		viewChild.required<ElementRef<HTMLInputElement>>('input');
 	protected rename(e: Event) {
 		const { value } = e.target as HTMLInputElement;
 
@@ -52,6 +53,6 @@ export class HeaderEditor {
 					),
 				);
 		}
-		this.input?.nativeElement.blur();
+		this.input().nativeElement.blur();
 	}
 }

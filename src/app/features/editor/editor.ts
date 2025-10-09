@@ -4,9 +4,8 @@ import {
 	Component,
 	effect,
 	ElementRef,
-	HostListener,
 	inject,
-	ViewChild,
+	viewChild,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
@@ -54,6 +53,7 @@ import { SheetsService } from './sheets-service/sheets-service';
 	templateUrl: './editor.html',
 	styleUrl: './editor.less',
 	changeDetection: ChangeDetectionStrategy.OnPush,
+	host: { '(keydown)': 'handleKeyDown($event)' },
 })
 export class Editor {
 	private readonly ls = inject(LayoutService);
@@ -61,6 +61,8 @@ export class Editor {
 	protected readonly ss = inject(SheetsService);
 	private readonly ks = inject(KeyboardService);
 	private readonly cdr = inject(ChangeDetectorRef);
+
+	private readonly table = viewChild<ElementRef<HTMLTableElement>>('table');
 
 	constructor() {
 		const id = this.ar.snapshot.paramMap.get('docId');
@@ -78,10 +80,9 @@ export class Editor {
 	private isSelectingFlag = false;
 	private clickOutsideFlag = false;
 
-	@ViewChild('table') table: ElementRef | undefined;
-
-	@HostListener('keydown', ['$event'])
 	protected handleKeyDown(e: KeyboardEvent) {
+		console.log('handle key down');
+
 		if (e.key === ' ' && !this.ss.isEditing) e.preventDefault();
 		if (!e.shiftKey && this.ks.isMatchTableArrows(e.key) && !this.ss.isEditing) {
 			e.preventDefault();
@@ -101,7 +102,7 @@ export class Editor {
 		if (this.ks.isMatchTableOther(e.key)) {
 			this.ks.tableMaps.other[e.key as keyof typeof this.ks.tableMaps.other]();
 			this.ss.updateUserInput();
-			this.table?.nativeElement?.focus();
+			this.table()?.nativeElement.focus();
 			this.firstTypedSign = '';
 		}
 		if (
@@ -148,12 +149,12 @@ export class Editor {
 			this.ss.setParsedCellValue(y, x, (e.target as HTMLInputElement).value);
 			if (!this.clickOutsideFlag) this.moveFocusDownIfPossible(y, x);
 		}
-		this.table?.nativeElement?.focus();
+		this.table()?.nativeElement.focus();
 	}
 	protected handleEscape(y: number, x: number, e: Event) {
 		(e.target as HTMLInputElement).value = this.ss.getParsedCellValue(y, x);
 		this.cancelFlag = true;
-		this.table?.nativeElement?.focus();
+		this.table()?.nativeElement.focus();
 	}
 	protected handleEnter(y: number, x: number, e: Event) {
 		if (this.firstTypedSign)
@@ -219,15 +220,15 @@ export class Editor {
 
 	pasteFormulaIntoInput(y: number, x: number, v: string) {
 		const el =
-			this.table?.nativeElement?.tBodies?.[0]?.rows?.[y]?.cells?.[
+			this.table()?.nativeElement.tBodies?.[0]?.rows?.[y]?.cells?.[
 				x + 1
 			].querySelector('input');
-		const start = el?.selectionStart;
-		const end = el?.selectionEnd;
-		const newV = el.value.slice(0, start) + v + el.value.slice(end);
-		el.value = newV;
+		const start = el?.selectionStart ?? 0;
+		const end = el?.selectionEnd ?? 0;
+		const newV = el?.value.slice(0, start) + v + el?.value.slice(end);
+		if (el?.value) el.value = newV;
 		const newP = start + v.length;
-		el.selectionStart = el.selectionEnd = newP;
+		if (el?.selectionStart) el.selectionStart = el.selectionEnd = newP;
 		el?.focus();
 	}
 }
