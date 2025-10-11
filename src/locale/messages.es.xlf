@@ -4068,52 +4068,44 @@
           <context context-type="linenumber">8,10</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2785898836458042194" datatype="html">
-        <source> Save Table </source>
-        <target> Guardar tabla </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">16,18</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="3485416866119094525" datatype="html">
-        <source> Save as Template </source>
-        <target> Guardar como plantilla </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">33,35</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="1691205636135848099" datatype="html">
-        <source> Create an empty table </source>
-        <target> Crear una tabla vacía </target>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">48,50</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="5246239871886349812" datatype="html">
-        <source>Save Table</source>
-        <target>Guardar tabla</target>
+      <trans-unit id="6974992559229945361" datatype="html">
+        <source>Save Table (Ctrl+S)</source>
+        <target> Guardar tabla (Ctrl+S)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">31</context>
+          <context context-type="linenumber">35</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="526985193195003374" datatype="html">
-        <source>Save as Template</source>
-        <target>Guardar como plantilla</target>
+      <trans-unit id="4987670479820404750" datatype="html">
+        <source>Save as Template (Ctrl+Shift+S)</source>
+        <target> Guardar como plantilla (Ctrl+Shift+S)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">32</context>
+          <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="6473978407351757539" datatype="html">
-        <source>Create an empty table</source>
-        <target>Crear una tabla vacía</target>
+      <trans-unit id="3567485489160290562" datatype="html">
+        <source>Create an empty table (Alt+N)</source>
+        <target> Crear una tabla vacía (Alt+N)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">33</context>
+          <context context-type="linenumber">37</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5238708423144467708" datatype="html">
+        <source>Undo (Ctrl+Z)</source>
+        <target>Deshacer (Ctrl+Z)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
+          <context context-type="linenumber">38</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7333716981483963498" datatype="html">
+        <source>Redo (Ctrl+Y)</source>
+        <target>Rehacer (Ctrl+Y)</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
+          <context context-type="linenumber">39</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1217251625458416147" datatype="html">

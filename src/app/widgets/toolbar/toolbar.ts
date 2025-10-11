@@ -11,26 +11,33 @@ import {
 } from '../../features/editor/sheets-service/doc-resolver';
 import { SheetsService } from '../../features/editor/sheets-service/sheets-service';
 import { FileManagerService } from '../../features/file-manager/service/file-manager-service';
+import { Divider } from '../../shared/ui/divider/divider';
 import { withEither } from '../../shared/utils/with-either';
 import { withLoading } from '../../shared/utils/with-loading';
 
 @Component({
 	selector: 'app-toolbar',
-	imports: [TuiButton, TuiHintDirective, TuiButtonLoading],
+	imports: [TuiButton, TuiHintDirective, TuiButtonLoading, Divider],
 	templateUrl: './toolbar.html',
 	styleUrl: './toolbar.less',
+	host: { '(document:keydown)': 'handleKeydown($event)' },
 })
 export class Toolbar {
 	private readonly fs = inject(FirestoreService);
 	private readonly fms = inject(FileManagerService);
 	private readonly r = inject(Router);
 	protected readonly ss = inject(SheetsService);
+
 	protected readonly isLoading = signal(false);
 	protected readonly isTemplateLoading = signal(false);
-	savingErrorMessage: string | null = null;
-	protected defaultSaveTablePhrase = $localize`Save Table`;
-	protected defaultSaveTemplatePhrase = $localize`Save as Template`;
-	protected createAnEmptyTablePhrase = $localize`Create an empty table`;
+
+	protected savingErrorMessage: string | null = null;
+	protected defaultSaveTablePhrase = $localize`Save Table (Ctrl+S)`;
+	protected defaultSaveTemplatePhrase = $localize`Save as Template (Ctrl+Shift+S)`;
+	protected createAnEmptyTablePhrase = $localize`Create an empty table (Ctrl+N)`;
+	protected undoPhrase = $localize`Undo (Ctrl+Z)`;
+	protected redoPhrase = $localize`Redo (Ctrl+Y)`;
+
 	protected trySave(isTemplate = false) {
 		const { doc, isDataSaved } = this.ss;
 		if (!doc || isDataSaved) return;
@@ -117,5 +124,27 @@ export class Toolbar {
 					),
 				);
 		}
+	}
+	protected undo() {
+		if (this.ss.doc?.sheets.isThereSomethingToUndo()) {
+			this.ss.doc?.sheets.undo();
+			this.ss.manualUpdateTrigger.update((v) => !v);
+		}
+	}
+	protected redo() {
+		if (this.ss.doc?.sheets.isThereSomethingToRedo()) {
+			this.ss.doc?.sheets.redo();
+			this.ss.manualUpdateTrigger.update((v) => !v);
+		}
+	}
+	protected handleKeydown(e: KeyboardEvent) {
+		if (e.ctrlKey) {
+			e.preventDefault();
+			if (e.key === 's') this.trySave();
+			if (e.key === 'S') this.trySave(e.shiftKey);
+			if (e.key === 'z') this.undo();
+			if (e.key === 'y') this.redo();
+		}
+		if (e.altKey && e.key === 'n') this.createNewTable();
 	}
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
 	selector: 'app-divider',
@@ -6,4 +6,6 @@ import { Component } from '@angular/core';
 	templateUrl: './divider.html',
 	styleUrl: './divider.less',
 })
-export class Divider {}
+export class Divider {
+	isVertical = input(false);
+}

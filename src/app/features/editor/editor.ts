@@ -81,8 +81,6 @@ export class Editor {
 	private clickOutsideFlag = false;
 
 	protected handleKeyDown(e: KeyboardEvent) {
-		console.log('handle key down');
-
 		if (e.key === ' ' && !this.ss.isEditing) e.preventDefault();
 		if (!e.shiftKey && this.ks.isMatchTableArrows(e.key) && !this.ss.isEditing) {
 			e.preventDefault();

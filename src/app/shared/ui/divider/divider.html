@@ -1,5 +1,5 @@
-<div class="row">
-	<div class="line"></div>
+<div class="row" [class.column]="isVertical()">
+	<div class="line" [class.vertical-line]="isVertical()"></div>
 	<ng-content />
-	<div class="line"></div>
+	<div class="line" [class.vertical-line]="isVertical()"></div>
 </div>

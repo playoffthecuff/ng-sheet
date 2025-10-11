@@ -45,3 +45,34 @@
 >
 	Create an empty table
 </button>
+<app-divider [isVertical]="true" />
+<button
+	appearance="neutral"
+	size="s"
+	tuiIconButton
+	type="button"
+	iconStart="@tui.undo"
+	class="btn"
+	[tuiHint]="undoPhrase"
+	tuiHintDirection="right"
+	(click)="undo()"
+	[disabled]="isLoading() || !ss.doc?.sheets?.isThereSomethingToUndo?.()"
+	i18n
+>
+	Undo
+</button>
+<button
+	appearance="neutral"
+	size="s"
+	tuiIconButton
+	type="button"
+	iconStart="@tui.redo"
+	class="btn"
+	[tuiHint]="redoPhrase"
+	tuiHintDirection="right"
+	(click)="redo()"
+	[disabled]="isLoading() || !ss.doc?.sheets?.isThereSomethingToRedo()"
+	i18n
+>
+	Redo
+</button>
