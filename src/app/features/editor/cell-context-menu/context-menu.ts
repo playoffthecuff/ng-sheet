@@ -1,4 +1,9 @@
-import { Component, inject, input } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	inject,
+	input,
+} from '@angular/core';
 import { TuiDataList, TuiDropdown } from '@taiga-ui/core';
 import { TuiDataListDropdownManager } from '@taiga-ui/kit';
 import { SheetsService } from '../sheets-service/sheets-service';
@@ -29,6 +34,7 @@ interface MenuItem {
 	imports: [TuiDataList, TuiDropdown, TuiDataList, TuiDataListDropdownManager],
 	templateUrl: './context-menu.html',
 	styleUrl: './context-menu.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContextMenu {
 	data = input<{ i: number; j: number } | undefined>(undefined);

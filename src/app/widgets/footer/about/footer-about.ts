@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { TuiIcon } from '@taiga-ui/core';
 
 @Component({
@@ -6,5 +6,6 @@ import { TuiIcon } from '@taiga-ui/core';
 	imports: [TuiIcon],
 	templateUrl: './footer-about.html',
 	styleUrl: './footer-about.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterAbout {}

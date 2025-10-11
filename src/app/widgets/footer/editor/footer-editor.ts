@@ -1,4 +1,9 @@
-import { Component, inject, type OnInit } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	inject,
+	type OnInit,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { NavigationEnd, Router } from '@angular/router';
 import {
@@ -28,6 +33,7 @@ import { SheetSegment } from './sheet-segment/sheet-segment';
 	],
 	templateUrl: './footer-editor.html',
 	styleUrl: './footer-editor.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FooterEditor implements OnInit {
 	private readonly r = inject(Router);

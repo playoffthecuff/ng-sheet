@@ -1,4 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { TuiLink, TuiRoot } from '@taiga-ui/core/components';
 import { AuthService } from './core/services/auth/auth-service';
@@ -13,7 +14,6 @@ import { Footer } from './widgets/footer/footer';
 import { HeaderEditor } from './widgets/header/editor/header-editor/header-editor';
 import { Header } from './widgets/header/header';
 import { HeaderSearch } from './widgets/header/search/header-search/header-search';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
 	selector: 'app-root',
@@ -35,6 +35,7 @@ import { AsyncPipe } from '@angular/common';
 	],
 	templateUrl: './app.html',
 	styleUrl: './app.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
 	private readonly as = inject(AuthService);

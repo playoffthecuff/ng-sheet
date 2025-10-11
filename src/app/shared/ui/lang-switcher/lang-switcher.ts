@@ -1,5 +1,5 @@
 import { TitleCasePipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TUI_DOC_ICONS } from '@taiga-ui/addon-doc/tokens';
 import { TuiButton } from '@taiga-ui/core/components/button';
@@ -33,6 +33,7 @@ import { capitalize } from '../../utils/utils';
 	templateUrl: './lang-switcher.html',
 	styleUrl: './lang-switcher.less',
 	providers: [tuiScrollbarOptionsProvider({ mode: 'hover' })],
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LangSwitcher {
 	protected readonly icons = inject(TUI_DOC_ICONS);

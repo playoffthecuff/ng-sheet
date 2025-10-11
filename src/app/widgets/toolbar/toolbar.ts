@@ -1,4 +1,9 @@
-import { Component, inject, signal } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	inject,
+	signal,
+} from '@angular/core';
 import { FirebaseError } from '@angular/fire/app';
 import { Router } from '@angular/router';
 import { TuiButton, TuiHintDirective } from '@taiga-ui/core';
@@ -21,6 +26,7 @@ import { withLoading } from '../../shared/utils/with-loading';
 	templateUrl: './toolbar.html',
 	styleUrl: './toolbar.less',
 	host: { '(document:keydown)': 'handleKeydown($event)' },
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Toolbar {
 	private readonly fs = inject(FirestoreService);

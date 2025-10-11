@@ -1,4 +1,9 @@
-import { Component, inject, signal } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	inject,
+	signal,
+} from '@angular/core';
 import {
 	FormBuilder,
 	ReactiveFormsModule,
@@ -24,13 +29,13 @@ import { TuiButtonLoading, TuiProgress, TuiTooltip } from '@taiga-ui/kit';
 import * as E from 'fp-ts/Either';
 import { AuthService } from '../../core/services/auth/auth-service';
 import { AUTH } from '../../shared/constants/auth';
+import { PLACEHOLDERS } from '../../shared/constants/image-placeholders';
 import { ProgressToColorPipe } from '../../shared/pipes/progress-to-color/progress-to-color-pipe';
+import { Divider } from '../../shared/ui/divider/divider';
 import { calcPasswordStrength } from '../../shared/utils/calc-password-strength';
 import { getControlErrorMessage } from '../../shared/utils/get-control-error-message';
 import { withEither } from '../../shared/utils/with-either';
 import { withLoading } from '../../shared/utils/with-loading';
-import { PLACEHOLDERS } from '../../shared/constants/image-placeholders';
-import { Divider } from '../../shared/ui/divider/divider';
 
 const validatePasswordStrength: ValidatorFn = (c) =>
 	calcPasswordStrength(c.value) > 75 ? null : (
@@ -61,6 +66,7 @@ const validatePasswordStrength: ValidatorFn = (c) =>
 	],
 	templateUrl: './register-form.html',
 	styleUrl: './register-form.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class RegisterForm {
 	private readonly fb = inject(FormBuilder);

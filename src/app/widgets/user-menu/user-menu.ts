@@ -1,4 +1,10 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	computed,
+	inject,
+	signal,
+} from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { FirebaseError } from '@angular/fire/app';
 import { Router, RouterLink } from '@angular/router';
@@ -34,6 +40,7 @@ import { withLoading } from '../../shared/utils/with-loading';
 	],
 	templateUrl: './user-menu.html',
 	styleUrl: './user-menu.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class UserMenu {
 	protected open = false;

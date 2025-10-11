@@ -1,4 +1,5 @@
 import {
+	ChangeDetectionStrategy,
 	Component,
 	ElementRef,
 	inject,
@@ -31,6 +32,7 @@ import { SetFocusDirective } from '../../../../shared/directives/set-focus/set-f
 	],
 	templateUrl: './sheet-segment.html',
 	styleUrl: './sheet-segment.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SheetSegment implements OnInit {
 	private readonly input =

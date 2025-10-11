@@ -1,4 +1,5 @@
 import {
+	ChangeDetectionStrategy,
 	Component,
 	ElementRef,
 	inject,
@@ -28,6 +29,7 @@ import { Toolbar } from '../../../toolbar/toolbar';
 	],
 	templateUrl: './header-editor.html',
 	styleUrl: './header-editor.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderEditor {
 	private readonly fs = inject(FirestoreService);

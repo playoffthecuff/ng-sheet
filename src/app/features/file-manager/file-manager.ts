@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import {
@@ -56,6 +56,7 @@ import {
 	],
 	templateUrl: './file-manager.html',
 	styleUrl: './file-manager.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FileManager {
 	private readonly r = inject(Router);

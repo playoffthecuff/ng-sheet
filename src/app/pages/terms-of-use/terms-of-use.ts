@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LayoutService } from '../../core/services/layout/layout-service';
 
 @Component({
@@ -6,6 +6,7 @@ import { LayoutService } from '../../core/services/layout/layout-service';
 	imports: [],
 	templateUrl: './terms-of-use.html',
 	styleUrl: './terms-of-use.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TermsOfUse {
 	private readonly ls = inject(LayoutService);

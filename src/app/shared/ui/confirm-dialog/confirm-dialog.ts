@@ -1,13 +1,14 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { TuiAutoFocus } from '@taiga-ui/cdk';
 import { TuiButton, type TuiDialogContext } from '@taiga-ui/core';
 import { injectContext } from '@taiga-ui/polymorpheus';
-import { TuiAutoFocus } from '@taiga-ui/cdk';
 
 @Component({
 	selector: 'app-confirm-dialog',
 	imports: [TuiButton, TuiAutoFocus],
 	templateUrl: './confirm-dialog.html',
 	styleUrl: './confirm-dialog.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ConfirmDialog {
 	readonly context =

@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { TuiLoader } from '@taiga-ui/core/components';
 
 @Component({
@@ -6,6 +6,7 @@ import { TuiLoader } from '@taiga-ui/core/components';
 	imports: [TuiLoader],
 	templateUrl: './spinner.html',
 	styleUrl: './spinner.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Spinner {
 	inheritColor = input(false);

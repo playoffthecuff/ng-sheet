@@ -1,4 +1,10 @@
-import { Component, ElementRef, inject, viewChild } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	ElementRef,
+	inject,
+	viewChild,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
 	TuiAlertService,
@@ -30,6 +36,7 @@ import { SheetsService } from '../sheets-service/sheets-service';
 	styleUrl: './cell-input.less',
 	providers: [CUSTOM_ICON_RESOLVER_PROVIDER],
 	host: { '(document:keydown)': 'handleDocumentKeydown($event)' },
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CellInput {
 	protected readonly ss = inject(SheetsService);

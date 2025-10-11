@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LayoutService } from '../../core/services/layout/layout-service';
 import { RegisterForm } from '../../features/register-form/register-form';
 
@@ -7,6 +7,7 @@ import { RegisterForm } from '../../features/register-form/register-form';
 	imports: [RegisterForm],
 	templateUrl: './signup.html',
 	styleUrl: './signup.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Signup {
 	private readonly ls = inject(LayoutService);

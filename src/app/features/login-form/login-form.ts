@@ -1,4 +1,9 @@
-import { Component, inject, signal } from '@angular/core';
+import {
+	ChangeDetectionStrategy,
+	Component,
+	inject,
+	signal,
+} from '@angular/core';
 import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import {
@@ -59,6 +64,7 @@ import { FileManagerService } from '../file-manager/service/file-manager-service
 	templateUrl: './login-form.html',
 	styleUrl: './login-form.less',
 	providers: [CUSTOM_ICON_RESOLVER_PROVIDER],
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class LoginForm {
 	private readonly fb = inject(FormBuilder);

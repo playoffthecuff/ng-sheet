@@ -1,4 +1,6 @@
+import { AsyncPipe } from '@angular/common';
 import {
+	ChangeDetectionStrategy,
 	Component,
 	ElementRef,
 	inject,
@@ -10,7 +12,6 @@ import { TuiTextfield } from '@taiga-ui/core';
 import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
 import { AuthService } from '../../../../core/services/auth/auth-service';
 import { FileManagerService } from '../../../../features/file-manager/service/file-manager-service';
-import { AsyncPipe } from '@angular/common';
 
 @Component({
 	selector: 'app-header-search',
@@ -18,6 +19,7 @@ import { AsyncPipe } from '@angular/common';
 	templateUrl: './header-search.html',
 	styleUrl: './header-search.less',
 	host: { '(document:keydown)': 'onKeyDown($event)' },
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderSearch implements OnDestroy {
 	private readonly fms = inject(FileManagerService);

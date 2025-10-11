@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { LayoutService } from '../../core/services/layout/layout-service';
 import { LoginForm } from '../../features/login-form/login-form';
 
@@ -7,6 +7,7 @@ import { LoginForm } from '../../features/login-form/login-form';
 	imports: [LoginForm],
 	templateUrl: './signin.html',
 	styleUrl: './signin.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Signin {
 	private readonly ls = inject(LayoutService);

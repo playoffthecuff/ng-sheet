@@ -1,4 +1,4 @@
-import { Component, SkipSelf } from '@angular/core';
+import { ChangeDetectionStrategy, Component, SkipSelf } from '@angular/core';
 import { type TuiStringHandler } from '@taiga-ui/cdk';
 import { TUI_ICON_RESOLVER } from '@taiga-ui/core';
 @Component({
@@ -18,5 +18,6 @@ import { TUI_ICON_RESOLVER } from '@taiga-ui/core';
 			},
 		},
 	],
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Footer {}

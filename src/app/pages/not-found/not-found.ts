@@ -1,5 +1,5 @@
 import { Location } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { TuiButton, TuiTitle } from '@taiga-ui/core';
 import { LayoutService } from '../../core/services/layout/layout-service';
@@ -9,6 +9,7 @@ import { LayoutService } from '../../core/services/layout/layout-service';
 	imports: [TuiButton, RouterLink, TuiTitle],
 	templateUrl: './not-found.html',
 	styleUrl: './not-found.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NotFound {
 	private readonly location = inject(Location);

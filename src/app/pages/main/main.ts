@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../core/services/auth/auth-service';
 import { LayoutService } from '../../core/services/layout/layout-service';
@@ -11,6 +11,7 @@ import { Intro } from '../../shared/ui/intro/intro';
 	imports: [Intro, RouterLink, AsyncPipe, FileManager],
 	templateUrl: './main.html',
 	styleUrl: './main.less',
+	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Main {
 	private readonly ls = inject(LayoutService);
