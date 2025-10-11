@@ -43,6 +43,14 @@ export const routes: Routes = [
 			import('./pages/terms-of-use/terms-of-use').then((m) => m.TermsOfUse),
 	},
 	{
+		title: 'Getting Started - Ng Sheet',
+		path: 'getting-started',
+		loadComponent: () =>
+			import('./pages/getting-started/getting-started').then(
+				(m) => m.GettingStarted,
+			),
+	},
+	{
 		title: 'Error - Ng Sheet',
 		path: 'error',
 		loadComponent: () => import('./pages/error/error').then((m) => m.Error),

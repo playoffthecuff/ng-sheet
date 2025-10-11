@@ -2,6 +2,13 @@
 <xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
   <file source-language="en" datatype="plaintext" original="ng2.template">
     <body>
+      <trans-unit id="3740709006082323918" datatype="html">
+        <source> Getting Started </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.html</context>
+          <context context-type="linenumber">26,27</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="7509897479183416236" datatype="html">
         <source>Navigation Confirm</source>
         <context-group purpose="location">
@@ -556,6 +563,48 @@
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/error/error.html</context>
           <context context-type="linenumber">43,44</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="9156212170228959929" datatype="html">
+        <source>Getting Started</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
+          <context context-type="linenumber">1,2</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5324552940967183614" datatype="html">
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/login&quot; tuiLink&gt;"/>Login<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> Log in to the application using <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/> your existing account (Google, GitHub) <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/> or credentials (email, password) that you can <x id="START_LINK_1" equiv-text="&lt;a routerLink=&quot;/register&quot; tuiLink&gt;"/>register<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/></source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
+          <context context-type="linenumber">4,14</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2989352907234101296" datatype="html">
+        <source>Create a new table.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
+          <context context-type="linenumber">14,15</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="5504818442245470977" datatype="html">
+        <source> Enter the data you want to process into the table sheets cells using the editor capabilities (In data entry mode, you have access to a context menu with formulas, and outside of it, with operations on cells by right-clicking). </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
+          <context context-type="linenumber">16,19</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6348231470570884780" datatype="html">
+        <source> After each input, the results of dependent calculations will be updated and actualized in the corresponding cells of the sheet. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
+          <context context-type="linenumber">21,23</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="7109128468453302586" datatype="html">
+        <source> You can save the result of your work as a document or as a starter template. </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
+          <context context-type="linenumber">25,26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7936398398057589906" datatype="html">
@@ -3587,42 +3636,47 @@
         <source>Alt+K to search</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/header/search/header-search/header-search.html</context>
-          <context context-type="linenumber">8,10</context>
+          <context context-type="linenumber">9,11</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="8710333769022749075" datatype="html">
-        <source> Save Table </source>
+      <trans-unit id="2785898836458042194" datatype="html">
+        <source> Save Table
+</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">15,16</context>
+          <context context-type="linenumber">15,17</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5478537465211859529" datatype="html">
-        <source> Save as Template </source>
+      <trans-unit id="3485416866119094525" datatype="html">
+        <source> Save as Template
+</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">33,34</context>
+          <context context-type="linenumber">31,33</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="2350219524139890721" datatype="html">
-        <source> Create an empty table </source>
+      <trans-unit id="1691205636135848099" datatype="html">
+        <source> Create an empty table
+</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">48,49</context>
+          <context context-type="linenumber">46,48</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="7997497639597459089" datatype="html">
-        <source> Undo </source>
+      <trans-unit id="8128525622223854196" datatype="html">
+        <source> Undo
+</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">65</context>
+          <context context-type="linenumber">63,64</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5974167658394135492" datatype="html">
-        <source> Redo </source>
+      <trans-unit id="345157245213727900" datatype="html">
+        <source> Redo
+</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">80</context>
+          <context context-type="linenumber">78,79</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6974992559229945361" datatype="html">
@@ -3639,8 +3693,8 @@
           <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3567485489160290562" datatype="html">
-        <source>Create an empty table (Alt+N)</source>
+      <trans-unit id="7791345912872020606" datatype="html">
+        <source>Create an empty table (Ctrl+N)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
           <context context-type="linenumber">37</context>

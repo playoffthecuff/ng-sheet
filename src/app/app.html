@@ -13,7 +13,20 @@
 					<div class="flex-between">
 						<app-heading />
 						<app-header-search />
-						<div class="flex-balance"></div>
+						<div class="flex-balance" [class.link-container]="!user()">
+							@if (!user()) {
+								<a
+									tuiLink
+									routerLink="/getting-started"
+									iconStart="@tui.circle-question-mark"
+									class="link"
+									appearance="action-grayscale"
+									i18n
+								>
+									Getting Started
+								</a>
+							}
+						</div>
 					</div>
 				}
 				@default {

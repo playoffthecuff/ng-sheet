@@ -8,6 +8,7 @@ import {
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { TuiTextfield } from '@taiga-ui/core';
 import { debounceTime, distinctUntilChanged, Subscription } from 'rxjs';
+import { AuthService } from '../../../../core/services/auth/auth-service';
 import { FileManagerService } from '../../../../features/file-manager/service/file-manager-service';
 
 @Component({
@@ -19,10 +20,12 @@ import { FileManagerService } from '../../../../features/file-manager/service/fi
 })
 export class HeaderSearch implements OnDestroy {
 	private readonly fms = inject(FileManagerService);
+	private readonly as = inject(AuthService);
 	protected readonly control = new FormControl('');
 	private readonly sub: Subscription | null = null;
 	private readonly input =
 		viewChild.required<ElementRef<HTMLInputElement>>('input');
+	protected readonly user = this.as.userSignal;
 
 	constructor() {
 		this.sub = this.control.valueChanges
