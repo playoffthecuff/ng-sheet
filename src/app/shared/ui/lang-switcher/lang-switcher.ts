@@ -54,6 +54,8 @@ export class LangSwitcher {
 		this.language.setValue(lang);
 		this.switcher.setLanguage(lang);
 		this.open = false;
-		location.pathname = `/${this.flags.get(lang)?.toLowerCase()}/${location.pathname.split('/').slice(2).join('/')}`;
+		const countryIsoCode = this.flags.get(lang);
+		const locale = countryIsoCode === 'US' ? 'EN' : countryIsoCode;
+		location.pathname = `/${locale?.toLowerCase()}/${location.pathname.split('/').slice(2).join('/')}`;
 	}
 }
