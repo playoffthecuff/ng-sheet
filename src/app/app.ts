@@ -13,10 +13,12 @@ import { Footer } from './widgets/footer/footer';
 import { HeaderEditor } from './widgets/header/editor/header-editor/header-editor';
 import { Header } from './widgets/header/header';
 import { HeaderSearch } from './widgets/header/search/header-search/header-search';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
 	selector: 'app-root',
 	imports: [
+		AsyncPipe,
 		CellInput,
 		Footer,
 		FooterEditor,
@@ -38,5 +40,5 @@ export class App {
 	private readonly as = inject(AuthService);
 	protected readonly ls = inject(LayoutService);
 	protected readonly ts = inject(ThemeService);
-	protected readonly user = this.as.userSignal;
+	protected readonly user$ = this.as.user$;
 }

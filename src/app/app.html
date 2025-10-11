@@ -13,8 +13,8 @@
 					<div class="flex-between">
 						<app-heading />
 						<app-header-search />
-						<div class="flex-balance" [class.link-container]="!user()">
-							@if (!user()) {
+						<div class="flex-balance" [class.link-container]="!(user$ | async)">
+							@if (!(user$ | async)) {
 								<a
 									tuiLink
 									routerLink="/getting-started"

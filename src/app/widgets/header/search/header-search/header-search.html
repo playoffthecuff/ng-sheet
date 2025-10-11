@@ -1,4 +1,4 @@
-@if (user()) {
+@if (user$ | async) {
 	<tui-textfield class="textfield" iconStart="@tui.search" size="s">
 		<input
 			[formControl]="control"
