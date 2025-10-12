@@ -6,6 +6,7 @@ import { SheetsService } from './sheets-service';
 import { FirebaseError } from '@angular/fire/app';
 import * as E from 'fp-ts/Either';
 import { HyperFormula, type RawCellContent } from 'hyperformula';
+import { map } from 'rxjs';
 import { FirestoreService } from '../../../core/services/firestore/firestore-service';
 import type { Replace } from '../../../shared/utils/types';
 import { withEither } from '../../../shared/utils/with-either';
@@ -37,10 +38,10 @@ export const docResolver: ResolveFn<void> = (route: ActivatedRouteSnapshot) => {
 	if (docId === '0') {
 		ss.initDoc('0', 'New Table', 0, emptySerializedTable);
 	} else {
-		fs
-			.getDoc(docId)
-			.pipe(withLoading(ss.isLoading.set), withEither(FirebaseError))
-			.subscribe(
+		return fs.getDoc(docId).pipe(
+			withLoading(ss.isLoading.set),
+			withEither(FirebaseError),
+			map(
 				E.match(
 					(e) => ss.loadingErrorMessage.set(e.message),
 					(d) => {
@@ -61,6 +62,8 @@ export const docResolver: ResolveFn<void> = (route: ActivatedRouteSnapshot) => {
 						}
 					},
 				),
-			);
+			),
+		);
 	}
+	return void 0;
 };
