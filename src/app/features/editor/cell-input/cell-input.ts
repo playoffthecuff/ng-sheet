@@ -1,6 +1,8 @@
 import {
 	ChangeDetectionStrategy,
+	ChangeDetectorRef,
 	Component,
+	effect,
 	ElementRef,
 	inject,
 	viewChild,
@@ -41,6 +43,7 @@ import { SheetsService } from '../sheets-service/sheets-service';
 export class CellInput {
 	protected readonly ss = inject(SheetsService);
 	private readonly alerts = inject(TuiAlertService);
+	private readonly cdr = inject(ChangeDetectorRef);
 	private readonly cellValue =
 		viewChild.required<ElementRef<HTMLInputElement>>('cellValue');
 	private readonly cellAddress =
@@ -48,13 +51,19 @@ export class CellInput {
 
 	protected readonly addrCtrlJPhrase = $localize`Address (Ctrl + J)`;
 
+	constructor() {
+		effect(() => {
+			this.ss.manualCellInputUpdateTrigger();
+			this.cdr.detectChanges();
+		});
+	}
+
 	protected handleDocumentKeydown(e: KeyboardEvent) {
 		if (e.ctrlKey && e.key === 'j') {
 			e.preventDefault();
 			this.cellAddress().nativeElement.focus();
 		}
 	}
-
 	protected showNotification(heading: string, text: string): void {
 		this.alerts.open(text, { label: heading }).subscribe();
 	}
@@ -79,7 +88,7 @@ export class CellInput {
 			this.ss.focusedCell.y = y + 1;
 		}
 		this.cellValue().nativeElement.blur();
-		this.ss.manualUpdateTrigger.update((v) => !v);
+		this.ss.toggleManualEditorTrigger();
 	}
 	protected setSelectedRange(e: Event) {
 		const { value } = e.target as HTMLInputElement;
@@ -110,6 +119,7 @@ export class CellInput {
 			this.ss.focusedCell.x = mnx;
 			this.ss.focusedCell.y = mny;
 		}
+		this.ss.toggleManualEditorTrigger();
 	}
 	protected pasteFormulaToCellValueInput(v: string) {
 		const el = this.cellValue().nativeElement;

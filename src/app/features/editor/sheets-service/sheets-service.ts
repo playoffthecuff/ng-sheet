@@ -25,6 +25,8 @@ interface Range {
 
 @Injectable({ providedIn: 'root' })
 export class SheetsService {
+	readonly manualEditorUpdateTrigger = signal(false);
+	readonly manualCellInputUpdateTrigger = signal(false);
 	formulas = inject(FORMULAS);
 	doc: Doc | null = null;
 	docName = signal('');
@@ -32,7 +34,7 @@ export class SheetsService {
 	isDataSaved = false;
 	isLoading = signal(false);
 	loadingErrorMessage = signal<string | null>(null);
-	manualUpdateTrigger = signal(false);
+
 	readonly focusedCell: Cell = { x: 0, y: 0 };
 	readonly selectedCells: { start: Cell; end: Cell } = {
 		start: { x: -1, y: -1 },
@@ -491,5 +493,12 @@ export class SheetsService {
 				this.setCellContent(y, this.sheetWidth - 1, '');
 			});
 		}
+	}
+
+	toggleManualEditorTrigger() {
+		this.manualEditorUpdateTrigger.update((v) => !v);
+	}
+	toggleManualCellInputTrigger() {
+		this.manualCellInputUpdateTrigger.update((v) => !v);
 	}
 }

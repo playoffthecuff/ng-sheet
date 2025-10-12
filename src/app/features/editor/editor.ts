@@ -70,7 +70,7 @@ export class Editor {
 		if (this.ss) this.ls.footerVariant = 'editor';
 		this.ls.headerVariant = 'editor';
 		effect(() => {
-			this.ss.manualUpdateTrigger();
+			this.ss.manualEditorUpdateTrigger();
 			this.cdr.detectChanges();
 		});
 	}
@@ -206,7 +206,10 @@ export class Editor {
 	}
 	protected handleMouseUp(e: MouseEvent) {
 		if (e.button !== 0) return;
-		this.isSelectingFlag = false;
+		if (this.isSelectingFlag) {
+			this.ss.toggleManualCellInputTrigger();
+			this.isSelectingFlag = false;
+		}
 	}
 
 	protected scrollNeed(y: number, x: number) {
@@ -216,7 +219,7 @@ export class Editor {
 		);
 	}
 
-	pasteFormulaIntoInput(y: number, x: number, v: string) {
+	protected pasteFormulaIntoInput(y: number, x: number, v: string) {
 		const el =
 			this.table()?.nativeElement.tBodies?.[0]?.rows?.[y]?.cells?.[
 				x + 1

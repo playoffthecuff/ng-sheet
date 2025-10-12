@@ -134,13 +134,13 @@ export class Toolbar {
 	protected undo() {
 		if (this.ss.doc?.sheets.isThereSomethingToUndo()) {
 			this.ss.doc?.sheets.undo();
-			this.ss.manualUpdateTrigger.update((v) => !v);
+			this.ss.toggleManualEditorTrigger();
 		}
 	}
 	protected redo() {
 		if (this.ss.doc?.sheets.isThereSomethingToRedo()) {
 			this.ss.doc?.sheets.redo();
-			this.ss.manualUpdateTrigger.update((v) => !v);
+			this.ss.toggleManualEditorTrigger();
 		}
 	}
 	protected handleKeydown(e: KeyboardEvent) {
