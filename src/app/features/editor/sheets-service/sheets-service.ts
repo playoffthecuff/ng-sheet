@@ -48,6 +48,28 @@ export class SheetsService {
 	readonly selectedColumns: Range = { end: -1, start: -1 };
 	readonly editingCell: Cell = { x: -1, y: -1 };
 	userInput: string | null = null;
+	private resetState() {
+		this.focusedCell.x = 0;
+		this.focusedCell.y = 0;
+		this.selectedCells.end.x = -1;
+		this.selectedCells.end.y = -1;
+		this.selectedCells.start.x = -1;
+		this.selectedCells.start.y = -1;
+		this.copiedCells.end.col = -1;
+		this.copiedCells.end.row = -1;
+		this.copiedCells.end.sheet = -1;
+		this.copiedCells.start.col = -1;
+		this.copiedCells.start.row = -1;
+		this.copiedCells.start.sheet = -1;
+		this.selectedRows.end = -1;
+		this.selectedRows.start = -1;
+		this.selectedColumns.end = -1;
+		this.selectedColumns.start = -1;
+		this.editingCell.x = -1;
+		this.editingCell.y = -1;
+		this.userInput = null;
+		this.isDataSaved = false;
+	}
 	private createLoadFlow = (
 		docId: string,
 		docName: string,
@@ -61,7 +83,7 @@ export class SheetsService {
 				this.docName.set(docName);
 				this.sheetId = sheetId;
 				this.doc = { id: docId, name: docName, sheets: hf };
-				this.isDataSaved = false;
+				this.resetState();
 				this.userInput = this.getParsedCellFormulaOrValue(0, 0);
 				return O.of(undefined);
 			}),

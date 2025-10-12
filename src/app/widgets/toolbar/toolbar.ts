@@ -94,9 +94,9 @@ export class Toolbar {
 	}
 	private startWithNewTable(docId: string) {
 		const { sheetId } = this.ss;
-		if (docId === '0' && sheetId === 0)
+		if (docId === '0' && sheetId === 0) {
 			this.ss.initDoc('0', $localize`New Table`, 0, emptySerializedTable);
-		else this.r.navigate(['editor', 0, 0]);
+		} else this.r.navigate(['editor', 0, 0]);
 		this.ss.docName.set($localize`New Table`);
 	}
 	protected createNewTable() {
@@ -105,30 +105,18 @@ export class Toolbar {
 		if (this.ss.isDataSaved) {
 			this.startWithNewTable(doc.id);
 		} else {
-			if (doc.id === '0')
-				this.getPostDocObservable(doc).subscribe(
-					E.match(
-						(e) => (this.savingErrorMessage = e.message),
-						() => {
-							this.startWithNewTable(doc.id);
-							this.ss.isDataSaved = true;
-							this.savingErrorMessage = null;
-							this.fms.loadPage();
-						},
-					),
-				);
-			else
-				this.getPostDocObservable(doc).subscribe(
-					E.match(
-						(e) => (this.savingErrorMessage = e.message),
-						() => {
-							this.startWithNewTable(doc.id);
-							this.ss.isDataSaved = true;
-							this.savingErrorMessage = null;
-							this.fms.loadPage();
-						},
-					),
-				);
+			this.getPostDocObservable(doc).subscribe(
+				E.match(
+					(e) => (this.savingErrorMessage = e.message),
+					() => {
+						this.startWithNewTable(doc.id);
+						this.ss.isDataSaved = true;
+						this.savingErrorMessage = null;
+						this.fms.loadPage();
+						this.ss.toggleManualEditorTrigger();
+					},
+				),
+			);
 		}
 	}
 	protected undo() {
