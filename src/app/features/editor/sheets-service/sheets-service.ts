@@ -403,6 +403,9 @@ export class SheetsService {
 			y <= Math.max(this.selectedCells.end.y, this.selectedCells.start.y)
 		);
 	}
+	isCellInSelectedRange(y: number, x: number) {
+		return this.isCellRowInSelectedRange(y) && this.isCellColInSelectedRange(x);
+	}
 	isCellInSheet(c: SimpleCellAddress) {
 		return c.col < this.sheetWidth && c.row < this.sheetHeight;
 	}

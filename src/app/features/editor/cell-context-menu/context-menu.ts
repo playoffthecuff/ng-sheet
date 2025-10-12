@@ -37,7 +37,6 @@ interface MenuItem {
 	changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContextMenu {
-	data = input<{ i: number; j: number } | undefined>(undefined);
 	close = input<(() => void) | undefined>(undefined);
 	private readonly ss = inject(SheetsService);
 	private readonly actions = {
@@ -112,10 +111,10 @@ export class ContextMenu {
 	];
 
 	onAction(a?: MenuActions) {
-		const d = this.data();
+		const { x, y } = this.ss.focusedCell;
 		const c = this.close();
-		if (!d || !c || !a) return;
-		this.actions[a](d.i, d.j);
+		if (x === -1 || y === -1 || !c || !a) return;
+		this.actions[a](y, x);
 		this.close();
 	}
 }

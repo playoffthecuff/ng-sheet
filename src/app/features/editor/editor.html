@@ -63,7 +63,11 @@
 									tuiDropdownContext
 									#dropdown="tuiDropdown"
 									[tuiDropdown]="
-										ss.focusedCell.x === j && ss.focusedCell.y === i && !ss.isEditing ?
+										(
+											((ss.focusedCell.x === j && ss.focusedCell.y === i) ||
+												ss.isCellInSelectedRange(i, j)) &&
+											!ss.isEditing
+										) ?
 											contextMenu
 										:	null
 									"
@@ -125,7 +129,7 @@
 										/>
 									</tui-input-inline>
 									<ng-template #contextMenu let-close>
-										<app-context-menu [data]="{ i, j }" [close]="close" />
+										<app-context-menu [close]="close" />
 									</ng-template>
 									<ng-template #formulaContextMenu>
 										<tui-data-list

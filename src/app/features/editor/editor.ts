@@ -58,9 +58,9 @@ import { SheetsService } from './sheets-service/sheets-service';
 export class Editor {
 	private readonly ls = inject(LayoutService);
 	private readonly ar = inject(ActivatedRoute);
-	protected readonly ss = inject(SheetsService);
 	private readonly ks = inject(KeyboardService);
 	private readonly cdr = inject(ChangeDetectorRef);
+	protected readonly ss = inject(SheetsService);
 
 	private readonly table = viewChild<ElementRef<HTMLTableElement>>('table');
 
@@ -162,8 +162,8 @@ export class Editor {
 		this.ss.editingCell.y = this.ss.focusedCell.y;
 	}
 	protected handleMouseDown(y: number, x: number, e: MouseEvent) {
-		if (e.button !== 0) return;
-		this.isSelectingFlag = true;
+		if (e.button !== 0 && e.button !== 2) return;
+		this.isSelectingFlag = e.button !== 2;
 		if (this.firstTypedSign) {
 			this.ss.setParsedCellValue(
 				this.ss.editingCell.y,
@@ -188,13 +188,15 @@ export class Editor {
 				},
 			);
 		} else {
-			this.ss.selectedCells.start.x = x;
-			this.ss.selectedCells.start.y = y;
-			this.ss.selectedCells.end.x = -1;
-			this.ss.selectedCells.end.y = -1;
-			this.ss.focusedCell.x = x;
-			this.ss.focusedCell.y = y;
-			this.ss.updateUserInput();
+			if (!(this.ss.isCellInSelectedRange(y, x) && e.button === 2)) {
+				this.ss.selectedCells.start.x = x;
+				this.ss.selectedCells.start.y = y;
+				this.ss.selectedCells.end.x = -1;
+				this.ss.selectedCells.end.y = -1;
+				this.ss.focusedCell.x = x;
+				this.ss.focusedCell.y = y;
+				this.ss.updateUserInput();
+			}
 		}
 		this.ss.resetSelectedRows();
 		this.ss.resetSelectedColumns();
@@ -205,7 +207,7 @@ export class Editor {
 		this.ss.selectedCells.end.y = y;
 	}
 	protected handleMouseUp(e: MouseEvent) {
-		if (e.button !== 0) return;
+		if (e.button !== 0 && e.button !== 2) return;
 		if (this.isSelectingFlag) {
 			this.ss.toggleManualCellInputTrigger();
 			this.isSelectingFlag = false;
