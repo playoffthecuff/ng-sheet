@@ -83,7 +83,7 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 
 ## Architecture Diagram
 
-<img width="1569" height="1715" alt="image" src="https://github.com/user-attachments/assets/f857ee25-169f-45aa-94ea-ed8b54ec346e" />
+<img width="1569" height="1715" alt="image" src="https://github.com/user-attachments/assets/7ea515a0-bf1d-4c4a-9ea5-1c25dd12d8b4" />
 
 ## Signals vs RxJs. Short rationale
 
