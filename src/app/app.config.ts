@@ -10,7 +10,6 @@ import {
 	Router,
 	withComponentInputBinding,
 	withNavigationErrorHandler,
-	withViewTransitions,
 } from '@angular/router';
 import { provideEventPlugins } from '@taiga-ui/event-plugins';
 
@@ -37,7 +36,6 @@ export const appConfig: ApplicationConfig = {
 		provideRouter(
 			routes,
 			withComponentInputBinding(),
-			withViewTransitions(),
 			withNavigationErrorHandler((e: NavigationError) => {
 				const r = inject(Router);
 				if (e.error.message)
