@@ -10,6 +10,7 @@ import {
 	Router,
 	withComponentInputBinding,
 	withNavigationErrorHandler,
+	withPreloading,
 } from '@angular/router';
 import { provideEventPlugins } from '@taiga-ui/event-plugins';
 
@@ -25,6 +26,7 @@ import {
 import { of } from 'rxjs';
 import { environment } from '../environments/environment';
 import { routes } from './app.routes';
+import { SelectivePreloadingStrategy } from './selective-preloading-strategy';
 import { formulas, FORMULAS } from './shared/constants/formulas';
 
 export const appConfig: ApplicationConfig = {
@@ -42,6 +44,7 @@ export const appConfig: ApplicationConfig = {
 					console.error('Navigation error occurred:', e.error.message);
 				r.navigate(['/error']);
 			}),
+			withPreloading(SelectivePreloadingStrategy),
 		),
 		provideEventPlugins(),
 		provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
