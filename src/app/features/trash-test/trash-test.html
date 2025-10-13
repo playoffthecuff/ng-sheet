@@ -1,0 +1,8 @@
+<p>trash-test works!</p>
+@for (item of arr; track $index) {
+	@for (x of item; track $index) {
+		<div>
+			{{ x() }}
+		</div>
+	}
+}

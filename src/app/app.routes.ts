@@ -56,6 +56,11 @@ export const routes: Routes = [
 		loadComponent: () => import('./pages/error/error').then((m) => m.Error),
 	},
 	{
+		path: 'trash-test',
+		loadComponent: () =>
+			import('./features/trash-test/trash-test').then((m) => m.TrashTest),
+	},
+	{
 		title: 'Nothing Found - Ng Sheet',
 		path: '**',
 		loadComponent: () =>
