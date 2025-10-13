@@ -41,91 +41,91 @@
         <source>Cut</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">53</context>
+          <context context-type="linenumber">58</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4323470180912194028" datatype="html">
         <source>Copy</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">54</context>
+          <context context-type="linenumber">59</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8890504809170904482" datatype="html">
         <source>Paste</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">55</context>
+          <context context-type="linenumber">60</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2422151061505420287" datatype="html">
         <source>Insert row above</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">57</context>
+          <context context-type="linenumber">62</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2962787881671243654" datatype="html">
         <source>Insert column left</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">62</context>
+          <context context-type="linenumber">67</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1915154957612238134" datatype="html">
         <source>Insert cell</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">67</context>
+          <context context-type="linenumber">72</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4702676403027981812" datatype="html">
         <source>and shift down</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">71</context>
+          <context context-type="linenumber">76</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3158073197858915649" datatype="html">
         <source>and shift right</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">76</context>
+          <context context-type="linenumber">81</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2491995762085788112" datatype="html">
         <source>Delete row</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">83</context>
+          <context context-type="linenumber">88</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5439202652131593109" datatype="html">
         <source>Delete column</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">85</context>
+          <context context-type="linenumber">90</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1589522116261416347" datatype="html">
         <source>Delete cell</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">91</context>
+          <context context-type="linenumber">96</context>
         </context-group>
       </trans-unit>
       <trans-unit id="576758111136893345" datatype="html">
         <source>and shift up</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">95</context>
+          <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2001785812088444114" datatype="html">
         <source>and shift left</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-context-menu/context-menu.ts</context>
-          <context context-type="linenumber">100</context>
+          <context context-type="linenumber">105</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2906022139983192734" datatype="html">
@@ -154,21 +154,36 @@
         <source>Address (Ctrl + J)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-input/cell-input.ts</context>
-          <context context-type="linenumber">42</context>
+          <context context-type="linenumber">52</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6107597928709695137" datatype="html">
         <source>Input Error!</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-input/cell-input.ts</context>
-          <context context-type="linenumber">88</context>
+          <context context-type="linenumber">104</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7112886930231287365" datatype="html">
         <source>Invalid address or range.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/editor/cell-input/cell-input.ts</context>
-          <context context-type="linenumber">89</context>
+          <context context-type="linenumber">105</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1217251625458416147" datatype="html">
+        <source>New Table</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/sheets-service/doc-resolver.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
+          <context context-type="linenumber">100</context>
         </context-group>
       </trans-unit>
       <trans-unit id="9166568402301437671" datatype="html">
@@ -407,15 +422,15 @@
         <source>Required</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/login-form/login-form.ts</context>
-          <context context-type="linenumber">113</context>
+          <context context-type="linenumber">119</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
-          <context context-type="linenumber">106</context>
+          <context context-type="linenumber">112</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
-          <context context-type="linenumber">115</context>
+          <context context-type="linenumber">121</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/utils/get-control-error-message.ts</context>
@@ -426,11 +441,11 @@
         <source>Invalid Email</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/login-form/login-form.ts</context>
-          <context context-type="linenumber">114</context>
+          <context context-type="linenumber">120</context>
         </context-group>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
-          <context context-type="linenumber">107</context>
+          <context context-type="linenumber">113</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1466012768716286509" datatype="html">
@@ -479,21 +494,21 @@
         <source>Weak Password</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4444421233822815019" datatype="html">
         <source>Minimum 2 characters</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
-          <context context-type="linenumber">116</context>
+          <context context-type="linenumber">122</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5101311503950207763" datatype="html">
         <source>Maximum 30 characters</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/features/register-form/register-form.ts</context>
-          <context context-type="linenumber">117</context>
+          <context context-type="linenumber">123</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2971281135134045654" datatype="html">
@@ -572,39 +587,39 @@
           <context context-type="linenumber">1,2</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5324552940967183614" datatype="html">
-        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/login&quot; tuiLink&gt;"/>Login<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> Log in to the application using <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/> your existing account (Google, GitHub) <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/> or credentials (email, password) that you can <x id="START_LINK_1" equiv-text="&lt;a routerLink=&quot;/register&quot; tuiLink&gt;"/>register<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/></source>
+      <trans-unit id="6029791726982108409" datatype="html">
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/login&quot; tuiLink&gt;"/>Login<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> Log in to the application using <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>your existing account (Google, GitHub)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/> or credentials (email, password) that you can <x id="START_LINK_1" equiv-text="&lt;a routerLink=&quot;/register&quot; tuiLink&gt;"/>register<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/></source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
-          <context context-type="linenumber">4,14</context>
+          <context context-type="linenumber">4,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2989352907234101296" datatype="html">
         <source>Create a new table.</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
-          <context context-type="linenumber">14,15</context>
+          <context context-type="linenumber">13,14</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5504818442245470977" datatype="html">
         <source> Enter the data you want to process into the table sheets cells using the editor capabilities (In data entry mode, you have access to a context menu with formulas, and outside of it, with operations on cells by right-clicking). </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
-          <context context-type="linenumber">16,19</context>
+          <context context-type="linenumber">15,18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6348231470570884780" datatype="html">
         <source> After each input, the results of dependent calculations will be updated and actualized in the corresponding cells of the sheet. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
-          <context context-type="linenumber">21,23</context>
+          <context context-type="linenumber">20,23</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7109128468453302586" datatype="html">
         <source> You can save the result of your work as a document or as a starter template. </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
-          <context context-type="linenumber">25,26</context>
+          <context context-type="linenumber">24,26</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7936398398057589906" datatype="html">
@@ -3615,7 +3630,7 @@
         <source>Add Sheet</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/footer/editor/footer-editor.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8212177249756365917" datatype="html">
@@ -3644,7 +3659,7 @@
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">15,17</context>
+          <context context-type="linenumber">16,18</context>
         </context-group>
       </trans-unit>
       <trans-unit id="3485416866119094525" datatype="html">
@@ -3652,7 +3667,7 @@
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">31,33</context>
+          <context context-type="linenumber">32,34</context>
         </context-group>
       </trans-unit>
       <trans-unit id="1691205636135848099" datatype="html">
@@ -3660,7 +3675,7 @@
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">46,48</context>
+          <context context-type="linenumber">47,49</context>
         </context-group>
       </trans-unit>
       <trans-unit id="8128525622223854196" datatype="html">
@@ -3668,7 +3683,7 @@
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">63,64</context>
+          <context context-type="linenumber">64,65</context>
         </context-group>
       </trans-unit>
       <trans-unit id="345157245213727900" datatype="html">
@@ -3676,53 +3691,42 @@
 </source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
-          <context context-type="linenumber">78,79</context>
+          <context context-type="linenumber">79,80</context>
         </context-group>
       </trans-unit>
       <trans-unit id="6974992559229945361" datatype="html">
         <source>Save Table (Ctrl+S)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">35</context>
+          <context context-type="linenumber">41</context>
         </context-group>
       </trans-unit>
       <trans-unit id="4987670479820404750" datatype="html">
         <source>Save as Template (Ctrl+Shift+S)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">36</context>
+          <context context-type="linenumber">42</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7791345912872020606" datatype="html">
         <source>Create an empty table (Ctrl+N)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5238708423144467708" datatype="html">
         <source>Undo (Ctrl+Z)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">38</context>
+          <context context-type="linenumber">44</context>
         </context-group>
       </trans-unit>
       <trans-unit id="7333716981483963498" datatype="html">
         <source>Redo (Ctrl+Y)</source>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">39</context>
-        </context-group>
-      </trans-unit>
-      <trans-unit id="1217251625458416147" datatype="html">
-        <source>New Table</source>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">92</context>
-        </context-group>
-        <context-group purpose="location">
-          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">94</context>
+          <context context-type="linenumber">45</context>
         </context-group>
       </trans-unit>
       <trans-unit id="187187500641108332" datatype="html">

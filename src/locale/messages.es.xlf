@@ -194,6 +194,22 @@
           <context context-type="linenumber">77</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="1217251625458416147" datatype="html">
+        <source>New Table</source>
+        <target>Nueva mesa</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/features/editor/sheets-service/doc-resolver.ts</context>
+          <context context-type="linenumber">39</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
+          <context context-type="linenumber">98</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
+          <context context-type="linenumber">100</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="9166568402301437671" datatype="html">
         <source>Create a document</source>
         <target>Crear un documento</target>
@@ -652,12 +668,12 @@
           <context context-type="linenumber">1,2</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="5324552940967183614" datatype="html">
-        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/login&quot; tuiLink&gt;"/>Login<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> Log in to the application using <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/> your existing account (Google, GitHub) <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/> or credentials (email, password) that you can <x id="START_LINK_1" equiv-text="&lt;a routerLink=&quot;/register&quot; tuiLink&gt;"/>register<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/></source>
+      <trans-unit id="6029791726982108409" datatype="html">
+        <source><x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/login&quot; tuiLink&gt;"/>Login<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> Log in to the application using <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/>your existing account (Google, GitHub)<x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/> or credentials (email, password) that you can <x id="START_LINK_1" equiv-text="&lt;a routerLink=&quot;/register&quot; tuiLink&gt;"/>register<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/></source>
         <target><x id="START_LINK" ctype="x-a" equiv-text="&lt;a routerLink=&quot;/login&quot; tuiLink&gt;"/>Acceso<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/> Inicie sesión en la aplicación usando <x id="START_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;ul&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/> su cuenta existente (Google, GitHub) <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="START_LIST_ITEM" ctype="x-li" equiv-text="&lt;li&gt;"/> o credenciales (correo electrónico, contraseña) que puedas <x id="START_LINK_1" equiv-text="&lt;a routerLink=&quot;/register&quot; tuiLink&gt;"/>registro<x id="CLOSE_LINK" ctype="x-a" equiv-text="&lt;/a&gt;"/>. <x id="CLOSE_LIST_ITEM" ctype="x-li" equiv-text="&lt;/li&gt;"/><x id="CLOSE_UNORDERED_LIST" ctype="x-ul" equiv-text="&lt;/ul&gt;"/></target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/pages/getting-started/getting-started.html</context>
-          <context context-type="linenumber">4,14</context>
+          <context context-type="linenumber">4,13</context>
         </context-group>
       </trans-unit>
       <trans-unit id="2989352907234101296" datatype="html">
@@ -1862,7 +1878,7 @@
       </trans-unit>
       <trans-unit id="8839685913286661868" datatype="html">
         <source>Returns TRUE if the value is an even integer, or FALSE if the value is odd.</source>
-        <target>Devuelve TRUE si el valor es un entero par, o FALSO si el valor es impar.</target>
+        <target>Devuelve TRUE si el valor es un entero par, o FALSE si el valor es impar.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
           <context context-type="linenumber">434</context>
@@ -1910,7 +1926,7 @@
       </trans-unit>
       <trans-unit id="3460860574172280539" datatype="html">
         <source>Returns TRUE if the value is odd, or FALSE if the number is even.</source>
-        <target>Devuelve TRUE si el valor es impar o FALSO si el número es par.</target>
+        <target>Devuelve TRUE si el valor es impar o FALSE si el número es par.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
           <context context-type="linenumber">466</context>
@@ -2170,7 +2186,7 @@
       </trans-unit>
       <trans-unit id="3283290778817072045" datatype="html">
         <source>Returns TRUE if all arguments are TRUE.</source>
-        <target>Devuelve VERDADERO si todos los argumentos son VERDADEROS.</target>
+        <target>Devuelve TRUE si todos los argumentos son TRUE.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
           <context context-type="linenumber">647</context>
@@ -2178,7 +2194,7 @@
       </trans-unit>
       <trans-unit id="1559815430048822081" datatype="html">
         <source>Returns the logical value FALSE.</source>
-        <target>Devuelve el valor lógico FALSO.</target>
+        <target>Devuelve el valor lógico FALSE.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
           <context context-type="linenumber">652</context>
@@ -2234,7 +2250,7 @@
       </trans-unit>
       <trans-unit id="3684146619493986831" datatype="html">
         <source>Returns TRUE if at least one argument is TRUE.</source>
-        <target>Devuelve VERDADERO si al menos un argumento es VERDADERO.</target>
+        <target>Devuelve TRUE si al menos un argumento es TRUE.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
           <context context-type="linenumber">693</context>
@@ -2242,7 +2258,7 @@
       </trans-unit>
       <trans-unit id="767692068258544367" datatype="html">
         <source>The logical value is set to TRUE.</source>
-        <target>El valor lógico se establece en VERDADERO.</target>
+        <target>El valor lógico se establece en TRUE.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
           <context context-type="linenumber">698</context>
@@ -2250,7 +2266,7 @@
       </trans-unit>
       <trans-unit id="154151999072504356" datatype="html">
         <source>Returns true if an odd number of arguments evaluates to TRUE.</source>
-        <target>Devuelve verdadero si un número impar de argumentos se evalúa como VERDADERO.</target>
+        <target>Devuelve verdadero si un número impar de argumentos se evalúa como TRUE.</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/shared/constants/formulas.ts</context>
           <context context-type="linenumber">703</context>
@@ -4124,6 +4140,46 @@
           <context context-type="linenumber">8,10</context>
         </context-group>
       </trans-unit>
+      <trans-unit id="2785898836458042194" datatype="html">
+        <source>Save Table</source>
+        <target>Guardar tabla</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
+          <context context-type="linenumber">15,17</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="3485416866119094525" datatype="html">
+        <source>Save as Template</source>
+        <target>Guardar como plantilla</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
+          <context context-type="linenumber">31,33</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="1691205636135848099" datatype="html">
+        <source>Create an empty table</source>
+        <target>Crear una tabla vacía</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
+          <context context-type="linenumber">46,48</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="8128525622223854196" datatype="html">
+        <source>Undo</source>
+        <target>Deshacer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
+          <context context-type="linenumber">63,64</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="345157245213727900" datatype="html">
+        <source>Redo</source>
+        <target>Rehacer</target>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.html</context>
+          <context context-type="linenumber">78,79</context>
+        </context-group>
+      </trans-unit>
       <trans-unit id="6974992559229945361" datatype="html">
         <source>Save Table (Ctrl+S)</source>
         <target> Guardar tabla (Ctrl+S)</target>
@@ -4140,12 +4196,12 @@
           <context context-type="linenumber">36</context>
         </context-group>
       </trans-unit>
-      <trans-unit id="3567485489160290562" datatype="html">
-        <source>Create an empty table (Alt+N)</source>
+      <trans-unit id="7791345912872020606" datatype="html">
+        <source>Create an empty table (Ctrl+N)</source>
         <target> Crear una tabla vacía (Alt+N)</target>
         <context-group purpose="location">
           <context context-type="sourcefile">src/app/widgets/toolbar/toolbar.ts</context>
-          <context context-type="linenumber">37</context>
+          <context context-type="linenumber">43</context>
         </context-group>
       </trans-unit>
       <trans-unit id="5238708423144467708" datatype="html">

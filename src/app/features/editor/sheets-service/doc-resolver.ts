@@ -36,7 +36,7 @@ export const docResolver: ResolveFn<void> = (route: ActivatedRouteSnapshot) => {
 	const sheetId = route.paramMap.get('sheetId');
 	if (sheetId && !/^\d+$/.test(sheetId)) throw new Error('Invalid sheet Id.');
 	if (docId === '0') {
-		ss.initDoc('0', 'New Table', 0, emptySerializedTable);
+		ss.initDoc('0', $localize`New Table`, 0, emptySerializedTable);
 	} else {
 		return fs.getDoc(docId).pipe(
 			withLoading(ss.isLoading.set),
