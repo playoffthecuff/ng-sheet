@@ -163,6 +163,7 @@ export class Editor {
 	}
 	protected handleMouseDown(y: number, x: number, e: MouseEvent) {
 		if (e.button !== 0 && e.button !== 2) return;
+		if (this.ss.editingCell.x === x && this.ss.editingCell.y === y) return;
 		this.isSelectingFlag = e.button !== 2;
 		if (this.firstTypedSign) {
 			this.ss.setParsedCellValue(
