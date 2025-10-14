@@ -1,5 +1,5 @@
 <tui-loader [overlay]="true" [showLoader]="isLoading()" size="s">
-	<tui-input-inline tuiHint="Rename" class="input-inline">
+	<tui-input-inline [tuiHint]="renamePhrase" class="input-inline">
 		<input
 			[ngModel]="ss.docName()"
 			(change)="rename($event)"

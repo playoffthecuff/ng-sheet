@@ -38,6 +38,7 @@ export class HeaderEditor {
 	protected errorLoadingMessage = signal('');
 	private readonly input =
 		viewChild.required<ElementRef<HTMLInputElement>>('input');
+	protected renamePhrase = $localize`Rename`;
 	protected rename(e: Event) {
 		const { value } = e.target as HTMLInputElement;
 
