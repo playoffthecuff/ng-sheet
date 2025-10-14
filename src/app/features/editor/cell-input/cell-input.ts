@@ -108,6 +108,7 @@ export class CellInput {
 			this.cellAddress().nativeElement.blur();
 			this.ss.focusedCell.x = cell.col;
 			this.ss.focusedCell.y = cell.row;
+			this.ss.resetSelectedCells();
 		}
 		if (rangeIn) {
 			const mnx = Math.min(range.start.col, range.end.col);
