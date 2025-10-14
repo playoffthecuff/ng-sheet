@@ -1,0 +1,25 @@
+<h2 class="tui-text_h6">{{ context.data.title }}</h2>
+<p>{{ context.data.message }}</p>
+<div class="buttons">
+	<button
+		tuiButton
+		type="button"
+		(click)="context.completeWith(false)"
+		size="m"
+		appearance="neutral"
+		tuiAutoFocus
+		i18n
+	>
+		{{ context.data.cancelText ?? "Cancel" }}
+	</button>
+	<button
+		tuiButton
+		type="button"
+		(click)="context.completeWith(true)"
+		size="m"
+		appearance="primary-grayscale"
+		i18n
+	>
+		{{ context.data.okText ?? "OK" }}
+	</button>
+</div>

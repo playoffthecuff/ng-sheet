@@ -1,0 +1,205 @@
+<div class="container">
+	<tui-loader
+		[overlay]="true"
+		[showLoader]="!ss.doc?.sheets || ss.isLoading()"
+		size="l"
+		class="loader"
+	>
+		@if (ss.doc?.sheets) {
+			<table
+				tuiTable
+				class="table"
+				[columns]="ss.columnLetters"
+				tabindex="0"
+				#table
+			>
+				<th
+					tuiTh
+					[minWidth]="48"
+					class="tbody-tr-th btn"
+					(click)="ss.selectAllCells()"
+				></th>
+				<thead class="thead">
+					<tr tuiThGroup>
+						<th tuiTh [minWidth]="48" class="tbody-tr-th"></th>
+						@for (col of ss.sheetValues?.[0]; let i = $index; track $index) {
+							<th
+								tuiTh
+								[minWidth]="48"
+								[resizable]="true"
+								class="thead-tr-th"
+								[class.highlighted-th]="
+									i === ss.focusedCell.x || ss.isCellColInSelectedRange(i)
+								"
+								[class.selected-th]="
+									i >= ss.selectedColumns.start && i <= ss.selectedColumns.end
+								"
+								(click)="ss.setSelectedColumn(i)"
+							>
+								{{ ss.getColumnLetter(i) }}
+							</th>
+						}
+					</tr>
+				</thead>
+				<tbody tuiTbody class="tbody">
+					@for (row of ss.sheetValues; let y = $index; track y) {
+						<tr tuiTr class="tr">
+							<th
+								tuiTh
+								class="tbody-tr-th"
+								[class.highlighted-th]="
+									y === ss.focusedCell.y || ss.isCellRowInSelectedRange(y)
+								"
+								[class.selected-th]="
+									y >= ss.selectedRows.start && y <= ss.selectedRows.end
+								"
+								(click)="ss.setSelectedRow(y)"
+							>
+								{{ y + 1 }}
+							</th>
+							@for (cell of row; let x = $index; track x) {
+								<td
+									tuiTd
+									class="td"
+									[class.highlighted-td]="
+										ss.isCellInSelectedRange(y, x) && ss.isSelectedAreaBiggerThanOne()
+									"
+									[class]="{
+										br:
+											y >= ss.copiedCells.start.row &&
+											y <= ss.copiedCells.end.row &&
+											x + 1 === ss.copiedCells.start.col,
+										bt:
+											x >= ss.copiedCells.start.col &&
+											x <= ss.copiedCells.end.col &&
+											y - 1 === ss.copiedCells.end.row,
+										bb:
+											x >= ss.copiedCells.start.col &&
+											x <= ss.copiedCells.end.col &&
+											y + 1 === ss.copiedCells.start.row,
+										bl:
+											y >= ss.copiedCells.start.row &&
+											y <= ss.copiedCells.end.row &&
+											x - 1 === ss.copiedCells.end.col,
+									}"
+								>
+									<app-data-cell
+										[x]="x"
+										[y]="y"
+										[tableEl]="table"
+										[value]="
+											ss.editingCell.x === x && ss.editingCell.y === y ?
+												ss.userInput
+											:	ss.getFormattedCellStrFromCellValue(y, x, cell)
+										"
+										[isFocused]="ss.focusedCell.x === x && ss.focusedCell.y === y"
+										[isEditing]="ss.editingCell.x === x && ss.editingCell.y === y"
+										[isSelecting]="ss.isSelectingFlag"
+									/>
+								</td>
+
+								<!-- <td
+									tuiTd
+									tuiDropdownContext
+									#dropdown="tuiDropdown"
+									[tuiDropdown]="
+										(
+											((ss.focusedCell.x === j && ss.focusedCell.y === i) ||
+												ss.isCellInSelectedRange(i, j)) &&
+											!ss.isEditing
+										) ?
+											contextMenu
+										:	null
+									"
+									class="td"
+									[class.highlighted-td]="
+										ss.isCellRowInSelectedRange(i) && ss.isCellColInSelectedRange(j)
+									"
+									[class.selected]="i === ss.focusedCell.y && j === ss.focusedCell.x"
+									(dblclick)="handleCellDoubleClick(i, j)"
+									[appScrollIntoView]="scrollNeed(i, j)"
+									[class]="{
+										br:
+											(i >= ss.copiedCells.start.row &&
+												i <= ss.copiedCells.end.row &&
+												j + 1 === ss.copiedCells.start.col) ||
+											(i >= ss.copiedCells.start.row &&
+												i <= ss.copiedCells.end.row &&
+												j === ss.copiedCells.end.col),
+										bt:
+											j >= ss.copiedCells.start.col &&
+											j <= ss.copiedCells.end.col &&
+											i - 1 === ss.copiedCells.end.row,
+										bb:
+											j >= ss.copiedCells.start.col &&
+											j <= ss.copiedCells.end.col &&
+											i + 1 === ss.copiedCells.start.row,
+									}"
+									(mousedown)="handleMouseDown(i, j, $event)"
+									(mouseenter)="handleMouseEnter(i, j)"
+									(mouseup)="handleMouseUp($event)"
+								>
+									<tui-input-inline
+										[class.no-events]="false"
+										class="input"
+										[class.pointer-events-all]="
+											ss.editingCell.x === j && ss.editingCell.y === i
+										"
+										[tuiDropdown]="
+											ss.editingCell.x === j && ss.editingCell.y === i ?
+												formulaContextMenu
+											:	null
+										"
+										tuiDropdownContext
+										[tuiDropdownOffset]="20"
+									>
+										<input
+											tabindex="-1"
+											[value]="
+												ss.editingCell.x === j && ss.editingCell.y === i ?
+													ss.userInput
+												:	ss.getFormattedCellStr(i, j)
+											"
+											[appSetFocus]="ss.editingCell.x === j && ss.editingCell.y === i"
+											[appBlur]="ss.editingCell.x !== j || ss.editingCell.y !== i"
+											(ngModel)="(ss.userInput)"
+											(change)="handleChange(i, j, $event)"
+											(keydown.escape)="handleEscape(i, j, $event)"
+											(keydown.enter)="handleEnter(i, j, $event)"
+										/>
+									</tui-input-inline>
+									<ng-template #contextMenu let-close>
+										<app-context-menu [close]="close" />
+									</ng-template>
+									<ng-template #formulaContextMenu>
+										<tui-data-list
+											role="menu"
+											tuiDataListDropdownManager
+											class="formulas"
+										>
+											@for (item of ss.formulas; track $index) {
+												<button
+													tuiOption
+													new
+													type="button"
+													class="option"
+													(click)="pasteFormulaIntoInput(i, j, item.id)"
+												>
+													{{ item.id }}
+													<tui-icon
+														tuiHintDirection="right"
+														[tuiTooltip]="item.description"
+													/>
+												</button>
+											}
+										</tui-data-list>
+									</ng-template>
+								</td> -->
+							}
+						</tr>
+					}
+				</tbody>
+			</table>
+		}
+	</tui-loader>
+</div>

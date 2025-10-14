@@ -1,0 +1,67 @@
+<div
+	tuiDropdownContext
+	#dropdown="tuiDropdown"
+	[tuiDropdown]="
+		(
+			((ss.focusedCell.x === x() && ss.focusedCell.y === y()) ||
+				ss.isCellInSelectedRange(y(), x())) &&
+			!ss.isEditing
+		) ?
+			contextMenu
+		:	null
+	"
+	class="td-content"
+	[class.focused]="isFocused()"
+	(dblclick)="onCellDoubleClick(y(), x())"
+	[appScrollIntoView]="scrollNeed(y(), x())"
+	(mousedown)="onMouseDown(y(), x(), $event)"
+	(mouseup)="onMouseUp($event)"
+>
+	<div
+		(mouseenter)="onMouseEnter(y(), x(), $event)"
+		class="input-wrapper"
+		[class.with-pointer-events]="isSelecting()"
+	>
+		<tui-input-inline
+			class="input"
+			[tuiDropdown]="
+				ss.editingCell.x === x() && ss.editingCell.y === y() ?
+					formulaContextMenu
+				:	null
+			"
+			tuiDropdownContext
+			[tuiDropdownOffset]="20"
+		>
+			<input
+				#input
+				tabindex="-1"
+				[value]="value()"
+				[appSetFocus]="isEditing()"
+				[appBlur]="ss.editingCell.x !== x() || ss.editingCell.y !== y()"
+				(ngModel)="(ss.userInput)"
+				(change)="onChange(y(), x(), $event)"
+				(keydown.escape)="onEscape(y(), x(), $event)"
+				(keydown.enter)="onEnter(y(), x(), $event)"
+			/>
+		</tui-input-inline>
+		<ng-template #contextMenu let-close>
+			<app-context-menu [close]="close" />
+		</ng-template>
+		<ng-template #formulaContextMenu>
+			<tui-data-list role="menu" tuiDataListDropdownManager class="formulas">
+				@for (item of ss.formulas; track $index) {
+					<button
+						tuiOption
+						new
+						type="button"
+						class="option"
+						(click)="pasteFormulaIntoInput(y(), x(), item.id)"
+					>
+						{{ item.id }}
+						<tui-icon tuiHintDirection="right" [tuiTooltip]="item.description" />
+					</button>
+				}
+			</tui-data-list>
+		</ng-template>
+	</div>
+</div>

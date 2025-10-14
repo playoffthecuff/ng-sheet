@@ -1,0 +1,56 @@
+<tui-root class="root" [attr.tuiTheme]="ts.darkMode() ? 'dark' : null">
+	<app-progress-bar />
+	<div
+		class="content page-layout"
+		[class.editor-layout]="ls.headerVariant === 'editor'"
+	>
+		<app-header>
+			@switch (ls.headerVariant) {
+				@case ("editor") {
+					<app-header-editor />
+				}
+				@case ("search") {
+					<div class="flex-between">
+						<app-heading />
+						<app-header-search />
+						<div class="flex-balance" [class.link-container]="!(user$ | async)">
+							@if (!(user$ | async)) {
+								<a
+									tuiLink
+									routerLink="/getting-started"
+									iconStart="@tui.circle-question-mark"
+									class="link"
+									appearance="action-grayscale"
+									i18n
+								>
+									Getting Started
+								</a>
+							}
+						</div>
+					</div>
+				}
+				@default {
+					<div class="h-wrapper">
+						<app-heading />
+					</div>
+				}
+			}
+		</app-header>
+		@if (ls.headerVariant === "editor") {
+			<app-cell-input />
+		}
+		<main class="main">
+			<router-outlet />
+		</main>
+		<app-footer>
+			@switch (ls.footerVariant) {
+				@case ("editor") {
+					<app-footer-editor />
+				}
+				@default {
+					<app-footer-about />
+				}
+			}
+		</app-footer>
+	</div>
+</tui-root>

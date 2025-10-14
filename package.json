@@ -1,0 +1,94 @@
+{
+	"dependencies": {
+		"@angular/cdk": "^20.2.2",
+		"@angular/common": "^20.2.0",
+		"@angular/compiler": "^20.2.0",
+		"@angular/core": "^20.2.0",
+		"@angular/fire": "^20.0.1",
+		"@angular/forms": "^20.2.0",
+		"@angular/platform-browser": "^20.2.0",
+		"@angular/router": "^20.2.0",
+		"@taiga-ui/addon-charts": "^4.52.0",
+		"@taiga-ui/addon-doc": "^4.52.0",
+		"@taiga-ui/addon-mobile": "^4.52.0",
+		"@taiga-ui/addon-table": "^4.52.0",
+		"@taiga-ui/cdk": "^4.52.0",
+		"@taiga-ui/core": "^4.52.0",
+		"@taiga-ui/event-plugins": "^4.0.2",
+		"@taiga-ui/icons": "^4.52.0",
+		"@taiga-ui/kit": "^4.52.0",
+		"@taiga-ui/layout": "^4.52.0",
+		"fp-ts": "^2.16.11",
+		"hyperformula": "^3.0.1",
+		"rxjs": "~7.8.0",
+		"tslib": "^2.3.0"
+	},
+	"devDependencies": {
+		"@angular/build": "^20.2.2",
+		"@angular/cli": "^20.2.2",
+		"@angular/compiler-cli": "^20.2.0",
+		"@angular/localize": "^20.2.4",
+		"@types/jasmine": "~5.1.0",
+		"angular-cli-ghpages": "^2.0.3",
+		"angular-eslint": "20.2.0",
+		"eslint": "^9.33.0",
+		"eslint-config-prettier": "^10.1.8",
+		"eslint-plugin-import": "^2.32.0",
+		"husky": "^9.1.7",
+		"jasmine-core": "~5.9.0",
+		"karma": "~6.4.0",
+		"karma-chrome-launcher": "~3.2.0",
+		"karma-coverage": "~2.2.0",
+		"karma-jasmine": "~5.1.0",
+		"karma-jasmine-html-reporter": "~2.1.0",
+		"less": "^4.2.0",
+		"lint-staged": "^16.1.6",
+		"prettier": "3.6.2",
+		"prettier-plugin-ignored": "^1.0.0",
+		"sharp": "^0.34.3",
+		"typescript": "~5.9.2",
+		"typescript-eslint": "8.40.0"
+	},
+	"lint-staged": {
+		"*.{js,ts}": [
+			"eslint --fix"
+		],
+		"**/*": "prettier --write --ignore-unknown"
+	},
+	"name": "ng-sheet",
+	"prettier": {
+		"experimentalTernaries": true,
+		"objectWrap": "collapse",
+		"overrides": [
+			{
+				"files": "*.html",
+				"options": {
+					"parser": "angular"
+				}
+			},
+			{
+				"files": "dist",
+				"options": {
+					"parser": "ignored"
+				}
+			}
+		],
+		"plugins": [
+			"prettier-plugin-ignored"
+		],
+		"tabWidth": 1,
+		"useTabs": true
+	},
+	"private": true,
+	"scripts": {
+		"build": "ng build",
+		"format": "prettier --write .",
+		"lint": "ng lint",
+		"ng": "ng",
+		"prepare": "husky",
+		"start": "ng serve",
+		"test": "ng test",
+		"watch": "ng build --watch --configuration development"
+	},
+	"version": "0.1.0"
+}

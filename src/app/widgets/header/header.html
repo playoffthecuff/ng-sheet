@@ -1,0 +1,14 @@
+<header class="header" tuiTheme="dark">
+	<a
+		[routerLink]="['/']"
+		tuiTab
+		class="home-link"
+		tuiLink
+		routerLinkActive
+		[routerLinkActiveOptions]="{ exact: true }"
+	>
+		<app-logo class="logo" />
+	</a>
+	<ng-content> </ng-content>
+	<app-user-menu />
+</header>

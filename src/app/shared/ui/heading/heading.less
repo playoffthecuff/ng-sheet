@@ -1,0 +1,34 @@
+.shimmer {
+	animation: shimmer 10s linear 1;
+}
+
+.infinite-animation {
+	animation-iteration-count: infinite;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 50% 0;
+	}
+	10% {
+		background-position: -150% 0;
+	}
+	100% {
+		background-position: -150% 0;
+	}
+}
+
+.h {
+	font-size: 1.5rem;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	line-height: 1.25;
+	width: fit-content;
+	background: linear-gradient(90deg, #222 0%, #fff 50%, #222 100%);
+	background-position: 50%;
+	background-size: 200% auto;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	margin: 0;
+}

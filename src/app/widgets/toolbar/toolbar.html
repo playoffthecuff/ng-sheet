@@ -1,0 +1,80 @@
+<app-divider [isVertical]="true" />
+<button
+	[appearance]="savingErrorMessage ? 'negative' : 'info'"
+	size="s"
+	tuiIconButton
+	type="button"
+	iconStart="@tui.save"
+	class="btn"
+	[tuiHint]="savingErrorMessage ? savingErrorMessage : defaultSaveTablePhrase"
+	tuiHintDirection="right"
+	(click)="trySave()"
+	[loading]="isLoading()"
+	[disabled]="ss.isDataSaved || isTemplateLoading()"
+	i18n
+>
+	Save Table
+</button>
+<button
+	[appearance]="savingErrorMessage ? 'negative' : 'info'"
+	size="s"
+	tuiIconButton
+	type="button"
+	iconStart="@tui.save-all"
+	class="btn"
+	[tuiHint]="savingErrorMessage ? savingErrorMessage : defaultSaveTemplatePhrase"
+	tuiHintDirection="right"
+	(click)="trySave(true)"
+	[loading]="isTemplateLoading()"
+	[disabled]="ss.isDataSaved || isLoading()"
+	i18n
+>
+	Save as Template
+</button>
+<button
+	appearance="positive"
+	size="s"
+	tuiIconButton
+	type="button"
+	iconStart="@tui.plus"
+	class="btn"
+	[tuiHint]="createAnEmptyTablePhrase"
+	tuiHintDirection="right"
+	(click)="createNewTable()"
+	[disabled]="isLoading()"
+	i18n
+>
+	Create an empty table
+</button>
+<app-divider [isVertical]="true" />
+<button
+	appearance="neutral"
+	size="s"
+	tuiIconButton
+	type="button"
+	iconStart="@tui.undo"
+	class="btn"
+	[tuiHint]="undoPhrase"
+	tuiHintDirection="right"
+	(click)="undo()"
+	[disabled]="isLoading() || !ss.doc?.sheets?.isThereSomethingToUndo?.()"
+	i18n
+>
+	Undo
+</button>
+<button
+	appearance="neutral"
+	size="s"
+	tuiIconButton
+	type="button"
+	iconStart="@tui.redo"
+	class="btn"
+	[tuiHint]="redoPhrase"
+	tuiHintDirection="right"
+	(click)="redo()"
+	[disabled]="isLoading() || !ss.doc?.sheets?.isThereSomethingToRedo()"
+	i18n
+>
+	Redo
+</button>
+<app-divider [isVertical]="true" />

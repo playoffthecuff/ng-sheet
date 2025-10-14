@@ -1,0 +1,53 @@
+<tui-data-list role="menu" tuiDataListDropdownManager class="context-menu">
+	@for (item of items; let i = $index; track i) {
+		@if (item.children) {
+			<button
+				tuiOption
+				new
+				type="button"
+				iconEnd="@tui.chevron-right"
+				[iconStart]="item.icon"
+				tuiDropdownAlign="right"
+				tuiDropdownSided
+				tuiOption
+				type="button"
+				[tuiDropdown]="nestedMenu"
+				(click)="onAction(item.action)"
+				class="option"
+			>
+				{{ item.title }}
+			</button>
+			<ng-template #nestedMenu>
+				<tui-data-list>
+					@for (child of item.children; track $index) {
+						<button
+							tuiOption
+							new
+							type="button"
+							(click)="onAction(child.action)"
+							class="option"
+							[iconEnd]="child.icon"
+						>
+							{{ child.title }}
+						</button>
+					}
+				</tui-data-list>
+			</ng-template>
+		} @else {
+			<button
+				tuiOption
+				new
+				type="button"
+				[iconStart]="item.icon"
+				(click)="onAction(item.action)"
+				class="option"
+			>
+				{{ item.title }}
+			</button>
+		}
+
+		@if (i === 2 || i === 5) {
+			<hr class="separator" />
+		}
+	}
+</tui-data-list>

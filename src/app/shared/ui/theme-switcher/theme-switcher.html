@@ -1,0 +1,13 @@
+<button
+	tuiButton
+	type="button"
+	(click)="toggle()"
+	tuiIconButton
+	[iconStart]="darkMode() ? '@tui.moon' : '@tui.sun'"
+	size="s"
+	appearance="secondary"
+	class="button"
+	i18n
+>
+	Toggle {{ darkMode() ? "dark" : "light" }}
+</button>

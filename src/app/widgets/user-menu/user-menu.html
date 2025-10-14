@@ -1,0 +1,98 @@
+<tui-avatar
+	[src]="initials()"
+	size="s"
+	[tuiAppearanceState]="open ? 'active' : null"
+	[tuiDropdown]="dropdown"
+	[tuiDropdownMaxHeight]="480"
+	[(tuiDropdownOpen)]="open"
+	tuiDropdownAlign="left"
+	class="avatar"
+></tui-avatar>
+<ng-template #dropdown let-close>
+	<div class="menu">
+		<header class="header">
+			<span tuiFade class="email" i18n>{{ email() ?? "Login to start" }}</span>
+			<div class="buttons">
+				<app-theme-switcher></app-theme-switcher>
+				<app-lang-switcher></app-lang-switcher>
+			</div>
+		</header>
+		<app-divider />
+		<div class="body">
+			<tui-avatar [src]="initials()" size="l" class="avatar"></tui-avatar>
+			<p class="p" i18n>
+				Good {{ time | dateToDayPart }}, {{ name() ?? "Guest" }}
+			</p>
+			@if (email()) {
+				<button
+					tuiButton
+					iconEnd="@tui.log-out"
+					appearance="secondary"
+					size="m"
+					(click)="logout()"
+					class="btn"
+					[loading]="isLoading()"
+					i18n
+				>
+					Sign Out
+				</button>
+			} @else {
+				<button
+					tuiButton
+					iconEnd="@tui.log-in"
+					appearance="secondary"
+					size="m"
+					(click)="login()"
+					class="btn"
+					[loading]="isLoading()"
+					i18n
+				>
+					Sign In
+				</button>
+			}
+		</div>
+		<app-divider />
+		@if (email()) {
+			<div class="body">
+				<p class="p" i18n>Register a new user?</p>
+				<button
+					tuiButton
+					iconEnd="@tui.user-plus"
+					appearance="secondary"
+					size="m"
+					(click)="register()"
+					class="btn"
+					[loading]="isLoading()"
+					i18n
+				>
+					Add Account
+				</button>
+			</div>
+		}
+
+		@if (!email()) {
+			<app-divider />
+			<div class="add-block">
+				<p class="p" i18n>Don't have an account?</p>
+				<button
+					tuiButton
+					iconEnd="@tui.user-plus"
+					appearance="secondary"
+					size="m"
+					(click)="register()"
+					class="btn"
+					[loading]="isLoading()"
+					i18n
+				>
+					Register
+				</button>
+			</div>
+		}
+		<app-divider />
+		<footer class="footer">
+			<a routerLink="/terms-of-use" tuiLink appearance="action-grayscale" i18n>
+				Terms of use
+			</a>
+		</footer>
+	</div>
+</ng-template>

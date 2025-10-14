@@ -1,0 +1,80 @@
+.root {
+	font: var(--tui-font-text-m);
+}
+
+.content {
+	display: grid;
+	grid-template-areas:
+		"header"
+		"toolbar"
+		"main"
+		"footer";
+	grid-template-rows: auto auto 1fr 3rem;
+}
+
+.page-layout {
+	--layout-height: 6rem;
+}
+.editor-layout {
+	--layout-height: 8rem;
+}
+
+.main {
+	width: 100vw;
+	height: calc(100dvh - var(--layout-height));
+	overflow: auto;
+	grid-area: main;
+}
+
+.h-wrapper {
+	flex-grow: 1;
+}
+
+.h {
+	font-size: 1.5rem;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	line-height: 1.25;
+	width: fit-content;
+	background: linear-gradient(90deg, #222 0%, #fff 50%, #222 100%);
+	background-position: 50%;
+	background-size: 200% auto;
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+
+.shimmer {
+	animation: shimmer 10s linear infinite;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 50% 0;
+	}
+	10% {
+		background-position: -150% 0;
+	}
+	100% {
+		background-position: -150% 0;
+	}
+}
+
+.flex-balance {
+	width: 111px;
+	@media screen and (width <= 800px) {
+		width: 0;
+		margin-left: -0.5rem;
+	}
+}
+.link-container {
+	width: 10rem;
+	text-align: end;
+}
+.flex-between {
+	flex-grow: 1;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	gap: 1rem;
+}

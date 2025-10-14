@@ -1,0 +1,103 @@
+<div class="container">
+	<tui-loader size="l" [overlay]="true" [showLoader]="isGlobalLoading()">
+		<form [formGroup]="form" (ngSubmit)="submit()" class="form">
+			<h2 tuiTitle="m" class="h" i18n>Sign in</h2>
+			<app-divider></app-divider>
+			<p class="p" i18n>with provider</p>
+			<div class="row gap-4">
+				<button
+					type="button"
+					tuiButton
+					i18n
+					class="btn"
+					appearance="secondary-grayscale"
+					(click)="signinWithProvider('google')"
+					i18n
+				>
+					<img
+						src="assets/img/google.svg"
+						[style.height.rem]="1.5"
+						alt="google logo"
+					/>
+					Google
+				</button>
+				<button
+					type="button"
+					tuiButton
+					i18n
+					class="btn"
+					appearance="secondary-grayscale"
+					(click)="signinWithProvider('github')"
+					i18n
+				>
+					<tui-icon icon="github" [style.height.rem]="1.5" />
+					Github
+				</button>
+			</div>
+			<app-divider></app-divider>
+			<p class="p" i18n>using credentials</p>
+			<div>
+				<tui-textfield>
+					<label tuiLabel htmlFor="email" i18n>Email </label>
+					<input
+						tuiTextfield
+						formControlName="email"
+						id="email"
+						type="email"
+						i18n-placeholder
+						placeholder="type email here..."
+					/>
+					<tui-icon icon="@tui.mail" class="no-events" />
+				</tui-textfield>
+				<tui-error [error]="emailValidationMessage" class="error" />
+			</div>
+			<div>
+				<tui-textfield>
+					<label tuiLabel htmlFor="password" i18n>Password </label>
+					<input
+						tuiTextfield
+						formControlName="password"
+						id="password"
+						type="password"
+						i18n-placeholder
+						placeholder="type password here..."
+					/>
+					<tui-icon tuiPassword />
+				</tui-textfield>
+				<tui-error [error]="passwordValidationMessage" class="error" />
+			</div>
+			<div>
+				<button
+					type="submit"
+					tuiButton
+					[disabled]="!form.valid || isLoading()"
+					i18n
+					class="btn w-full"
+					appearance="primary-grayscale"
+				>
+					@if (isLoading()) {
+						<app-spinner [inheritColor]="true" [overlay]="false" size="m" />
+					} @else {
+						Sign In
+						<tui-icon icon="@tui.log-in" [style.height.rem]="1.5" />
+					}
+				</button>
+				<tui-error [error]="loadingErrorMessage()" class="error" />
+			</div>
+			<div class="row">
+				<span i18n i18n> Don't have an account? </span>
+				<a tuiLink routerLink="/register" i18n i18n> Register </a>
+			</div>
+		</form>
+	</tui-loader>
+	<div class="illustration">
+		<img
+			ngSrc="assets/img/auth.png"
+			alt="user badge"
+			width="288"
+			height="384"
+			priority="high"
+			[placeholder]="AUTH_PLACEHOLDER"
+		/>
+	</div>
+</div>

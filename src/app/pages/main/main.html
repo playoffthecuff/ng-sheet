@@ -1,0 +1,7 @@
+@if (user$ | async) {
+	<app-file-manager />
+} @else {
+	<div class="link-wrapper">
+		<a class="intro-link" routerLink="/login"><app-intro></app-intro></a>
+	</div>
+}

@@ -1,0 +1,12 @@
+@if (user$ | async) {
+	<tui-textfield class="textfield" iconStart="@tui.search" size="s">
+		<input
+			[formControl]="control"
+			class="input"
+			tuiTextfield
+			#input
+			i18n-placeholder
+			placeholder="Alt+K to search"
+		/>
+	</tui-textfield>
+}

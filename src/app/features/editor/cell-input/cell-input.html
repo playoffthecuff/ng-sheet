@@ -1,0 +1,56 @@
+<tui-textfield
+	class="cell"
+	tuiTextfieldSize="s"
+	[tuiTextfieldCleaner]="false"
+	[tuiHint]="addrCtrlJPhrase"
+>
+	<input
+		#cellAddress
+		i18n-placeholder
+		placeholder="Enter cell here..."
+		tuiTextfield
+		class="input"
+		[value]="ss.getStrAddressRange() ?? null"
+		(keydown.enter)="setSelectedRange($event)"
+	/>
+</tui-textfield>
+<tui-textfield iconStart="f-x" class="value" tuiTextfieldSize="s">
+	<input
+		#cellValue
+		i18n-placeholder
+		placeholder="Type value or formula here..."
+		tuiTextfield
+		class="input"
+		(keydown.enter)="setFocusedCellValue($event)"
+		[(ngModel)]="ss.userInput"
+	/>
+</tui-textfield>
+<button
+	tuiButton
+	tuiChevron
+	tuiDropdownOpen
+	type="button"
+	[tuiDropdown]="contextMenu"
+	size="s"
+	appearance="outline-grayscale"
+	i18n
+	class="dropdown"
+>
+	Formulas
+</button>
+<ng-template #contextMenu>
+	<tui-data-list role="menu" tuiDataListDropdownManager>
+		@for (item of ss.formulas; track $index) {
+			<button
+				tuiOption
+				new
+				type="button"
+				class="option"
+				(click)="pasteFormulaToCellValueInput(item.id)"
+			>
+				{{ item.id }}
+				<tui-icon tuiHintDirection="right" [tuiTooltip]="item.description" />
+			</button>
+		}
+	</tui-data-list>
+</ng-template>

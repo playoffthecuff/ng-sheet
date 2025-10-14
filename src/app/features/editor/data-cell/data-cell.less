@@ -1,0 +1,54 @@
+:host {
+	display: block;
+	height: 100%;
+}
+.td-content {
+	font-weight: 500;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	outline-offset: -2px;
+}
+.focused {
+	outline: 2px solid var(--tui-chart-categorical-00);
+}
+.br {
+	border-right: 2px dotted var(--tui-text-primary);
+}
+.bt {
+	border-top: 2px dotted var(--tui-text-primary);
+}
+.bb {
+	border-bottom: 2px dotted var(--tui-text-primary);
+}
+.input {
+	padding: 0 0.25rem;
+	width: 100%;
+	pointer-events: none;
+	font-size: 0.875rem;
+}
+.option {
+	padding: 0 0.5rem !important;
+	min-block-size: 2rem !important;
+	font-size: 0.875rem !important;
+	font-weight: 500 !important;
+	gap: 0.75rem !important;
+	&::before {
+		font-size: 1.25rem;
+	}
+	width: 100%;
+	display: flex;
+	gap: 1rem;
+	align-items: center;
+	justify-content: space-between;
+}
+.formulas {
+	border-radius: 1.25rem;
+}
+.input-wrapper {
+	flex-grow: 1;
+	pointer-events: none;
+}
+.with-pointer-events {
+	pointer-events: auto;
+}

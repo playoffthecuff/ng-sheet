@@ -1,0 +1,46 @@
+<div>
+	<section class="container">
+		<span class="bg">404</span>
+		<article class="content">
+			<h1 tuiTitle="m" class="h" i18n>Page are you looking for cannot be found</h1>
+			<div class="actions-grid">
+				@if (this.canGoBack) {
+					<span class="txt" i18n> You can </span>
+					<button
+						appearance="action"
+						iconStart="@tui.undo"
+						size="m"
+						tuiButton
+						type="button"
+						(click)="goBack()"
+						class="btn"
+						i18n
+					>
+						go back
+					</button>
+					<span class="txt" i18n>or</span>
+				} @else {
+					<span class="txt" i18n>You can</span>
+				}
+				<button
+					appearance="action"
+					routerLink="/"
+					iconStart="@tui.home"
+					size="m"
+					tuiButton
+					type="button"
+					class="btn"
+					i18n
+				>
+					start over
+				</button>
+			</div>
+		</article>
+	</section>
+	<img
+		src="assets/img/404.svg"
+		i18n-alt
+		alt="woman with a 'dead end' sign"
+		class="img"
+	/>
+</div>

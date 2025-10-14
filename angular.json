@@ -1,0 +1,101 @@
+{
+	"$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+	"version": 1,
+	"newProjectRoot": "projects",
+	"projects": {
+		"ng-sheet": {
+			"projectType": "application",
+			"i18n": {
+				"sourceLocale": "en",
+				"locales": {
+					"es": { "translation": "src/locale/messages.es.xlf", "subPath": "es" }
+				}
+			},
+			"schematics": { "@schematics/angular:component": { "style": "less" } },
+			"root": "",
+			"sourceRoot": "src",
+			"prefix": "app",
+			"architect": {
+				"build": {
+					"builder": "@angular/build:application",
+					"options": {
+						"browser": "src/main.ts",
+						"baseHref": "/",
+						"tsConfig": "tsconfig.app.json",
+						"outputPath": "dist/ng-sheet",
+						"inlineStyleLanguage": "less",
+						"localize": true,
+						"assets": [
+							{ "glob": "**/*", "input": "public" },
+							{
+								"glob": "**/*",
+								"input": "node_modules/@taiga-ui/icons/src",
+								"output": "assets/taiga-ui/icons"
+							},
+							"src/_redirects"
+						],
+						"styles": [
+							"@taiga-ui/core/styles/taiga-ui-theme.less",
+							"@taiga-ui/core/styles/taiga-ui-fonts.less",
+							"@taiga-ui/addon-mobile/styles/taiga-ui-mobile.less",
+							"src/styles.less"
+						],
+						"polyfills": ["@angular/localize/init"]
+					},
+					"configurations": {
+						"production": {
+							"budgets": [
+								{ "type": "initial", "maximumWarning": "1.5MB", "maximumError": "3MB" },
+								{
+									"type": "anyComponentStyle",
+									"maximumWarning": "4kB",
+									"maximumError": "8kB"
+								}
+							],
+							"outputHashing": "all"
+						},
+						"development": {
+							"optimization": false,
+							"extractLicenses": false,
+							"sourceMap": true,
+							"fileReplacements": [
+								{
+									"replace": "src/environments/environment.ts",
+									"with": "src/environments/environment.development.ts"
+								}
+							]
+						},
+						"es": { "localize": ["es"] }
+					},
+					"defaultConfiguration": "production"
+				},
+				"serve": {
+					"builder": "@angular/build:dev-server",
+					"configurations": {
+						"production": { "buildTarget": "ng-sheet:build:production" },
+						"development": { "buildTarget": "ng-sheet:build:development" },
+						"es": { "buildTarget": "ng-sheet:build:development,es" }
+					},
+					"defaultConfiguration": "development"
+				},
+				"extract-i18n": { "builder": "@angular/build:extract-i18n" },
+				"test": {
+					"builder": "@angular/build:karma",
+					"options": {
+						"tsConfig": "tsconfig.spec.json",
+						"inlineStyleLanguage": "less",
+						"assets": [{ "glob": "**/*", "input": "public" }],
+						"styles": ["src/styles.less"],
+						"polyfills": ["@angular/localize/init"]
+					}
+				},
+				"deploy": { "builder": "angular-cli-ghpages:deploy" },
+				"lint": {
+					"builder": "@angular-eslint/builder:lint",
+					"options": { "lintFilePatterns": ["src/**/*.ts", "src/**/*.html"] }
+				}
+			}
+		}
+	},
+	"cli": { "schematicCollections": ["angular-eslint"] }
+}

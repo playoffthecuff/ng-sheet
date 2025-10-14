@@ -1,0 +1,59 @@
+<div class="menu">
+	<button
+		appearance="positive"
+		size="s"
+		tuiIconButton
+		[tuiHint]="addSheetPhrase"
+		type="button"
+		[style.border-radius.%]="100"
+		(click)="this.ss.addSheet()"
+		i18n
+	>
+		Add Sheet
+		<tui-icon icon="@tui.plus" />
+	</button>
+	<button
+		tuiButton
+		iconEnd="@tui.chevron-down"
+		class="btn"
+		tuiDropdownOpen
+		type="button"
+		[tuiDropdown]="content"
+		size="s"
+		appearance="info"
+		i18n
+	>
+		All Sheets
+	</button>
+	<ng-template #content>
+		<tui-data-list role="menu" size="s" class="data-list">
+			@for (sheetName of ss.sheetNames; let i = $index; track $index) {
+				<button
+					tuiOption
+					new
+					type="button"
+					class="option"
+					(click)="navigateToSheet(ss.getSheetId(sheetName) ?? 0)"
+				>
+					<span>
+						@if (sheetName === ss.sheetName) {
+							<tui-icon icon="@tui.check" [style.font-size]="'1rem'" />
+						}
+					</span>
+					{{ sheetName }}
+				</button>
+			}
+		</tui-data-list>
+	</ng-template>
+	<tui-segmented size="s" class="segments" [activeItemIndex]="activeIndex">
+		@for (
+			sheetName of ss.sheetNames ?? [];
+			let i = $index, c = $count;
+			track $index
+		) {
+			<button class="btn-wrapper">
+				<app-sheet-segment [removable]="c === 1" [sheetName]="sheetName" />
+			</button>
+		}
+	</tui-segmented>
+</div>

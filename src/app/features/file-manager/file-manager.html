@@ -1,0 +1,291 @@
+<header class="header">
+	<div class="container">
+		<h2 class="h2" i18n>Create a document</h2>
+		<div class="btn-bar">
+			<button
+				tuiButton
+				tuiButtonVertical
+				iconStart="@tui.file"
+				size="xl"
+				appearance="floating"
+				(click)="openEditorWithEmptyTable()"
+				class="template-btn"
+				i18n
+			>
+				as an empty <br />
+				table
+			</button>
+			@for (item of fms.templates(); track item.id) {
+				<tui-loader
+					[overlay]="true"
+					[showLoader]="fms.isTemplateLoading() && fms.templateLoadingId === item.id"
+					size="m"
+				>
+					<button
+						tuiButton
+						tuiButtonVertical
+						iconStart="@tui.table"
+						size="xl"
+						appearance="floating"
+						(click)="openEditorWithTemplate(item.id)"
+						class="template-btn"
+						i18n
+					>
+						<button
+							tuiButtonClose
+							tuiIconButton
+							type="button"
+							size="s"
+							class="close-btn"
+							(click)="openRemoveTableDialog(delTmpl, $event)"
+						>
+							Close
+						</button>
+						from template <br />
+						"{{ item.name }}"
+					</button>
+				</tui-loader>
+				<ng-template #delTmpl let-observer>
+					<h2 tuiTitle="m" i18n>Delete?</h2>
+					<p class="warning" i18n>The template "{{ item.name }}" will be deleted.</p>
+
+					<div class="dialog-buttons">
+						<button
+							size="m"
+							tuiButton
+							type="button"
+							(click)="observer.complete()"
+							appearance="secondary-grayscale"
+							i18n
+						>
+							Cancel
+						</button>
+						<button
+							size="m"
+							tuiButton
+							type="button"
+							class="tui-space_right-3"
+							(click)="removeTemplate(item.id)"
+							appearance="primary-grayscale"
+							i18n
+						>
+							Confirm
+						</button>
+					</div>
+				</ng-template>
+			} @empty {
+				<div class="no-template-frame">
+					<tui-icon icon="@tui.file-x" class="tf-icon" />
+					<span class="t-text" i18n
+						>Create a table and save it as a template so it will be available
+						here.</span
+					>
+				</div>
+			}
+		</div>
+	</div>
+</header>
+<tui-loader [overlay]="true" [showLoader]="isLoading()" size="l">
+	<div class="container">
+		@if (fms.pageDocuments()?.length) {
+			<table
+				tuiTable
+				class="table"
+				[columns]="columns"
+				[tuiSortBy]="fms.sortBy() ?? null"
+				(tuiSortChange)="change($event)"
+			>
+				<thead>
+					<tr tuiThGroup>
+						<th
+							*tuiHead="'name'"
+							tuiSortable
+							tuiTh
+							[requiredSort]="false"
+							class="th"
+							i18n
+						>
+							Name
+						</th>
+						<th
+							*tuiHead="'createdAt'"
+							tuiSortable
+							[requiredSort]="false"
+							tuiTh
+							class="th date"
+							i18n
+						>
+							Created at
+						</th>
+						<th
+							*tuiHead="'updatedAt'"
+							tuiSortable
+							[requiredSort]="false"
+							tuiTh
+							class="th date"
+							i18n
+						>
+							Updated at
+						</th>
+						<th
+							tuiTh
+							class="th actions"
+							*tuiHead="'id'"
+							[requiredSort]="false"
+							[sorter]="null"
+						></th>
+					</tr>
+				</thead>
+				<tbody tuiTbody>
+					@for (item of fms.pageDocuments(); let i = $index; track i) {
+						<tr tuiTr class="content-row" (click)="openTable(item.id)">
+							<td
+								*tuiCell="'name'"
+								tuiTd
+								class="td"
+								[class.pointer-events-none]="changingNameIndex === i"
+							>
+								<tui-input-inline class="inline-input pointer-events-none">
+									<input
+										[ngModel]="item.name"
+										(change)="renameTable($event, item.id)"
+										class="input pointer-events-none"
+										[class.pointer-events-all]="changingNameIndex === i"
+										[appSetFocus]="changingNameIndex === i"
+										[appBlur]="changingNameIndex !== i"
+										(click)="stopPropagation($event)"
+										(blur)="endEditTableName($event)"
+										tuiHint="At least one character"
+										tuiHintDirection="top"
+										tuiHintAppearance="error"
+										[tuiHintManual]="showEmptyNameHint && changingNameIndex === i"
+									/>
+								</tui-input-inline>
+							</td>
+							<td *tuiCell="'createdAt'" tuiTd class="td">
+								<div class="double-td">
+									<span>{{ item["createdAt"] | date: "dd MMM yyyy" }}</span>
+									<span>
+										{{ item["createdAt"] | date: "shortTime" }}
+									</span>
+								</div>
+							</td>
+							<td *tuiCell="'updatedAt'" tuiTd class="td">
+								<div class="double-td">
+									<span>
+										{{ item["updatedAt"] | date: "dd MMM yyyy" }}
+									</span>
+									<span>
+										{{ item["updatedAt"] | date: "shortTime" }}
+									</span>
+								</div>
+							</td>
+							<td class="td" *tuiCell="'id'" tuiTd class="td menu-cell">
+								<button
+									tuiIconButton
+									appearance="secondary-grayscale"
+									tuiDropdownOpen
+									[tuiDropdown]="content"
+									iconStart="@tui.ellipsis-vertical"
+									(click)="stopPropagation($event)"
+									i18n
+								>
+									Menu
+								</button>
+								<ng-template #content>
+									<tui-data-list role="menu">
+										<a
+											role="menuitem"
+											tuiOption
+											[routerLink]="['editor', item.id, 0]"
+											class="link"
+											target="_blank"
+											i18n
+										>
+											<tui-icon icon="@tui.external-link" class="icon" /> Open in a new tab
+										</a>
+										<button
+											role="menuitem"
+											tuiOption
+											class="link"
+											(click)="startEditTableName(i)"
+										>
+											<tui-icon icon="@tui.pencil" class="icon" /> Rename
+										</button>
+										<button
+											role="menuitem"
+											tuiOption
+											class="link"
+											(click)="openRemoveTableDialog(dialog)"
+										>
+											<tui-icon icon="@tui.trash-2" class="icon" /> Delete
+										</button>
+										<ng-template #dialog let-observer>
+											<h2 tuiTitle="m" i18n>Delete?</h2>
+											<p class="warning" i18n>
+												The table "{{ item.name }}" will be deleted.
+											</p>
+
+											<div class="dialog-buttons">
+												<button
+													size="m"
+													tuiButton
+													type="button"
+													(click)="observer.complete()"
+													appearance="secondary-grayscale"
+													i18n
+												>
+													Cancel
+												</button>
+												<button
+													size="m"
+													tuiButton
+													type="button"
+													class="tui-space_right-3"
+													(click)="removeTable(item.id)"
+													appearance="primary-grayscale"
+													i18n
+												>
+													Confirm
+												</button>
+											</div>
+										</ng-template>
+									</tui-data-list>
+								</ng-template>
+							</td>
+						</tr>
+					}
+				</tbody>
+				<tfoot>
+					<tr>
+						<td [colSpan]="columns.length" tuiTd class="td">
+							<tui-table-pagination
+								class="pagination"
+								[page]="fms.currentPage()"
+								[total]="fms.totalDocuments() ?? 0"
+								(paginationChange)="onPagination($event)"
+								[size]="fms.docsPerPage()"
+								[items]="[8, 16, 32, 64]"
+							/>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		} @else {
+			<p class="info" i18n>
+				@if (fms.loadingErrorMessage()) {
+					{{ fms.loadingErrorMessage() }}
+				} @else {
+					@if (fms.searchText()) {
+						No tables match the specified search criteria. Please adjust your search
+						query or create a new table by clicking one of the table creation buttons
+						above.
+					} @else {
+						Here you can manage your tables, but you haven't created any yet. Click
+						one of the table creation buttons above to do so.
+					}
+				}
+			</p>
+		}
+	</div>
+</tui-loader>
