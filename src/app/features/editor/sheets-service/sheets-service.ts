@@ -5,6 +5,7 @@ import {
 	CellValueDetailedType,
 	HyperFormula,
 	type CellValue,
+	type ExportedChange,
 	type RawCellContent,
 	type SimpleCellAddress,
 	type SimpleCellRange,
@@ -88,6 +89,14 @@ export class SheetsService {
 				return O.of(undefined);
 			}),
 		);
+
+	cancelFlag = false;
+	firstTypedSign = '';
+	isSelectingFlag = false;
+	clickOutsideFlag = false;
+
+	exportedChange: ExportedChange[] = [];
+
 	initDoc(
 		docId: string,
 		docName: string,
@@ -215,7 +224,7 @@ export class SheetsService {
 	}
 	getParsedCellFormulaOrValue(y: number, x: number) {
 		const cv = this.getMaybeCellFormulaOrValue(y, x);
-		return this.parseCellValue(cv ? this.getFormattedCellStr(y, x, cv) : cv);
+		return this.parseCellValue(cv ? this.getFormattedCellStr(y, x) : cv);
 	}
 	setParsedCellValue(y: number, x: number, input: string) {
 		this.setCellContent(y, x, this.parseUserInput(input));
@@ -255,20 +264,27 @@ export class SheetsService {
 	getColumnLetter(x: number) {
 		return createColumnName(x);
 	}
-	getFormattedCellStr(y: number, x: number, v: CellValue) {
+	getFormattedCellStr(y: number, x: number) {
+		return this.getFormattedCellStrFromCellValue(
+			y,
+			x,
+			this.doc?.sheets.getCellValue({ col: x, row: y, sheet: this.sheetId }),
+		);
+	}
+	getFormattedCellStrFromCellValue(y: number, x: number, cv?: CellValue) {
 		const t = this.doc?.sheets.getCellValueDetailedType({
 			col: x,
 			row: y,
 			sheet: this.sheetId,
 		});
-		if (typeof v === 'number') {
+		if (typeof cv === 'number') {
 			let date;
 			if (t === CellValueDetailedType.NUMBER_DATE)
-				date = this.doc?.sheets.numberToDate(v);
+				date = this.doc?.sheets.numberToDate(cv);
 			if (t === CellValueDetailedType.NUMBER_DATETIME)
-				date = this.doc?.sheets.numberToDateTime(v);
+				date = this.doc?.sheets.numberToDateTime(cv);
 			if (t === CellValueDetailedType.NUMBER_TIME)
-				date = this.doc?.sheets.numberToTime(v);
+				date = this.doc?.sheets.numberToTime(cv);
 			if (date)
 				return new Date(
 					'year' in date ? date.year : 0,
@@ -279,18 +295,14 @@ export class SheetsService {
 					'seconds' in date ? date.seconds : 0,
 				).toLocaleDateString();
 		}
-		return v;
+		return cv;
 	}
-	getFormattedCellOrFormulaStr(y: number, x: number, v: CellValue) {
-		return (
-				this.doc?.sheets.doesCellHaveSimpleValue({
-					col: x,
-					row: y,
-					sheet: this.sheetId,
-				})
-			) ?
-				this.getFormattedCellStr(y, x, v)
-			:	v;
+	getFormattedCellOrFormulaStr(y: number, x: number) {
+		const ca: SimpleCellAddress = { col: y, row: x, sheet: this.sheetId };
+		const cv = this.doc?.sheets.getCellValue(ca);
+		return this.doc?.sheets.doesCellHaveSimpleValue(ca) ?
+				this.getFormattedCellStr(y, x)
+			:	cv;
 	}
 	setCellContent(y: number, x: number, v: RawCellContent | RawCellContent[][]) {
 		this.doc?.sheets?.setCellContents({ col: x, row: y, sheet: this.sheetId }, v);
@@ -405,6 +417,12 @@ export class SheetsService {
 	}
 	isCellInSelectedRange(y: number, x: number) {
 		return this.isCellRowInSelectedRange(y) && this.isCellColInSelectedRange(x);
+	}
+	isSelectedAreaBiggerThanOne() {
+		return (
+			Math.abs(this.selectedCells.end.x - this.selectedCells.start.x) > 0 ||
+			Math.abs(this.selectedCells.end.y - this.selectedCells.start.y) > 0
+		);
 	}
 	isCellInSheet(c: SimpleCellAddress) {
 		return c.col < this.sheetWidth && c.row < this.sheetHeight;

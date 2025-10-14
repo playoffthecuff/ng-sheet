@@ -42,23 +42,63 @@
 					</tr>
 				</thead>
 				<tbody tuiTbody class="tbody">
-					@for (row of ss.sheetValues; let i = $index; track $index) {
+					@for (row of ss.sheetValues; let y = $index; track y) {
 						<tr tuiTr class="tr">
 							<th
 								tuiTh
 								class="tbody-tr-th"
 								[class.highlighted-th]="
-									i === ss.focusedCell.y || ss.isCellRowInSelectedRange(i)
+									y === ss.focusedCell.y || ss.isCellRowInSelectedRange(y)
 								"
 								[class.selected-th]="
-									i >= ss.selectedRows.start && i <= ss.selectedRows.end
+									y >= ss.selectedRows.start && y <= ss.selectedRows.end
 								"
-								(click)="ss.setSelectedRow(i)"
+								(click)="ss.setSelectedRow(y)"
 							>
-								{{ i + 1 }}
+								{{ y + 1 }}
 							</th>
-							@for (cell of row; let j = $index; track $index) {
+							@for (cell of row; let x = $index; track x) {
 								<td
+									tuiTd
+									class="td"
+									[class.highlighted-td]="
+										ss.isCellInSelectedRange(y, x) && ss.isSelectedAreaBiggerThanOne()
+									"
+									[class]="{
+										br:
+											y >= ss.copiedCells.start.row &&
+											y <= ss.copiedCells.end.row &&
+											x + 1 === ss.copiedCells.start.col,
+										bt:
+											x >= ss.copiedCells.start.col &&
+											x <= ss.copiedCells.end.col &&
+											y - 1 === ss.copiedCells.end.row,
+										bb:
+											x >= ss.copiedCells.start.col &&
+											x <= ss.copiedCells.end.col &&
+											y + 1 === ss.copiedCells.start.row,
+										bl:
+											y >= ss.copiedCells.start.row &&
+											y <= ss.copiedCells.end.row &&
+											x - 1 === ss.copiedCells.end.col,
+									}"
+								>
+									<app-data-cell
+										[x]="x"
+										[y]="y"
+										[tableEl]="table"
+										[value]="
+											ss.editingCell.x === x && ss.editingCell.y === y ?
+												ss.userInput
+											:	ss.getFormattedCellStrFromCellValue(y, x, cell)
+										"
+										[isFocused]="ss.focusedCell.x === x && ss.focusedCell.y === y"
+										[isEditing]="ss.editingCell.x === x && ss.editingCell.y === y"
+										[isSelecting]="ss.isSelectingFlag"
+									/>
+								</td>
+
+								<!-- <td
 									tuiTd
 									tuiDropdownContext
 									#dropdown="tuiDropdown"
@@ -118,7 +158,7 @@
 											[value]="
 												ss.editingCell.x === j && ss.editingCell.y === i ?
 													ss.userInput
-												:	ss.getFormattedCellStr(i, j, cell)
+												:	ss.getFormattedCellStr(i, j)
 											"
 											[appSetFocus]="ss.editingCell.x === j && ss.editingCell.y === i"
 											[appBlur]="ss.editingCell.x !== j || ss.editingCell.y !== i"
@@ -154,7 +194,7 @@
 											}
 										</tui-data-list>
 									</ng-template>
-								</td>
+								</td> -->
 							}
 						</tr>
 					}
